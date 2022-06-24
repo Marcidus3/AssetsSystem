@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+ 
+ 
+<div class="text_block">
+
+<h1>Делаем ракушку более реалистичной </h1>
+
+<h2>Дополнительные карты и материалы в 3D Coat</h2>
+
+
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="50%" src="../assets/images/tex_practice/clam_map.gif">
+</div>
+<p>
+На данный момент модель ракушки имеет только текстуру цвета Diffuse, которая не изменяет свойства взаимодействия со светом. Чтобы добавить реализма необходимо использоваться дополнительные карты рельефности, смещения, бликов и т.д. Рассмотрим способы создания таких текстур в 3D Coat.
+</br>Начнем с карты Glossiness/Roughness, отвечающей за отражающую способность поверхности. Чтобы рисовать участки Glossiness сразу на модели, необходимо настроить кисть. На верхней панели инструментов располагаются три иконки, открывающие вкладки установки значений влияния кисти на глубину Depth, цвет Opacity и гладкость Glossiness Intesity. Создаем новый пустой слой, отключаем Depth и Opacity, кликая на их иконки ( на их месте должны появиться крестики), а для Glossiness устанавливаем максимальное значение 100%
+     </p>
+	 
+	 
+	   
+   <div  style="text-align: center;">
+<img width="70%" src="../assets/images/tex_practice/7_1.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Настройки кисти
+</p>
+
+
+	 <p>
+Отключаем возможность воздействия на объекты Base и Top, берем стандартную кисть и рисуем на поверхности жемчужины.
+ </p>
+ 
+    <div  style="text-align: center;">
+<img width="20%" src="../assets/images/tex_practice/7_2.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Отключаем объекты
+</p>
+
+ 
+ <p>
+Все участки, где была использована эта кисть, должны стать глянцевыми. А если переключить отображение текстур в режим Roughness, то увидим, что только жемчужина выделена черным цветом.
+  </p>
+  
+     <div  style="text-align: center;">
+<img width="70%" src="../assets/images/tex_practice/7_3.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Карта Glossiness
+</p>
+
+
+<p>
+Так же рисуем на остальных поверхностях ракушки, требующих повышения глянцевости. Если переключиться в стандартный режим отображения модели, то увидим, что данные участки действительно взаимодействуют со светом особым образом.
+</p>
+
+   <div  style="text-align: center;">
+<img width="60%" src="../assets/images/tex_practice/7_4.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Карта Glossiness
+</p>
+
+<p>  
+Также настроить степень глянцевости/жесткости можно во вкладке Blending для данного слоя. 
+ </p>
+ 
+   <div  style="text-align: center;">
+<img width="20%" src="../assets/images/tex_practice/7_5.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Настройки наложения
+</p> 
+
+
+ <p>
+Далее рассмотрим ситуацию, в которой нет возможности запечь карты нормалей Normal Map, а значит глубину или рельеф придется создать самостоятельно. Создаем новый слой, в настройках кисти устанавливаем Depth 100%, остальное отключаем. 
+ </p>
+ 
+    <div  style="text-align: center;">
+<img width="20%" src="../assets/images/tex_practice/7_6.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Карта Glossiness
+</p>
+
+
+ <p>
+Рисуем возвышающийся рельеф стандартной кистью Brush, создаем углубления с зажатой клавишей Alt. Изменения будут сохраняться в виде карты нормалей.
+   </p>
+   
+      <div  style="text-align: center;">
+<img width="60%" src="../assets/images/tex_practice/7_7.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Рисование карты нормалей
+</p>
+
+
+   <p>
+Теперь рассмотрим материалы Smart Materials в 3D Coat. На панели справа открываем вкладку Smart Materials и нажимаем плюсик рядом со списком видов материалов, чтобы создать новую папку, в появившемся поле вводим ее название. 
+ </p>
+ 
+      <div  style="text-align: center;">
+<img width="40%" src="../assets/images/tex_practice/7_8.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Создание новой папки
+</p>
+
+
+ <p>
+Далее нажимаем на иконку плюса внутри данной папки, чтобы создать материал. Открывается окно настройки параметров. Здесь можно установить название материала, все стандартные карты и их прозрачность, а также распределить характеристики по отдельным слоям со своими режимами наложения. После завершения настройки нажимаем Save, теперь материал появился в нашей папке и его можно использовать.
+ </p>
+ 
+      <div  style="text-align: center;">
+<img width="50%" src="../assets/images/tex_practice/7_9.jpg">
+</div>
+<p class="image_text">
+Рис. 9 - Создание нового материала
+</p>
+
+
+ <p>
+Для ракушки используем один из стандартных материалов plastic_glossy из папки Leather. Нажимаем на его изображение правой кнопкой мыши и выбираем вариант Duplicate – дублировать, изменяем название нового материала. 
+</p>
+
+     <div  style="text-align: center;">
+<img width="20%" src="../assets/images/tex_practice/7_10.jpg">
+</div>
+<p class="image_text">
+Рис. 10 - Дублирование слоя
+</p>
+
+
+ <p>
+В окне настроек уменьшим параметры карты Depth до 30%, а Roughness до 45%, чтобы сделать материал мягче. 
+</br>Также при нажатии на материал появляется окно Smart Material Preview, в котором можно в реальном времени посмотреть на эффект, создаваемый им.
+  </p>
+  
+       <div  style="text-align: center;">
+<img width="70%" src="../assets/images/tex_practice/7_11.jpg">
+</div>
+<p class="image_text">
+Рис. 11 - Применение материала
+</p>
+
+
+ <p> 
+Чтобы применить материал, нажимаем на него правой кнопкой мыши, а затем выбираем Fill Entire Layer. В списке слоев появится новый слой Material, от параметров которого будет зависеть отображение модели.
+</p>
+
+ <p>
+Чтобы метариал перестал воздействовать на участки модели, достаточно стереть его слой стандартным иснтрументом Eraser. На изображении ниже можем наблюдать, как шум, создаваемвй материалом, уменьшился после использования ластика в данной области.
+  </p>
+  
+       <div  style="text-align: center;">
+<img width="50%" src="../assets/images/tex_practice/clam_map.gif">
+</div>
+<p class="image_text">
+Рис. 12 - Результат
+</p>
+
+
+ <div class="next_link">
+    <p> <a href="tex_task6.html"> < Использование градиентных карт в Photoshop </a> </p>
+ <p> <a href="tex_task8.html"> Отрисовка текстур персонажа > </a> </p>
+ 
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

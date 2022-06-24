@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+
+<div class="text_block">
+
+<h1>Продолжаем моделировать рыбку   </h1>
+<h2> Кисти Move, Standard, Clay Buildup и их настройки</h2>
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="50%" src="../assets/images/hp_practice/Fish2.gif">
+</div>
+
+
+<p>
+Кисти – основное средство скульптурирования в Zbrush. Все кисти имеют три режима: 
+
+  <ul style="list-style-type: disc; margin-left:40px;">
+     <li>Основной – не требует нажатия каких-либо дополнительных клавиш, просто водите мышью по модели;</li>
+     <li>Инвертированный – включается при зажатой клавише Alt, эффект кисти инвертируется, т.е., например, если кисть создавала объемный рельеф на поверхности, то теперь она будет создавать впадины такой же формы;</li>
+     <li>Сглаживающий – включается при зажатой клавише Shift, сглаживает поверхность модели, для всех кистей работает одинаково.</li>
+   </ul>
+
+</p>
+
+<p>
+Продолжаем работу с рыбкой из прошлого задания, либо открываем проект из файла scenes/high_poly/Fish.ZPR.
+</p>
+<p>
+Для работы с кистями должен быть включен режим Draw.  Он включается нажатием кнопки Draw (или клавишей Q) на панели инструментов над рабочим полем. 
+</p>
+
+
+<div  style="text-align: center;">
+<img width="45%" src="../assets/images/hp_practice/4_1.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Режим Draw
+</p>
+
+<p>
+Чтобы вызвать палитру кистей достаточно нажать на превью кисти в верхней левой части экран либо нажать клавишу B.
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/4_2.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Палитра кистей
+</p>
+
+<p>
+Среди множества кистей выбираем кисть Move (последовательность клавиш BMV), настраиваем ее размер с помощью клавиш [ и ], либо вручную меняя значения на панели инструментов.
+</p>
+
+
+<div  style="text-align: center;">
+<img width="45%" src="../assets/images/hp_practice/4_3.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Настройка кисти
+</p>
+
+<div  style="text-align: center;">
+<img width="13%" src="../assets/images/hp_practice/4_4.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Кисть Move
+</p>
+
+<p>
+Настраиваем достаточно большой размер кисти, включаем симметрию нажатием кнопки X (подробно симметрия будет рассмотрена в дальнейших заданиях, пока включаем ее для удобства). Используя кисть на поверхности модели корректируем форму, делая хвост рыбы более тонким, голову менее круглой.
+ </br>
+ Также в области хвоста делаем модель уже. 
+ </p>
+
+
+<div  style="text-align: center;">
+<img width="60%" src="../assets/images/hp_practice/4_5.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Скульптинг кистью Move
+</p>
+
+<p>
+Теперь таким же образом придадим форму плавникам. Так как они были созданы из цилиндров, имеющих своеобразную топологию, с которой может быть тяжело работать, применим функцию ZRemesher.
+</br>
+ Ее можно найти в палитре Geometry ниже списка сабтулов. Устанавливаем в настройках режим Double, чтобы увеличить количество полигонов и сгладить модель после ретопологии. Нажимаем кнопку ZRemesher, смотрим на изменения в режиме сетки (Shift+F).
+</p>
+
+
+<div  style="text-align: center;">
+<img width="20%" src="../assets/images/hp_practice/4_6.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - ZRemesher
+</p>
+
+<div  style="text-align: center;">
+<img width="60%" src="../assets/images/hp_practice/4_7.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Результат использования ZRemesher
+</p>
+
+
+<p>
+Аналогичную операцию используем для остальных плавников. Когда все плавники приобрели новую топологию, используем ту же кисть Move для разглаживания и корректирования формы.
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/4_8.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Использование кисти Move
+</p>
+
+<p>
+Далее приступаем к скульпртингу деталей и второстепенных форм рыбки. Для этого можно взять либо кисть Standard (BST), либо ClayBuildup (CBC). Они обе хорошо подходят для наращивания объема, однако вторая имеет большую площадь покрытия и ей удобно работать на начальных стадиях. 
+</br>
+Настроим Alpha (альфу) данной кисти. Изначально кисть имеет неровную текстуру глины, которую определяет одна из альф. Выберем Alpha Off, т.е. отключим ее использование, теперь кисть станет гладкой и не придется лишний раз прибегать к разглаживанию.
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/4_9.jpg">
+</div>
+<p class="image_text">
+Рис. 9 - Альфы кисти ClayBuildup
+</p>
+
+
+<p>
+С помощью данной кисти создаем более детализированную голову рыбе, достраиваем жабры и рот. Затем сгладим неровную поверхность.
+</p>
+
+
+<div  style="text-align: center;">
+<img width="30%" src="../assets/images/hp_practice/4_10.jpg">
+</div>
+<p class="image_text">
+Рис. 10 - Скульптинг жабр
+</p>
+
+<p>
+Добавим новый сабтул – сферу, отразим ее при помощи Mirror and Weld, чтобы создать глаза.
+</p>
+
+<div  style="text-align: center;">
+<img width="25%" src="../assets/images/hp_practice/4_11.jpg">
+</div>
+<p class="image_text">
+Рис. 11 - Создание глаз
+</p>
+
+<p>
+Используя ClayBuildup можно было заметить, что при сильных изменениях формы поверхности, становятся видны отдельные полигоны. Это значит, что у модели недостаточно высокое разрешение. Нажимаем Shift+F, чтобы посмотреть сетку и убедиться, что полигонов действительно мало.
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/4_12.jpg">
+</div>
+<p class="image_text">
+Рис. 12 - Сетка
+</p>
+
+<p>
+Переходим в раздел Geometry и открываем палитру DynaMesh. DynaMesh – особый формат модели, а также средство настройки ее разрешения и корректирования топологии. 
+</br>
+Включим данный режим для тела рыбки, устанавливая разрешение 128 и нажимая на кнопку DynaMesh. 
+Увидим, что количество полигонов значительно увеличилось, но формы модели не исказились. 
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/4_13.jpg">
+</div>
+<p class="image_text">
+Рис. 13 - Преобразование в DynaMesh
+</p>
+
+
+<p>
+Продолжим добавлять детали, используя кисти ClayBuildup и Standard и их режимы, чтобы доработать модель. 
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/4_14.jpg">
+</div>
+<p class="image_text">
+Рис. 14 - Процесс скульптинга
+</p>
+
+<p>
+Для придания текстуры плавникам используем те же кисти, постоянно переключаясь между стандартным и инвертированным режимом.
+
+</br>
+В результате получим следующую модель. Она требующую доработки, но уже имеет все необходимые базовые формы. 
+</p>
+
+<div  style="text-align: center;">
+<img width="50%" src="../assets/images/hp_practice/4_15.jpg">
+</div>
+<p class="image_text">
+Рис. 15 - Результат
+</p>
+
+
+
+
+ <div class="next_link">
+ 
+  <p> <a href="hpoly_task3.html"> < Операции Boolean </a> </p>
+  
+ <p> <a href="hpoly_task5.html"> Кисти Dam Standard, Trim Dynamic, Pinch > </a> </p>
+ 
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

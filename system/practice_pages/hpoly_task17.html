@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+<div class="text_block">
+
+<h1>Скульптинг твердых поверхностей</h1>
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="50%" src="../assets/images/hp_practice/Armor.gif">
+</div>
+
+<p>
+Для создания нагрудника используем примитив цилиндр Cylinder3D. Используем кисть Move, чтобы придать ему форму, соответствующую референсу. 
+</p>
+
+
+<div  style="text-align: center;">
+<img width="50%" src="../assets/images/hp_practice/17_1.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Создание примитивной основы доспеха
+</p>
+
+<p>
+Уменьшим разрешение модели, а также исправим топологию цилиндра, применяя ZRemesher с режимами Half и Adapt.
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/17_2.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Операция ZRemesher
+</p>
+
+<p>
+Необходимо добавить элементы оформления краев доспеха. </br>
+Выбираем кисть ZModeler. Для полигонов в меню настройки (Пробел) выбираем режим Insert Polyloops. 
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/17_3.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Insert Polyloops
+</p>
+
+<p>
+Последовательно кликаем на полигоны, в результате чего они приобретают полигруппу, отличную от остальной модели, и окрашиваются в новый цвет.
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/17_4.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Создание полигруппы
+</p>
+
+<p>
+Затем меняем режим Zmodeler на Extrude, а область воздействия на Polygroup All и нажимаем на группу полигонов. Должно произойти выдавливание данной полигруппы. Аналогичную операцию проделываем для нижней части доспеха.
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/17_5.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Extrude полигруппы
+</p>
+
+<p>
+Вторую часть нагрудника создадим из примитивного куба QCube методом выдавливания Extrude его сторон. Расположим его на спине персонажа и будем выдавливать форму вокруг тела. 
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/17_6.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Extrude частей модели
+</p>
+
+<p>
+В результате выдавливания и корректирования расположения точек и ребер, а также после смягчения DynamicSub модель должна выглядеть следующим образом.
+</p>
+
+<div  style="text-align: center;">
+<img width="20%" src="../assets/images/hp_practice/17_7.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Форма части доспеха
+</p>
+
+<p>
+Подготовим полосу полигонов на границе пластины доспеха и выполним выдавливание.
+</p>
+
+<div  style="text-align: center;">
+<img width="50%" src="../assets/images/hp_practice/17_8.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Extrude полигруппы
+</p>
+
+<p>
+Соединим две части нагрудника функцией Merge.
+</p>
+
+<div  style="text-align: center;">
+<img width="20%" src="../assets/images/hp_practice/17_9.jpg">
+</div>
+<p class="image_text">
+Рис. 9 - Низкополигональная модель
+</p>
+
+<p>
+Преобразуем сабтул в DynaMesh разрешением Resolution примерно 176.
+</p>
+
+<div  style="text-align: center;">
+<img width="50%" src="../assets/images/hp_practice/17_10.jpg">
+</div>
+<p class="image_text">
+Рис. 10 - Преобразование в DynaMesh
+</p>
+
+<p>
+Теперь необходимо разгладить плоские поверхности смягчающим режимом Shift, а края сделать более четкими. 
+</p>
+
+<div  style="text-align: center;">
+<img width="30%" src="../assets/images/hp_practice/17_11.jpg">
+</div>
+<p class="image_text">
+Рис. 11 - Готовая модель нагрудника
+</p>
+
+<p>
+Для создания наголенника и набедренника выделим маской область ноги и отделим ее функцией Split. Корректируем новые детали кистью Move (BMV), пока не получим желаемую форму.
+</p>
+
+<div  style="text-align: center;">
+<img width="50%" src="../assets/images/hp_practice/17_12.jpg">
+</div>
+<p class="image_text">
+Рис. 12 - Создание основных форм доспехов
+</p>
+
+<p>
+Теперь подготовим сабтул для дальнейшего полигонального моделирования. Применяем ZRemesher с режимом Half и Adapt до тех пор, пока модель не будет достаточно упрощена.
+</p>
+
+<div  style="text-align: center;">
+<img width="50%" src="../assets/images/hp_practice/17_13.jpg">
+</div>
+<p class="image_text">
+Рис. 13 - Операция ZRemesher для уменьшения разрешения
+</p>
+
+<p>
+Берем кисть ZModeler, для ребер выбираем действие Bevel и цель EdgeLoop, чтобы обработать края модели. Периодически включаем DynamicSub, чтобы проверить вид модели после сглаживания и увеличения разрешения.
+</p>
+
+<div  style="text-align: center;">
+<img width="25%" src="../assets/images/hp_practice/17_14.jpg">
+</div>
+<p class="image_text">
+Рис. 14 - Операция Bevel
+</p>
+
+<p>
+Оформляем края данных деталей аналогично нагруднику.
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/17_15.jpg">
+</div>
+<p class="image_text">
+Рис. 15 - Готовые модели наголенника и набедренника
+</p>
+
+<p>
+Далее приступаем к созданию декоративных элементов доспехов. Маской выделяем области моделей, затем отделяем их операцией Extrude. Детализируем новые модели, делая их похожими на существующие части доспеха.
+</p>
+
+<div  style="text-align: center;">
+<img width="45%" src="../assets/images/hp_practice/17_16.jpg">
+</div>
+<p class="image_text">
+Рис. 16 - Создание масок для декоративных элементов
+</p>
+
+<div  style="text-align: center;">
+<img width="55%" src="../assets/images/hp_practice/17_17.jpg">
+</div>
+<p class="image_text">
+Рис. 17 - Готовые модели декоративных элементов
+</p>
+
+<p>
+Наколенник создаем из примитива сферы. Придаем модели ромбовидную форму, соответствующую референсу, обрезаем заднюю часть, делая поверхность гладкой.
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/17_18.jpg">
+</div>
+<p class="image_text">
+Рис. 18 - Модель передней части наколенника
+</p>
+
+<p>
+Вторая часть наколенника, располагающаяся за ним, будет моделироваться на основе простейшего куба QCube с настройками по умолчанию (Res – 2). Используем функции ZModeler и создадим следующую форму.
+</p>
+
+<div  style="text-align: center;">
+<img width="15%" src="../assets/images/hp_practice/17_19.jpg">
+</div>
+<p class="image_text">
+Рис. 19 - Полигональное моделирование части наколенника
+</p>
+
+<p>
+Разгладим модель с помощью DynamicSub, затем дублируем ее и переместим назад и ниже предыдущей части.
+</br>
+Кистью Pinch (BPI) проводим по поверхности наколенника, создавая характерную форму.
+</br>
+Применяем ко всем сабтулам доспехам материал ZMetal.
+</p>
+
+
+<div  style="text-align: center;">
+<img width="50%" src="../assets/images/hp_practice/17_20.jpg">
+</div>
+<p class="image_text">
+Рис. 20 - Готовая модель наколенника
+</p>
+
+<div  style="text-align: center;">
+<img width="30%" src="../assets/images/hp_practice/17_21.jpg">
+</div>
+<p class="image_text">
+Рис. 21 - Результат
+</p>
+
+ <div class="next_link">
+ 
+  <p> <a href="hpoly_task16.html"> < Скульптинг одежды, тканей и волос </a> </p>
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

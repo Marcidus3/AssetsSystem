@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+ 
+ 
+<div class="text_block">
+
+<h1>Скиннинг модели персонажа</h1>
+
+
+<p>
+Выделяем все кости рига со следующими исключениями: окончания цепей не выделяем, цепи IK и FK не выделяем. Создаем набор выделения, чтобы упростить процесс добавления костей в модификатор Skin.
+</br>Для модели персонажа добавляем модификатор Skin, а затем в разделе Bones нажимаем Add. В окне добавления костей выбираем созданный ранее Selection Set и нажимаем кнопку Select. Теперь кости присоединены к модели, однако распределение их влияния на геометрию требует корректировки.
+  </p>
+  
+                   <div  style="text-align: center;">
+<img width="45%" src="../assets/images/rig_practice/9_1.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Добавляем кости в модификатор Skin
+</p>
+
+  <p>
+Заметим, что наша модель содержит больше количество объектов, закрывающих другие, что может усложнить процесс настройки весов. Чтобы решить данную проблему будем делать невидимыми мешающие элементы модели.
+</br>Прежде чем редактировать геометрию выключаем воздействие модификатора Skin с помощью иконки глаза.
+ </p>
+ <p>
+Далее нажимаем на модификатор Editable Mesh и в открывшемся окне с предупреждением нажимаем Yes.
+ </p>
+ <p>
+Теперь в данном модификаторе выбираем режим выделения Element и кликаем на часть модели, которую нужно скрыть, она должна изменить цвет на красный. Теперь нажимаем кнопку Hide в разделе Selection. Выбранная геометрия должна исчезнуть.
+  </p>
+                   <div  style="text-align: center;">
+<img width="55%" src="../assets/images/rig_practice/9_2.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Скрываем части модели
+</p>
+
+  <p>
+Обязательно отключаем режим выбора Element, нажимая на соответствующую кнопку повторно, и возвращаемся к Skin, не забывая включить его. 
+</br>Таким образом можно прятать любое количество элементов модели. Возвратить модель в исходное состояние можно при помощи кнопки Unhide All.
+</br>Процесс настройки весов будет в режиме Edit Envelopes с включенным параметром Vertices, так как у нас достаточно низкополигональная модель и будет удобно выделять отдельные точки. Установка весов для определенных точек происходит в окне Weight Tool.
+  </p>
+                     <div  style="text-align: center;">
+<img width="45%" src="../assets/images/rig_practice/9_3.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Найстрока весов в Weight Tool
+</p>
+
+  <p>
+Шаги настройки весов следующие:
+  <ul style="list-style-type: disc; margin-left:40px;">
+<li>Выбираем кость; </li>
+<li>Выделяем точки модели, требующие настройки; </li>
+<li>В окне Weight Tool указываем значение веса, которое будет кость оказывать на точки. </li>
+</ul>
+</br>Таким образом настраиваем точки для всех центральных костей и конечностей с одной из сторон. Используем Mirror Mode, чтобы отразить веса на обратную сторону.
+</p>
+                   <div  style="text-align: center;">
+<img width="30%" src="../assets/images/rig_practice/9_4.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Mirror Mode
+</p>
+
+ 
+Проверяем качество скина, двигая кости. Модель должна не слишком сильно искажаться и иметь широкий диапазон движения.
+                   <div  style="text-align: center;">
+<img width="75%" src="../assets/images/rig_practice/9_5.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Примеры распределения весов
+</p>
+
+
+
+ <div class="next_link">
+    <p> <a href="rig_task8.html"> < Создание скелета персонажа </a> </p>
+ <p> <a href="rig_task10.html"> Контроллеры ног, позвоночника и глаз > </a> </p>
+ 
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

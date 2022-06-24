@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+ 
+ 
+<div class="text_block">
+
+<h1>Создание простого скелета</h1>
+<h2>Инструмент Bone Tool</h2>
+
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="30%" src="../assets/images/rig_practice/1_1.jpg">
+</div>
+
+<p>
+Риг — это невидимые цифровые кости персонажа, необходимые для анимации. На этой стадии создаются объекты управления моделью – кости, ползунки и т.д. Данные объекты не обязаны быть анатомически верным. Это лишь набор точек, которые, двигаясь, будут «гнуть» персонажа, элементы его одежды и прочие объекты. 
+</br>В 3DS Max одним из средств создания таких костей является инструмент Bone Tools. 
+</br>Создаем пустой проект 3DS Max и на верхней панели меню открываем Animation>>Bone Tools. Данное окно содержит функции по созданию и редактированию костей.
+</br>Переходим в вид слева Left, нажимаем кнопку Create Bones и кликаем в рабочей области, создавая кости позвоночника. Для окончания создания скелета нажимаем Esc или правую кнопку мыши. Первые три кости снизу будут позвоночником, а верхние – шеей и головой, маленькую кость на конце игнорируем.
+</br>Чтобы перемещать данный скелет в пространстве, достаточно выделить первую созданную нами кость – корень и применять стандартные функции Move и Rotate.
+  </p>
+  
+  <div  style="text-align: center;">
+<img width="40%" src="../assets/images/rig_practice/1_2.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Create Bones
+</p>
+
+ 
+  <p>
+Чтобы изменять кости по-отдельности, необходимо включить режим Bone Edit Mode, нажатием соответствующей кнопки в разделе Bone Pivot Position. Данный режим позволяет изменять положение и поворот кости.
+</br>Таким образом удлиним среднюю кость позвоночника и изменим поворот кости шеи.
+ </p>
+
+  <div  style="text-align: center;">
+<img width="40%" src="../assets/images/rig_practice/1_3.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Bone Edit Mode
+</p>
+
+<p> 
+Чтобы изменять размер кости, не затрагивая ее длину и положение, изменяем ее характеристики в разделе Fin Adjustment Tools. Параметры Width и Height отвечают за объем, а Taper определяет степень сужения. Увеличим размер кости головы.
+  </p>
+  
+    <div  style="text-align: center;">
+<img width="60%" src="../assets/images/rig_practice/1_4.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Размер кости
+</p>
+  
+  <p>
+Далее создаем кость таза так, чтобы она была направлена вниз. Выделяем ее, затем нажимаем Alt+A, чтобы открыть окно Alight Selection, и кликаем на первой кости позвоночника. В настройках обязательно ставим галочки у всех осей, как точки выравнивания устанавливаем Pivot Point для обоих объектов.
+</br>Это позволит максимально приблизить и выровнять основания костей позвоночника и таза.
+ </p>
+
+  <div  style="text-align: center;">
+<img width="45%" src="../assets/images/rig_practice/1_5.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Align Selection
+</p>
+
+<p> 
+Создаем кости ноги, начиная от бедра. При создании отодвигаем их чуть дальше от таза, чтобы не произошло автоматического соединения. Когда полная цепочка создана, перемещаем ее к тазу и отодвигаем от центральной оси в направлении X.
+   </p>
+     <div  style="text-align: center;">
+<img width="45%" src="../assets/images/rig_practice/1_6.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Кости ноги
+</p>
+
+
+   <p>
+Кнопка Mirror позволит отразить кости ноги. В открывшемся окне Bone Mirror установим Mirror Axis – x, Bone Axis to Flip – Y, увеличиваем Offset, чтобы отодвинуть отраженные кости.
+</br>Чтобы идеально выровнять ноги относительно позвоночника, скопируем параметр X одного из бедер, затем введем такое же значение для второго бедра, но с добавленным минусом.
+  </p>
+  
+       <div  style="text-align: center;">
+<img width="40%" src="../assets/images/rig_practice/1_7.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Копируем кости
+</p>
+
+  
+  <p>
+Аналогично создаем кости рук. Здесь первой костью корнем будет ключица. Убедимся, что рука согнута в области локтя, так как это необходимо для корректного применения инверсивной кинематики в следующих заданиях.
+ </p>
+
+     <div  style="text-align: center;">
+<img width="40%" src="../assets/images/rig_practice/1_8.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Кости руки
+</p>
+
+
+<p> 
+Не всегда при создании костей можно точно оценить количество необходимых элементов. Чтобы добавить новые используем инструмент Refine. Нажмем на соответствующую кнопку, а затем на большую кость позвоночника, чтобы разделить его на две части.
+</br>Чтобы удалять кости, при этом сохраняя общую структуру скелета, используется функция Remove Bone. А функция Delete Bone после удаления кости разделяет его на две части.
+   </p>
+   
+        <div  style="text-align: center;">
+<img width="55%" src="../assets/images/rig_practice/1_9.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Refine
+</p>
+
+   <p>
+Теперь рассмотрим инструменты 3DS Max, позволяющие организовать работу с костями. 
+</br>Bone Tools имеет возможность раскрашивания косей. Выделяем кости позвоночника и задаем цвета начала Start Color и конца End Color градиента в разделе Gradient Coloring. Нажимаем Apply Gradient, чтобы применить их к выделенным костям.
+</br>Чтобы раскрасить одну кость, задаем ей цвет в Bone Coloring>> Selected Bone Color.
+  </p>
+  
+       <div  style="text-align: center;">
+<img width="55%" src="../assets/images/rig_practice/1_10.jpg">
+</div>
+<p class="image_text">
+Рис. 9 - Изменяем цвет костей
+</p>
+
+
+  <p>
+Таким образом раскрашиваем весь скелет.
+ </p>
+ 
+ <p>
+Теперь необходимо переименовать все кости. Открываем инструмент Tools>>Rename Objects, чтобы произвести автоматическое изменение названий больших групп костей.
+</br>Выделяем группу костей и в открывшемся окне задаем ее базовое имя (в данном случае base_), префикс (в данном случае spine_) и ставим галочку у Numbered, чтобы кости были автоматически пронумерованы. Не забываем разделять части названия нижними подчеркиваниями или другими символами.
+</p>
+
+     <div  style="text-align: center;">
+<img width="55%" src="../assets/images/rig_practice/1_11.jpg">
+</div>
+<p class="image_text">
+Рис. 10 - Изменяем названия костей
+</p>
+
+     <div  style="text-align: center;">
+<img width="30%" src="../assets/images/rig_practice/1_1.jpg">
+</div>
+<p class="image_text">
+Рис. 11 - Результат
+</p>
+
+
+ <div class="next_link">
+
+ <p> <a href="rig_task2.html"> Link и Inverse Kinematics > </a> </p>
+ 
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

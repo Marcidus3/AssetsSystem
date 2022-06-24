@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+ 
+ 
+<div class="text_block">
+
+<h1>Контроллеры ног, позвоночника и глаз</h1>
+
+
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="40%" src="../assets/images/rig_practice/10_1.jpg">
+</div>
+<p style="font-weight:bold;">
+Ноги
+</p>
+<p>
+Начнем с создания цепей обратной кинематики для ног персонажа. Выделяем кость – цель цепи обратной кинематики и используем функцию Animation>>IKSolver>>HISоlver. Таким образом нам необходимо соединить: 
+Кости ступни Heel с костью бедра Thigh, где ступня управляет цепью;
+Кость пальцев Toe с костью ступни, где пальцы управляют ступней;
+Кость кончика ноги с костью пальцев, где кончик управляет пальцами. 
+Теперь при взаимодействии с созданными точками-целями обратной кинематики каждая из цепей будет двигаться.
+  </p>
+                     <div  style="text-align: center;">
+<img width="65%" src="../assets/images/rig_practice/10_2.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Создаем цепи кинематики ног
+</p>
+
+  <p>
+Для управления созданными цепями необходимо создать объекты-помощники.
+Создаем три объекта Point из панели Create>>Helpers>>Standard. Ставим галочку у параметра Box каждого из них, чтобы они отображались в форме кубов.
+Кубы выравниваем относительно Pivot Point каждой из целей IK цепи, при этом учитываем ориентацию. Затем помощники у пятки и кончика устанавливаем на одном уровне с «полом».
+Куб, находящийся в точке между пальцами и ступней копируем и делаем копию крупнее. 
+Таким образом у нас должно получиться 4 помощника на каждую ногу, расположенных следующим образом.
+  </p>
+                     <div  style="text-align: center;">
+<img width="58%" src="../assets/images/rig_practice/10_3.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Создаем Helpers
+</p>
+<p>
+Переходим к созданию зависимостей. С помощью Select and Link привязываем IK цепь пятки к соответствующему помощнику heel. Heel управляет большими движениями ноги, воздействующими на колено, бедро и всю ступню.
+ </p>
+                      <div  style="text-align: center;">
+<img width="35%" src="../assets/images/rig_practice/10_4.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Helper пятки
+</p>
+ <p>
+Затем привязываем этот же IK и IK ступни к меньшему из помощников ступни heel_peel, который обеспечит поднятие пятки.
+ </p>
+                      <div  style="text-align: center;">
+<img width="35%" src="../assets/images/rig_practice/10_5.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Helper поднятия пятки
+</p>
+ <p>
+IK кончика ноги привязывается к большему из помощников ступни toe_tap, который будет управлять пальцами ноги независимо от остальной цепи.
+ </p>
+                      <div  style="text-align: center;">
+<img width="35%" src="../assets/images/rig_practice/10_6.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Helper пальцев ног
+</p>
+ <p>
+Далее помощники в области ступни toe_tap и heel_peel привязываем к кончику ноги toe_lift, чтобы создать возможность поднятия ноги относительно кончика.
+ </p>
+                       <div  style="text-align: center;">
+<img width="35%" src="../assets/images/rig_practice/10_7.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Helper кончика ноги
+</p>
+ <p>
+Между помощниками устанавливаем следующую иерархию: помощники ступни toe_tap и heel_peel зависимы от toe_lift, который в свою очередь зависит от пятки heel.
+ </p>
+                       <div  style="text-align: center;">
+<img width="40%" src="../assets/images/rig_practice/10_8.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Иерархия Helpers и цепей IK
+</p>
+ <p>
+Как в одном из предыдущих заданий создаем сплайн – форму ступни и привязываем к ней heel. Теперь с помощью данной формы и помощников можно управлять ногой. 
+Не забываем замораживать расположение контролера в изначальном положении Freeze Transform.
+ </p>
+ 
+                       <div  style="text-align: center;">
+<img width="35%" src="../assets/images/rig_practice/10_9.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Готовые контроллеры ног
+</p>
+ 
+ 
+ <p style="font-weight:bold;">
+Позвоночник
+</p>
+
+<p>
+Для позвоночника создадим следующие контроллеры: 
+  <ul style="list-style-type: disc; margin-left:40px;">
+<li>Положение таза;</li>
+<li>Ориентация таза;</li>
+<li>Ориентация основания позвоночника;</li>
+<li>Ориентация шеи;</li>
+<li>Ориентация головы.</li>
+</ul>
+</p>
+<p>
+Каждый из контроллер будет представлять из себя сплайн окружность. Создаем их и выравниваем относительно соответствующих костей с учетом ориентации.
+ </p>
+ 
+                       <div  style="text-align: center;">
+<img width="30%" src="../assets/images/rig_practice/10_10.jpg">
+</div>
+<p class="image_text">
+Рис. 9 - Контроллеры таза, позвоночника, шеи и головы
+</p>
+
+ <p>
+Таз pelvis привязываем к контроллеру положения таза стандартным средством Select and Link.
+К контроллерам ориентации кости привязываем с помощью Constraints>>Orientation Constraint.
+ </p>
+                       <div  style="text-align: center;">
+<img width="35%" src="../assets/images/rig_practice/10_11.jpg">
+</div>
+<p class="image_text">
+Рис. 10 - Ограничитель ориентации
+</p>
+ <p>
+Все контроллеры привяжем Select and Link к контроллеру таза, так как его кость является корневой для всего рига. 
+</p>
+<p style="font-weight:bold;">
+Глаза
+</p>
+<p>
+В виде Front с помощью сплайнов создаем следующую форму. Круги для глаз должны соответствовать расположению глаз, а большой эллипс в центре. 
+С помощью Select and Link делаем круги зависимыми от эллипса, так как они должны перемещаться вместе с ним.
+ </p>
+                       <div  style="text-align: center;">
+<img width="40%" src="../assets/images/rig_practice/10_12.jpg">
+</div>
+<p class="image_text">
+Рис. 11 - Контроллер для глаз
+</p>
+ <p>
+Отдаляем контроллер от лица и выбираем первый глаз.
+ </p>
+                       <div  style="text-align: center;">
+<img width="40%" src="../assets/images/rig_practice/10_13.jpg">
+</div>
+<p class="image_text">
+Рис. 12 - Связывает глаз с контроллером
+</p>
+ <p>
+Устанавливаем зависимость данного глаза Constraint>>LookAt Constraint от соответствующего круга контроллера. Таким образом ориентация глаза будет зависеть от расположения контроллера.
+ </p>
+                        <div  style="text-align: center;">
+<img width="38%" src="../assets/images/rig_practice/10_14.jpg">
+</div>
+<p class="image_text">
+Рис. 13 - Look At
+</p>
+ <p>
+Скорее всего глаз примет случайную ориентацию, так как контроллер не был установлен относительно глаз. В разделе Motion выбираем параметр Rotation для данного глаза и ставим галочку Keep Initial Offset во вкладке LookAt Constraint, чтобы ориентация восстановилась.
+ </p>
+                        <div  style="text-align: center;">
+<img width="28%" src="../assets/images/rig_practice/10_15.jpg">
+</div>
+<p class="image_text">
+Рис. 14 - Keep Initial Offset
+</p>
+ <p>
+Повторяем данное действие для второго глаза.
+</p>
+                       <div  style="text-align: center;">
+<img width="40%" src="../assets/images/rig_practice/10_16.jpg">
+</div>
+<p class="image_text">
+Рис. 15 - Готовый контроллер глаз
+</p>
+                       <div  style="text-align: center;">
+<img width="40%" src="../assets/images/rig_practice/10_1.jpg">
+</div>
+<p class="image_text">
+Рис. 16 - Результат
+</p>
+
+ <div class="next_link">
+    <p> <a href="rig_task9.html"> < Скиннинг модели персонажа </a> </p>
+ <p> <a href="rig_task11.html"> Контроллеры рук  > </a> </p>
+ 
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

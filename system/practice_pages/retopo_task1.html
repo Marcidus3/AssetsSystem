@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+ 
+ 
+<div class="text_block">
+
+<h1>Ретопология рыбки</h1>
+
+<h2>Инструмент Simple Create</h2>
+
+
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="40%" src="../assets/images/top_practice/1_1.jpg">
+</div>
+
+
+ 
+<p>
+Начинаем работу в TopoGun с загрузки модели-референса, которая будет выступать в качестве основы для построения низкополигональной топологии.
+</br>На верхней панели кнопок нажимаем Load Ref и указываем путь к файлу.
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/top_practice/1_2.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Загрузка референса
+</p>
+
+<p>
+После загрузки модель появляется в центральной части рабочей области.
+</p>
+ 
+ <div  style="text-align: center;">
+<img width="60%" src="../assets/images/top_practice/1_3.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Референс загружен
+</p>
+ 
+<p>
+Управление и перемещение в рамках рабочей области происходит следующим образом:
+  <ul style="list-style-type: disc; margin-left:40px;">
+<li>Левая кнопка мыши + Alt – поворот;</li>
+<li>Колесо мыши + Alt – перемещение;</li>
+<li>Колесо мыши или Правая кнопка мыши + Alt – приближение/отдаление.</li>
+
+</ul>
+</p>
+<p>
+Панель инструментов TopoGun позволяет выбрать инструмент создания топологии. Выбираем инструмент SimpleCreate, который позволяет создавать точки на поверхности модели-референса, и автоматически соединяет их ребрами. 
+</br>На панели опций инструментов Tool Options можно настроить принцип функционирования выбранного инструмента. Для инструмента SimpleCreate доступен режим Make Faces, который будет автоматически создавать полигоны на основе создаваемых точек и ребер. Оставляем его выключенным.
+</p>
+ 
+ 
+ 
+<div  style="text-align: center;">
+<img width="20%" src="../assets/images/top_practice/1_4.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - SimpleCreate
+</p>
+ 
+ 
+ 
+<p>
+Создаем две линии из точек и ребер. Переключаемся на инструмент Bridge. Bridge позволяет создавать соединения между точками и ребрами. Он имеет два режима: Edges – создание новых соединяющих ребер и Faces – создание полигонов. 
+</p>
+  
+  <div  style="text-align: center;">
+<img width="40%" src="../assets/images/top_practice/1_5.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - SimpleCreate
+</p>
+ 
+  
+  
+<p>
+Выбираем режим Edges и наводим курсор на промежутки между точками. На модели должно отобразиться ребро красного цвета, при нажатии на него, оно будет применено и станет частью топологии. Нажимаем на ребра, пока не соединим все точки. Полигоны образуются автоматически.
+</p>
+
+    <div  style="text-align: center;">
+<img width="50%" src="../assets/images/top_practice/1_6.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Bridge Tool
+</p>
+
+<p>
+Чтобы корректировать и передвигать элементы топологии, переходим в режим SimpleEdit. В настройках инструменты выбираем какие элементы будут доступны при редактировании: точки, ребра, полигоны или их сочетания. Оставляем доступными для редактирования все из них.
+</br>Чтобы выбрать элемент наводим на него курсором и дожидаемся, пока он подсветиться красным. Далее кликаем и перемещаем его.
+</p>
+  
+      <div  style="text-align: center;">
+<img width="45%" src="../assets/images/top_practice/1_7.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - SimpleEdit
+</p>
+
+<p>
+При единичном нажатии на элемент будет доступен инструмент дополнительного взаимодействия: перемещения, поворота и изменения размера.
+</p>
+       <div  style="text-align: center;">
+<img width="30%" src="../assets/images/top_practice/1_8.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Перемещение полигона
+</p>
+
+<p>
+Продолжаем выстраивать топологию, используя эти функции.
+</br>Неизбежно придется столкнуться с таким расположением точек, что инструмент Bridge не сможет соединить их автоматически. Сделаем это вручную.
+</br>Выделим две точки, зажимая Shift, они должны подсветиться желтым. Нажимаем кнопку Bridge на правой панели. Точки должны автоматически соединиться ребром.
+</p>
+
+        <div  style="text-align: center;">
+<img width="60%" src="../assets/images/top_practice/1_9.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Bridge
+</p>
+  
+<p>
+Также нам часто понадобиться сливать две точки в одну. Это можно сделать двумя способами:
+</br>•	Выделить точки, которые необходимо слить, и нажать кнопку Merge на правой панели;
+</br>•	Выделить одну точку и с зажатым Ctrl подвести ее к другой точке, произойдет автоматическое соединение.
+</p>
+
+         <div  style="text-align: center;">
+<img width="50%" src="../assets/images/top_practice/1_10.jpg">
+</div>
+<p class="image_text">
+Рис. 9 - Merge
+</p>
+   
+<p>
+Используя рассмотренные выше приемы, создаем топологию половины модели.
+</p>
+ 
+         <div  style="text-align: center;">
+<img width="50%" src="../assets/images/top_practice/1_1.jpg">
+</div>
+<p class="image_text">
+Рис. 10 - Результат
+</p>
+
+
+ <div class="next_link">
+  
+ <p> <a href="retopo_task2.html"> Инструменты Brush и Symmetry > </a> </p>
+ 
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

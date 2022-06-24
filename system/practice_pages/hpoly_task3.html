@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+
+<div class="text_block">
+
+<h1>Моделируем простую рыбку  </h1>
+<h2> Операции Boolean</h2>
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="50%" src="../assets/images/hp_practice/Fish1.gif">
+</div>
+
+
+<p>
+Операции Boolean в Zbrush позволяют создавать новые формы на основе булевых операций объединения, вычитания и пересечения.
+</br>
+Создадим новый проект, добавим три сабтула: сферу – тело рыбки и два цилиндра – части для создания хвоста.
+</br>
+Расположим один цилиндр так, чтобы он закрывал другой, создавая тем самым форму месяца. 
+</p>
+
+
+<div  style="text-align: center;">
+<img width="45%" src="../assets/images/hp_practice/3_1.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Устанавливаем сабтулы для булевых операций
+</p>
+
+<p>
+Мы собираемся осуществить булеву операцию вычитания этого цилиндра, поэтому в списке сабтулов переключим его режим на Substract. Другой цилиндр пометим как границу булевых операций – нажмем на него в списке, тем самым переключая его в режим Start. Число, расположенное под стрелочкой Start показывает сколько субтулов будут задействованы в операции, в данном случае их два – цилиндры.
+</p>
+
+<div  style="text-align: center;">
+<img width="25%" src="../assets/images/hp_practice/3_2.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Настройка булевых операций
+</p>
+
+<p>
+Чтобы увидеть предварительный результат операции включаем режим Live Boolean, его кнопка расположена на верхней панели инструментов рядом с Lightbox и режимами настройки сабтула. Результат будет изменяться в реальном времени, поэтому можно спокойно корректировать расположение сабтулов.
+</p>
+
+
+<div  style="text-align: center;">
+<img width="45%" src="../assets/images/hp_practice/3_3.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Режим Live Boolean
+</p>
+
+
+<p>
+Для исполнения булевой операции используется кнопка Boolean – Make Boolean Mesh, расположенная ниже списка сабтулов. Она создаст новый сабтул и автоматически добавит его на палитру.
+ </p>
+
+<div  style="text-align: center;">
+<img width="25%" src="../assets/images/hp_practice/3_4.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Вкладка Boolean
+</p>
+
+<p>
+Нажмем кнопку, ждем выполнения операции и открываем палитру сабтулов, там должна появиться новая деталь.
+</p>
+
+<div  style="text-align: center;">
+<img width="50%" src="../assets/images/hp_practice/3_5.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Сабтул - результат операции вычитания
+</p>
+
+<p>
+Добавляем ее к сабтулам посредством кнопки Append, а цилиндры, используемые для ее создания, удаляем, либо скрываем.
+</br>
+Далее приступаем к созданию верхнего плавника рыбки. Теперь воспользуемся булевой операцией пересечения. Также создадим два цилиндра, но теперь у одного из них установим режим Intersection. Аналогично хвосту применим операцию, затем добавим новый сабтул в список.
+</p>
+
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/3_6.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Использование булевой операции пересечения
+</p>
+
+<p>
+Скопируем верхний плавник, перевернем его и превратим в нижний.
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/3_7.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Результат операций пересечения
+</p>
+
+<p>
+Два боковых плавника создадим сочетанием обеих булевых операций – вычитания и пересечения. Также создаем три цилиндра, один располагаем так, чтобы он вырезал часть, а второй так, чтобы пересекал, создавая нужную форму.
+</p>
+
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/3_8.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Использование двух операций одновременно
+</p>
+
+<p>
+Преобразуем его в новый сабтул аналогично прошлым плавникам, подкорректируем положение и симметрично скопируем на другую сторону при помощи Mirror and Weld. В результате должна получиться такая примитивная рыбка.
+</p>
+
+<div  style="text-align: center;">
+<img width="50%" src="../assets/images/hp_practice/3_9.jpg">
+</div>
+<p class="image_text">
+Рис. 9 - Результат
+</p>
+
+ <div class="next_link">
+  <p> <a href="hpoly_task2.html"> < Работа с инструментами Subtool </a> </p>
+ <p> <a href="hpoly_task4.html"> Кисти Move, Standard, Clay Buildup > </a> </p>
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

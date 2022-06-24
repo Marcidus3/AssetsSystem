@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+ 
+ 
+<div class="text_block">
+
+<h1>Бейкинг (запекание) UV карт мишки</h1>
+
+
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="50%" src="../assets/images/tex_practice/2_1.jpg">
+</div>
+<p>
+Запекание – в общем случае, это акт предварительного вычисления чего-либо для того, чтобы ускорить последующий процесс. Запекание создаёт двумерные растровые изображения полисетки отображаемой поверхности объекта. Эти изображения могут быть повторно спроецированы на объект при помощи UV-координат. 
+</br>В рамках процесса создания ассета мы будем использовать запекание Normal Map (карт нормалей), Ambient Occlusion и Light Baking (запечка света сцены).
+</br>В новый проект 3D Coat импортируем два файла: высокополигональную модель и низкополигональную с сохраненной UV информацией. Для импорта высокополигональной модели нажимаем File>>Import и выбираем Import for Sculpt/Vertex Painting/Reference. Выбираем файл scenes/bake_texture/TeddyBear_HP.obj. Данная модель переместится в раздел скульптинга Sculpt.
+</p>
+
+ <div  style="text-align: center;">
+<img width="60%" src="../assets/images/tex_practice/2_2.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Импорт модели
+</p>
+
+
+<p>  
+Для испорта низкополигональной модели переходим в режим работы с топологией. В левом верхнем углу указан режим Paint, раскрываем список и нажимаем на Retopo. В списке слева нажимаем кнопку Import и загружаем файл scenes/bake_texture/TeddyBear_LP_UV.obj. На экране должны отобразиться обе модели.
+</p>
+
+ <div  style="text-align: center;">
+<img width="50%" src="../assets/images/tex_practice/2_3.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Режим Retopo
+</p>
+
+
+<p>    
+Настраивать отображения моделей и их частей можно в левой части экрана, в браузере объектов над изображением UV развертки. Слева отображаются полигруппы низкополигонального объекта, а справа модели из режима скульптинга.
+ </p>
+ 
+  <div  style="text-align: center;">
+<img width="60%" src="../assets/images/tex_practice/2_4.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Браузер объектов
+</p>
+
+ 
+ 
+ <p>
+Перед началом процесса запекания включим симметрию. Она пригодится при редактировании размеров моделей относительно друг друга для корректного запекания.
+</br>На верхней панели нажимаем Symmetry>>Symmetry и в открывшемся окошке включаем симметрию Enable Symmetry, включаем отображение плоскости симметрии Show Symmetry Plane и устанавливаем тип симметрии Symmetry Type – X Axis (относительно оси x).
+   </p>
+  
+ <div  style="text-align: center;">
+<img width="50%" src="../assets/images/tex_practice/2_5.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Включаем симметрию
+</p>
+
+
+  
+ <p>
+Приступим к бейкингу карт. На панели сверху нажимаем Bake и в раскрывшеймся списке выбираем Bake w/ Normal Map – запекание карт нормалей. 
+</p>
+
+<p>
+В открывшемся окне нам предоставляются возможности по редактированию модели перед запеканием. Scan Depth Inside the Object отвечает за размер внутренней сетки запекания, а Scan Depth Outside the Object – внешней. Изменяя значения параметров необходимо убедиться, что внутренняя сетка полностью покрыта высокополигональной моделью, а внешняя наборот закрывает ее. Переключаемся между отображением сеток кнопками Preview Inner Shell и Show Outer Shell.
+</p>
+
+<p>
+Увеличиваем внешнюю сетку, изменяя значение параметра так, чтобы большая часть высокополигональной модели была скрыта, но низкополигональная оставалась не сильно искаженной. Черезмерное раздувание модели для бейкинга может привести к артифактам и ошибкам.
+</br>Кусочки, оставшиеся на поверхности, закрываем вручную. Нажимаем левой кнопкой мыши на области, которе необходимо увеличить, а для умньшения зажимаем Ctrl. 
+   </p>
+   
+   
+    <div  style="text-align: center;">
+<img width="60%" src="../assets/images/tex_practice/2_6.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Baking Normal Map
+</p>
+   
+      <div  style="text-align: center;">
+<img width="40%" src="../assets/images/tex_practice/2_7.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Увеличение сетки
+</p> 
+   
+   <p>
+Когда корректировка сеток завершена, нажимаем Ok и в открывшемся окне настроек меняем разрешение текстур, либо оставляем все по умолчанию. Снова нажимаем Ok. 
+ </p>
+
+ 
+ 
+ <p>
+Дожидаемся окончания загрузки и переходим в режим Paint для просмотра результата. Благодаря картам нормалей модель взаимодействует со светом так, будто ее разрешение намного выше реального.
+   </p>
+   
+ 
+     <div  style="text-align: center;">
+<img width="40%" src="../assets/images/tex_practice/2_8.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Влияние карты нормалей на отображение модели
+</p>   
+   
+   
+   <p>
+</br>Теперь приступим к запеканию карт Ambiet Occlusion и Light на основе карты нормалей. Они позволят поздготовить основу для дальнейшей отрисовки текстур вручную. 
+</br>На панели в верзней части экрана нажимаем Textures и выбираем Calculate Occlusion. В настройках устанавливаем источник света Light Sources – Sphere+Hemisphere, сохранение карты на новый слой Into New Layer, наимаем Ok. 
+</br>Далее выбираем Texture>>Light Baking Tool и в окне настроек устанавливаем аналогичные параметры. Тип карты Map Type устанавливаем Light From Render Room, нажимаем Ok.
+ </p>  
+ 
+ 
+      <div  style="text-align: center;">
+<img width="60%" src="../assets/images/tex_practice/2_9.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Запекание AO
+</p>   
+ 
+      <div  style="text-align: center;">
+<img width="70%" src="../assets/images/tex_practice/2_10.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Запекание Light From Render Room
+</p>   
+ 
+ 
+<p> 
+Для просмотра результата нажимаем клавишу 2, что позволит перейти в просмотр карт цвета модели без учета освещения. Нажимая 4 также можно включить/отключить видимость сетки.
+</br>Благодаря двум данным картам у нас получилась правдоподобная черно-белая текстура с запеченной светотенью, готовая к раскрашиванию и детализации.
+</p>
+
+      <div  style="text-align: center;">
+<img width="50%" src="../assets/images/tex_practice/2_1.jpg">
+</div>
+<p class="image_text">
+Рис. 9 - Результат
+</p>  
+
+
+
+ <div class="next_link">
+    <p> <a href="tex_task1.html"> < Создание UV развертки в 3D Coat </a> </p>
+ <p> <a href="tex_task3.html"> Работа с отдельными частями модели > </a> </p>
+ 
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

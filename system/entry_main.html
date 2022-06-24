@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+<script src=
+		"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+		</script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+ <link rel="import" href="menu.html">
+ 
+ 
+
+</head>
+<body >
+
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+ <iframe src="menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+    <!--
+
+
+<div class="imen">
+
+ <iframe class="imenu" src="menu.html" seamles scrolling="no"  allowtransparency="true" >  </iframe>
+
+<div class="imen2">
+ddd
+</div>
+
+-->
+
+
+
+ 
+<div class="page-title">
+О процессе создания ассетов
+</div>
+
+
+<div class='parent' style="margin-top:10px;">
+
+
+  
+    <div class='child_entry' >
+   
+    <ul class="menu-block" style="display:inline-block;background:#FBFBFB;">
+	
+	
+			  <img src="assets/images/hp_practice/fish3.gif" style="width: 35%;
+    float: left;">
+
+
+</img>		
+	
+	<div style="    display: inline;">
+	    <a  class="mega-menu-item-title-block"style="display: inline;" >Высокополигональное моделирование</a></br></br>
+            <p>  На основе концептов создается высокополигональная модель high-poly. Она нужна для дальнейшей запечки текстур на низкополигональную модель.</p>
+<p>Данный этап начинается с создания скульптуры в упрощенном виде с использованием примитивов (сфер, кубы и т.д.). Такая модель должна соответствовать пропорциям и силуэту изначального изображения референса. Далее происходит добавление мелких элементов и проработка модели. В результате должна получиться максимально детализированная модель, содержащая всю информацию с концепт-арта.</p>
+          
+		<p>  Для реализации данного этапа будем использовать ZBrush. ZBrush — программа для 3D моделирования. Отличительной особенностью данного ПО является имитация процесса «лепки» трёхмерной скульптуры, усиленного движком трёхмерного рендеринга в реальном времени, что существенно упрощает процедуру создания требуемого трёхмерного объекта.</p>
+		  </div>
+		  
+  <a href="practice_pages/hpoly_task1.html" class="link1" style="font-weight:bold;">Перейти к изучению раздела</a>
+												
+    </ul>
+   
+  
+  
+  </div>
+  
+    <div class='child_entry' >
+   
+    <ul class="menu-block" style="display:inline-block;background:#FBFBFB;">
+	
+	
+			  <img src="assets/images/top_practice/3_8.jpg" style="width: 30%;
+    float: right;">
+
+
+</img>		
+	
+	<div style="    display: inline;">
+	<a  class="mega-menu-item-title-block"style="display: inline;" >Ретопология</a></br></br>
+	<p>
+Этап ретопологии можно также назвать оптимизацией модели, так как он делает высокополигональную скульптуру пригодной для использования в игровом движке. Низкополигональная модель, получаемая в результате ретопологии, должна иметь баланс между выразительностью и наименьшим числом полигонов, а также обладать правильной топологией, учитывающей дальнейшую анимацию и создающей корректные блики.
+         </p>
+		 <p>
+		 Используем TopoGun, программу ретопологии, предназначенную для построения низкополигональной модели по поверхности высокополигональной, отсканированной с помощью 3D сканера или созданной в среде Zbrush, и запекания текстур. Она позволяет создавать новую сетку путем добавления вершин, либо рисуя топологию специальным инструментом прямо по high-poly. Программа поддерживает формат .obj. 
+		 </p> 
+		  
+		  
+		    <a href="practice_pages/retopo_task1.html" class="link1" style="font-weight:bold;">Перейти к изучению раздела</a>
+			
+			
+		  </div>
+		  
+  
+												
+    </ul>
+   
+  
+  
+  </div>
+  
+  
+      <div class='child_entry' >
+   
+    <ul class="menu-block" style="display:inline-block;background:#FBFBFB;">
+	
+	
+			  <img src="assets/images/tex_practice/6_1_1.jpg" style="width: 35%;
+    float: left;">
+
+
+</img>		
+	
+	<div style="    display: inline;background:#FBFBFB;">
+	<a  class="mega-menu-item-title-block"style="display: inline;" >Текстурирование</a></br></br>
+	<p>
+В процессе создания развертки, модель будет разделена на части, отделенные швами, и подготовлена для наложения текстур. При создании UV развертки укрупняются области, требующие большей детализации, а швы стараются спрятать в менее заметных местах.
+ </p>
+<p>
+Далее проводится запекание карт с целью перенесения детализации с high-poly модели на низкополигональную. Такие карты, как Normal, Depth создают иллюзию глубины модели, а AmbientOcclusion и прочие зачастую используют как основу для дальнейшей ручной отрисовки текстур. 
+ </p>
+ <p>
+Далее происходит покраска низкополигональной модели, а именно создание карт цвета, свечения, глянца и т.д. Для создания цвета могут использоваться фотографии реальных поверхностей или нарисованные вручную текстуру, выбор зависит от степени стилизации ассета. 
+В играх, требующих большой экономии производительности, используется упрощенное освещение и минимум теней и отражений, что требует применения особых приемов ручной отрисовки. В таком случае освещение рисуется прямо на модели, при этом учитываются свойства окружения, где будет находиться ассет (цвет основного света, освещенность, отражающие поверхности). К таким играм можно отнести, например, мобильные игры. 
+</p>
+
+
+<p>
+Создание UV развертки, запекание и дальнейшее текстурирование будет выполнено в 3DCoat.
+Данная программа предоставляет широкие возможности по UV маппингу автоматически и вручную, запеканию карт нормалей импортированных моделей.
+</p>
+ <a href="practice_pages/tex_task1.html" class="link1" style="font-weight:bold;">Перейти к изучению раздела</a>
+ 
+		  </div>
+		  
+  
+												
+    </ul>
+   
+  
+  
+  </div>
+  
+
+  
+          <div class='child_entry' >
+   
+    <ul class="menu-block" style="display:inline-block;background:#FBFBFB;">
+	
+	
+			  <img src="assets/images/rig_practice/11_4.jpg" style="width: 35%;
+    float: left;">
+
+
+</img>		
+	
+	<div style="    display: inline;">
+	<a  class="mega-menu-item-title-block"style="display: inline;" >Риггинг</a></br></br>
+	
+	<p>
+Риг — это невидимые цифровые кости персонажа, необходимые для анимации. На этой стадии создаются объекты управления моделью – кости, ползунки и т.д. Данные объекты не обязаны быть анатомически верным. Это лишь набор точек, которые, двигаясь, будут «гнуть» персонажа, элементы его одежды и прочие объекты. 
+</br>Для более эффективного использования такого скелета, его элементы соединяют между собой при помощи прямой/обратной кинематики и других привязок. Могут быть использованы кривые, направляющие движение элементы, ползунки, управляющие отдельными элементами, и технические объекты – пустышки.
+ </p>
+
+<p>
+Скиннинг – привязка рига к модели. Этот процесс определяет какими частями модели будут управлять элементы рига. Для каждого из его элементов на модели устанавливаются значения веса (степень воздействия). В результате модель должна двигаться натуралистично, без искажений и артефактов.
+</p>
+<p>
+Данный этап будем осуществлять с помощью 3DS Max. Инструменты для анимации персонажей, содержащиеся в 3DS Max, позволяют эффективно выполнять процедурную анимацию и оснастку двуногих персонажей и толпы. Модификаторы Skin и CAT Muscle обеспечивают более точное и плавное управление скелетной деформацией.
+ </p>
+ <a href="practice_pages/rig_task1.html" class="link1" style="font-weight:bold;">Перейти к изучению раздела</a>
+		  </div>
+		  
+  
+												
+    </ul>
+   
+  
+  
+  </div>
+  
+  
+  
+            <div class='child_entry' >
+   
+    <ul class="menu-block" style="display:inline-block;background:#FBFBFB;">
+	
+	
+			  <img src="assets/images/ani_practice/sliders.gif" style="width: 40%;
+    float: right;">
+
+
+</img>		
+	
+	<div style="    display: inline;">
+	<a  class="mega-menu-item-title-block"style="display: inline;" >Анимация</a></br></br>
+	<p>
+На данном этапе модель, имеющая привязанный к ней скелет, анимируется. Для использования ассета в играх чаще всего требуются следующие анимации: 
+</br>•	Idle – анимация персонажа в спокойном состоянии, когда он ни чем не занят;<
+</br>•	Ходьба – анимация ходьбы и бега. Включает в себя отдельные анимации начала и окончания ходьбы;
+</br>•	Атака – анимация атак и использования различных умений;
+</br>•	Смерть – анимация гибели персонажа, получения урона и анимация при наличие негативные эффектов (например, замедление, ослепление).
+</p>
+<p>
+Многие анимации требуется создавать с возможностью зацикливания (idle, ходьба) и многократного повторения (атака).
+</br>Работа над анимацией будет проводиться в 3DS Max. В данной программе анимации поддаются как целые объекты, так и отдельные их элементы. Присутствуют эффекты движения частиц (огонь, дым, брызги, снег), жидкостные эффекты. Также есть возможность детального моделирования траекторий движения объектов. Пользователь вплоть до малейших перемещений определяет путь передвижения моделей.
+ </p>
+<p>
+Вдобавок ко всему, инструменты анимации можно самостоятельно создавать и редактировать, а с их помощью формировать новые контроллеры анимации в среде создания графов. Не забывайте о динамике твердых и мягких тел, ткани, и многом другом. Помимо прочего программа предлагает возможность видеомонтажа анимационных сцен и множество фильтров изображений. 
+</p>
+ <a href="practice_pages/ani_task1.html" class="link1" style="font-weight:bold;">Перейти к изучению раздела</a>
+		  </div>
+		  
+  
+												
+    </ul>
+   
+  
+  
+  </div>
+  
+  
+            <div class='child_entry' >
+   
+    <ul class="menu-block" style="display:inline-block;background:#FBFBFB;">
+	
+	
+			  <img src="assets/images/unity_theory/unity.png" style="width: 25%;
+    float: left;">
+
+
+</img>		
+	
+	<div style="    display: inline;">
+	<a  class="mega-menu-item-title-block"style="display: inline;" >Сборка в движке</a></br></br>
+	<p>
+Чтобы модель могла быть использована в игре, ее необходимо экспортировать в игровой движок проекта. Это подразумевает импорт как самой модели, так и ее набора анимаций, текстур и т.д.
+</br>В рамках системы выполним сборку в игровом движке Unity, так как он имеет расширенные возможности по импорту из средств Autodesk, и имеет бесплатную версию Unity Personal.
+</p>
+ <a href="practice_pages/unity_task1.html" class="link1" style="font-weight:bold;">Перейти к изучению раздела</a>
+		  </div>
+		  
+  
+												
+    </ul>
+   
+  
+  
+  </div>
+  
+</div>
+
+
+
+<div class='parent' style="margin-top:10px;">
+  <div class='child000'>
+   
+    <ul class="menu-block" >
+            <a href="practice_main.html" class="link1" style="font-weight:bold;  font-family: 'IBM Plex Sans', sans-serif;font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;">Все практические задания</a>                                 					
+												
+    </ul>
+   
+  
+  
+  </div>
+  <div class='child000' >
+  
+  
+   <ul class="menu-block" >
+             <a href="theory_main.html" class="link1" style="font-weight:bold;  font-family: 'IBM Plex Sans', sans-serif;font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;">Теория</a>        
+  
+  </ul>
+	</div>
+	 
+
+
+ <div class='child000' >
+   
+    <ul class="menu-block" >
+           <a href="glossary/gloss_a.html" class="link1" style="font-weight:bold;  font-family: 'IBM Plex Sans', sans-serif;font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;">Глоссарий</a>                                     			
+												
+    </ul>
+   
+  
+  
+  </div>
+  
+   <div class='child000' >
+   
+    <ul class="menu-block" >
+           <a href="literature.html" class="link1" style="font-weight:bold;  font-family: 'IBM Plex Sans', sans-serif;font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;">Литература</a>                                     			
+												
+    </ul>
+   
+  
+  
+  </div>
+  
+     <div class='child000' >
+   
+    <ul class="menu-block" >
+           <a href="links.html" class="link1" style="font-weight:bold;  font-family: 'IBM Plex Sans', sans-serif;font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;">Ссылки</a>                                     			
+												
+    </ul>
+   
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+ <script src="assets/js/main.js"></script>
+ 
+ 
+
+ <footer>
+ </footer>
+
+</body>
+
+</html>

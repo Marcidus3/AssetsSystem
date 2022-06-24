@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+ 
+ 
+<div class="text_block">
+
+<h1>Соединяем кости </h1>
+<h2>Link и Inverse Kinematics</h2>
+
+
+<p>
+Продолжаем работу со скелетом из прошлого задания или открываем проект scenes/rig/Basics_IK_Start.max.
+</br>Чтобы кости можно было комфортно анимировать, между ними должны быть созданы связи и зависимости.
+</br>Начнем с присоединения конечностей к позвоночнику. Выделим сначала кости ключиц, включим режим Select and Link, нажав на соответствующую кнопку на верхней панели инструментов, и затем перетянем пунктирные линии к верхнему элементу скелета.
+</br>Так же выделим кости бедер и нижнюю часть позвоночника, привяжем их к тазу.
+   </p>
+   
+     <div  style="text-align: center;">
+<img width="55%" src="../assets/images/rig_practice/2_1.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Select and Link
+</p>
+
+
+<p>   
+Посмотреть результат привязки и общую иерархию костей можно в окне Schematic View.
+ </p>
+ 
+      <div  style="text-align: center;">
+<img width="40%" src="../assets/images/rig_practice/2_2.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Открываем Schematic View
+</p>
+       <div  style="text-align: center;">
+<img width="50%" src="../assets/images/rig_practice/2_3.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Schematic View костей скелета
+</p>
+
+ <p>
+Теперь необходимо подключить инверсивную кинематику Inverse kinematics к частям скелета. Данный метод анимации позволяет управлять всей цепочкой костей через любой из ее элементов, что особенно полезно для анимации конечностей.
+</br>Начнем с ног. Выбираем кость ступни, затем вызываем инструмент HI Solver во вкладке Animation>>IK Solvers. Этот инструмент позволяет создавать неограниченное количество точек управления в цепи. Далее наводим появившуюся пунктирную линию на кость бедра. В области лодыжки появится элемент управления цепью, при перемещении данной точки кости ноги будут поворачиваться и подстраиваться под движение.
+  </p>
+
+      <div  style="text-align: center;">
+<img width="60%" src="../assets/images/rig_practice/2_4.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Создание IK цепи ноги
+</p>
+
+<p>  
+Таким же образом соединяем конец кости ступни с самой ступней, чтобы создать точку управления ей.
+ </p>
+ 
+<div  style="text-align: center;">
+<img width="30%" src="../assets/images/rig_practice/2_5.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Точки контроля IK ступни
+</p>
+
+ <p>
+Для рук выполняем соединение кости запястья с костью плеча.
+ </p>
+ 
+       <div  style="text-align: center;">
+<img width="35%" src="../assets/images/rig_practice/2_6.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Создание IK цепи рук
+</p>
+ 
+ <p>
+Теперь, когда у нас есть возможность управлять всем скелетом, необходимо настроить диапазон движения костей, чтобы анимация была более реалистичной. Во вкладке Hierarchy правой панели инструментов имеются два раздела: IK – настройка степени изменения/перемещения объекта в пространстве и Link Info – включение/отключение возможности изменения параметров объекта и наследования.
+   </p>
+   
+
+   
+   <p>
+Последовательно выделяем кости и настраиваем степень их поворота, изменяя параметры начала From и конца To, а также предпочитаемый угло Preferred Angle. Когда настройка параметра завершена, ставим галочку у Limited, чтобы применить ограничения. Чтобы отключить возможность поворота относительно данной оси, убираем галочку Active.
+  </p>
+         <div  style="text-align: center;">
+<img width="50%" src="../assets/images/rig_practice/2_7.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Ограничиваем поворот костей цепи
+</p>
+
+<p>  
+Таким образом устанавливаем ограничения для всех костей.
+</p>
+
+
+ <div class="next_link">
+    <p> <a href="rig_task1.html"> < Инструмент Bone Tool </a> </p>
+ <p> <a href="rig_task3.html"> Создаем элементы контроля  > </a> </p>
+ 
+ </div>
+
+  
+  
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

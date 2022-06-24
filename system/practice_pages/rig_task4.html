@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+ 
+ 
+<div class="text_block">
+
+<h1>Привязка скелета к модели попугая </h1>
+<h2>Модификатор Skin и Edit Envelopes</h2>
+
+
+<p>
+Один из необходимых этапов подготовки модели к анимации – скиннинг, т.е. привязка рига к модели. Этот процесс определяет какими частями модели будут управлять элементы рига. Для каждого из его элементов на модели устанавливаются значения веса (степень воздействия).
+</br>В 3DS Max скинниг осуществляется посредством модификатора Skin.
+</br>Открываем проект scenes/rig/Bird_Skin_Start.max. Здесь имеется скелет с контроллерами и модель, к которой необходимо его привязать.
+</br>Для удобства управления скелетом создадим список выделения Selection Set. Выделим все кости и в поле Create Selection Set введем название Bones, нажмем Enter. Кости будут автоматически выбраны при переключении на данный список.
+  </p>
+              <div  style="text-align: center;">
+<img width="28%" src="../assets/images/rig_practice/4_1.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Создаем Selection Set
+</p>
+  
+  <p>
+Применяем к модели попугая модификатор Skin, а далее во вкладке Parameters выбираем Bones>>Add. 
+  </p>
+  
+              <div  style="text-align: center;">
+<img width="55%" src="../assets/images/rig_practice/4_2.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Добавляем модификатор Skin
+</p>
+
+<p>
+В открывшемся окне Select Bones выбираем Bones, чтобы автоматически были выделены все кости, а затем нажимаем Select. Теперь кости автоматически привязаны к модели и отображаются во вкладке Parameters. 
+  </p>
+            <div  style="text-align: center;">
+<img width="60%" src="../assets/images/rig_practice/4_3.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Добавляем кости в модификатор Skin
+</p>
+
+<p>
+Можно запустить тестовую анимацию и убедиться, что модель действительно привязана к ригу.
+</br>Однако такой автоматический скиннинг недостаточно хорош для использования и создает странные искажения при анимации. Чтобы отредактировать области влияния костей на геометрию модели используется режим Edit Envelopes. При нажатии на кнопку Edit Envelopes и выборе кости из списка Bones для данного модификатора Skin будет выделена область модели, управляемая этой костью. Чем «краснее» цвет области, тем большее влияние производится.
+ </p>
+             <div  style="text-align: center;">
+<img width="50%" src="../assets/images/rig_practice/4_4.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Режим Edit Envelopes
+</p>
+
+<p>
+Сама кость также окружают две сетки – внешняя и внутренняя. Все точки, находящиеся внутри первой розовой границы, имеют степень воздействия 1. Точки, находящиеся между двумя границами, могут иметь влияние, т.е. вес, от 0 до 1. 
+</br>Чтобы отредактировать ширину данных границ, достаточно потянуть за управляющие их диаметрами точки. Область Envelope также можно поворачивать и перемещать в пространстве, при использовании концов желтого отрезка, соответствующего кости. При этом сама кость не будет перемещена, только область ее воздействия.
+ </p>
+ 
+             <div  style="text-align: center;">
+<img width="30%" src="../assets/images/rig_practice/4_5.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Изменение области влияния кости на точки геометрии
+</p>
+
+ <p>
+Последовательно выделяем элементы скелета и с помощью Edit Envelope настраиваем их эффект на геометрию. Проверяем результат с помощью тестовой анимации.
+</p>
+
+
+
+ <div class="next_link">
+    <p> <a href="rig_task3.html"> < Создаем элементы контроля </a> </p>
+ <p> <a href="rig_task5.html"> Настройка весов Weight Painting > </a> </p>
+ 
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

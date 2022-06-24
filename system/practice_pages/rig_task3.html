@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+ 
+ 
+<div class="text_block">
+
+<h1>Создаем элементы контроля </h1>
+
+
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="30%" src="../assets/images/rig_practice/3_1.jpg">
+</div>
+
+<p>
+Котроллеры и помощники Helpers – примитивы и прочие объекты, упрощающие процесс анимации рига. Такие объекты создаются для наиболее часто используемых или труднодоступных элементов скелета. Они должны быть достаточно заметны и выделяться на фоне модели, которой будет управлять риг.
+</br>Продолжаем работу со скелетом из прошлого задания или открываем проект scenes/rig/Basics_Contrl_Start.max.
+</br>Для начала создадим объекты-помощники, которые заменят стандартные элементы управления цепью IK. В окне Create выберем вкладку Helpers и создадим два объекта типа Point. В разделе Parameters данных объектов установим тип Box и размер Size - 4.
+  </p>
+  
+        <div  style="text-align: center;">
+<img width="40%" src="../assets/images/rig_practice/3_2.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Создание объектов Helper
+</p>
+  
+  <p>
+Один из объектов выровняем с IK точкой для конца ступни, а второй с точкой пятки. Убедимся, что выравнивание Alight Selection происходит в соответствии с параметром Pivot Point и включены все оси ориентации Alight Orientation.
+</br>Далее переместим оба помощника на значение 0 по оси Z. 
+   </p>
+           <div  style="text-align: center;">
+<img width="50%" src="../assets/images/rig_practice/3_3.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Align Selection
+</p>
+
+   <p>
+Теперь необходимо выполнить привязку Helpers к соответствующим IK точкам, для этого используем Select and Link. Объект, привязанный к концу ступни, так же привяжем к пятке. При перемещении данных объектов должны двигаться и поворачиваться кости цепи.
+</br>Приступим к созданию основного контроллера ноги. С помощью сплайна типа Line очертим форму стопы, добавим ей свойство отображения толщины.
+  </p>
+          <div  style="text-align: center;">
+<img width="45%" src="../assets/images/rig_practice/3_4.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Создаем форму контроллера
+</p>
+            <div  style="text-align: center;">
+<img width="50%" src="../assets/images/rig_practice/3_5.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Настройка отображения сплайна
+</p>
+  
+  <p> 
+Теперь привязываем Helper пятки к данному сплайну методом Select and Link. Повторим данные действия для второй ноги. С помощью данных объектов мы сможем двигать ноги персонажа.
+ </p>
+ 
+           <div  style="text-align: center;">
+<img width="50%" src="../assets/images/rig_practice/3_6.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Иерахия костей и их контроллеров
+</p>
+  
+  
+ <p>
+Следующим шагом будет создание элементов управления тазом. Добавим в сцену сплайн – круг и выровняем его положение и ориентацию относительно таза. Заметим, что круг принял вертикальное положение, соответствующее тазу. Необходимо повернуть его, иначе управлять скелетом будет неудобно.
+   </p>
+
+             <div  style="text-align: center;">
+<img width="45%" src="../assets/images/rig_practice/3_7.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Создание контроллера таза
+</p>
+
+   
+   <p>
+Чтобы повернуть контроллер, при этом не влияя на его глобальную ориентацию, выбираем весь сплайн в модификаторе Editable Spline, затем изменяем координатную систему на Local и поворачиваем объект. Возвращаем координаты в режим View.
+  </p>
+  
+              <div  style="text-align: center;">
+<img width="50%" src="../assets/images/rig_practice/3_8.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Ориентация контроллера
+</p>
+  
+ <p>
+Создаем еще один сплайн (в данном случае была создана звезда Start с количеством вершин 31) и так же выравниваем его относительно таза. Аналогично предыдущему контроллеру поворачиваем в системе координат Local.
+ </p>
+             <div  style="text-align: center;">
+<img width="30%" src="../assets/images/rig_practice/3_9.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Создание контроллера ориентации таза
+</p>
+
+ <p>
+Один из объектов (звезда) будет отвечать за поворот таза, а второй (круг) за его положение в пространстве. Выделяем тазовую кость, затем открываем список Animation>>Constraints и выбираем Orientation Constraint – ограничитель поворота, кликаем на контроллер. Теперь данный контроллер управляет ориентацией кости.
+   </p>
+               <div  style="text-align: center;">
+<img width="65%" src="../assets/images/rig_practice/3_10.jpg">
+</div>
+<p class="image_text">
+Рис. 9 - Свяжем контроллер с костью
+</p>
+
+   <p>
+Привязываем таз и контроллер ориентации ко второму объекту посредством Select and Link. Таким образом мы получили элементы управления положением и ориентацией таза.
+</br>Аналогично создаем контроллер перемещения для корневой кости позвоночника.
+ </p>
+ 
+             <div  style="text-align: center;">
+<img width="25%" src="../assets/images/rig_practice/3_11.jpg">
+</div>
+<p class="image_text">
+Рис. 10 - Новый контроллер первой кости позвоночника
+</p>
+ 
+ <p>
+Контроллер для рук будет построен на основе прямых, с помощью которых создадим крестовину. Нарисуем одну прямую Line, а затем в модификаторе Editable Spline выбираем Selection > Spline. С зажатым Shift копируем линию и поворачиваем копии перпендикулярно. 
+</br>Выравниваем получившейся объект с костью запястья, после чего привязываем (Select and Link) к нему IK точку цепи руки. Создаем такой же контроллер для другой руки.
+   </p>
+   
+               <div  style="text-align: center;">
+<img width="50%" src="../assets/images/rig_practice/3_12.jpg">
+</div>
+<p class="image_text">
+Рис. 11 - Контроллер руки
+</p>
+   
+   <p>
+Теперь, когда все контроллеры и помощники созданы, необходимо сохранить данную позу. Выделяем каждый из них, нажимаем Alt+Правую кнопку мыши и в открывшемся списке выбираем Freeze Transform, чтобы запомнить данное положение как положение по умолчанию. Чтобы вернуться к нему достаточно будет выделить нужный контроллер, снова вызвать список Alt+Правой кнопкой мыши и нажать Transform to Zero.
+</p>
+
+
+ <div class="next_link">
+    <p> <a href="rig_task2.html"> < Link и Inverse Kinematics </a> </p>
+ <p> <a href="rig_task4.html"> Модификатор Skin и Edit Envelopes > </a> </p>
+ 
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

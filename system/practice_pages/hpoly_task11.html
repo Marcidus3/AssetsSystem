@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+<div class="text_block">
+
+<h1>Скульптинг лица</h1>
+
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="50%" src="../assets/images/hp_practice/Face.gif">
+</div>
+
+
+<p>
+Начнем создание модели головы и лица с ушей. За основу возьмем сплющенный цилиндр. </br>
+Добавляем в проект новый сабтул Cylinder3D методом Append. Изменяем его с помощью Gizmo так, чтобы толщина соответствовала толщине уха, а сечение имело овальную форму. Перемещаем сабтул примерно в центр головы по горизонтали.
+</br>
+С помощью кисти ClayBuildup (BCB) создаем завиток уха и округлый выступ (козелок), закрывающий ушную раковину. Эти две части анатомии уха являются наиболее заметными и позволяют сохранять правдоподобность даже при сильной стилизации.
+</p>
+
+<div  style="text-align: center;">
+<img width="50%" src="../assets/images/hp_practice/11_1.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Создание примитивной модели уха
+</p>
+
+<p>
+Используя эту же кисть, но в альтернативном режиме Alt, создаем углубления в области слухового прохода. 
+ Добавляем такую анатомическую деталь, как противозавиток. Эта выпуклая часть повторяет форму большого завитка, но находится ниже и менее выражена.
+</br> Завершая работу над ухом, делаем углы и переходы между плоскостями более четкими, используя кисть DamStandard (BDS) и TrimDynamic (BTD).
+</p>
+
+<div  style="text-align: center;">
+<img width="50%" src="../assets/images/hp_practice/11_2.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Модель уха
+</p>
+
+<p>
+Переходим к скульптингу лица. </br>
+Для создания черт лица будет использоваться референс с видом в анфас и в профиль. Загружаем изображение в проект как текстуру Texture>>Import и добавляем его на экран Add To Spotlight. Располагаем референс на рабочей области так, чтобы все черты лица были видны. Увеличиваем прозрачность и приступаем к моделированию.
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/11_3.jpeg">
+</div>
+<p class="image_text">
+Рис. 3 - Референс лица
+</p>
+
+<p>
+Для начала корректируем форму головы в соответствии с референсом. Используем кисть Move (BMV), чтобы передвигать черты лица. Височную часть заужаем с помощью TrimDynamic (BTD).
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/11_4.jpeg">
+</div>
+<p class="image_text">
+Рис. 4 - Скульптинг основных форм головы
+</p>
+<p>
+Берем кисть ClayBuildup (BCB), переключимся в альтернативный режим Alt. Создаем углубления в области глазниц и лицевой части, чтобы отделить нос от плоскости лица. Достраиваем форму носа данной кистью в стандартном режиме, а с помощью Pinch (BPI) делаем ее более четкой. Важно, чтобы были видны основные плоскости носа, особенно нижняя поверхность.
+</p>
+
+<div  style="text-align: center;">
+<img width="20%" src="../assets/images/hp_practice/11_5.jpeg">
+</div>
+<p class="image_text">
+Рис. 5 - Схема основных плоскостей носа
+</p>
+
+<div  style="text-align: center;">
+<img width="60%" src="../assets/images/hp_practice/11_6.jpeg">
+</div>
+<p class="image_text">
+Рис. 6 - Скульптинг глазниц и носа
+</p>
+
+<p>
+Начиная скульптинг глаз, важно создать форму глазного яблока, на основе которого будут выстраиваться части анатомии. Добавляем в проект сабтул сферу и отражаем ее относительно центра лица с помощью Mirror and Weld. Располагаем сферы в области глазниц. Начинаем выстраивать формы век.
+</p>
+
+<div  style="text-align: center;">
+<img width="25%" src="../assets/images/hp_practice/11_7.jpeg">
+</div>
+<p class="image_text">
+Рис. 7 - Добавление глаз
+</p>
+
+<p>
+При создании век важно учитывать наличие плоской поверхности. Отделяем ее от основной формы с помощью кисти TrimDynamic (BTD), а затем делаем ее край более четким кистью Pinch (BPI).
+</p>
+
+<div  style="text-align: center;">
+<img width="20%" src="../assets/images/hp_practice/11_8.jpeg">
+</div>
+<p class="image_text">
+Рис. 8 - Схема анатомии глаза и его основных плоскостей
+</p>
+
+<div  style="text-align: center;">
+<img width="55%" src="../assets/images/hp_practice/11_9.jpeg">
+</div>
+<p class="image_text">
+Рис. 9 - Скульптинг век
+</p>
+
+<p>
+При создании ноздрей учитываем разделение объема кончика носа и крыльев ноздрей. С помощью кисти DamStandard (BDS) создаем отверстия ноздрей и обозначаем крыльевую борозду, отделяющую нос от плоскости лица. 
+</p>
+
+<div  style="text-align: center;">
+<img width="60%" src="../assets/images/hp_practice/11_10.jpeg">
+</div>
+<p class="image_text">
+Рис. 10 - Скульптинг носа
+</p>
+
+<p>
+Переносим расположение основных точек рта с референса кистью DamStandard (BDS), оставляя на поверхности модели пометки в области уголков рта, ямки под нижней губой и арки купидона. 
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/11_11.jpeg">
+</div>
+<p class="image_text">
+Рис. 11 - Перенос пропорций губ с референса на модель
+</p>
+
+<p>
+Далее кистью ClayBuildup (BCB) создаем губы, используя созданные в предыдущем шаге ориентиры.
+</br>Для создания контура губ используем кисть DamStandard (BDS) в альтернативном режиме Alt.
+</p>
+
+<div  style="text-align: center;">
+<img width="60%" src="../assets/images/hp_practice/11_12.jpeg">
+</div>
+<p class="image_text">
+Рис. 12 - Скульптинг губ
+</p>
+
+<p>
+Кистью Pinch (BPI) оттачиваем очертания рта и переход к плоскости подбородка.
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/11_13.jpeg">
+</div>
+<p class="image_text">
+Рис. 13 - Скульптинг губ и подбородка
+</p>
+
+<p>
+Используем кисти DamStandard (BDS), TrimDynamic (BTD) и Pinch (BPI) для корректирования и уточнения форм лица, разглаживаем плоские области режимом Shift.
+</p>
+
+<div  style="text-align: center;">
+<img width="30%" src="../assets/images/hp_practice/11_14.jpeg">
+</div>
+<p class="image_text">
+Рис. 14 - Готовая модель головы
+</p>
+
+<p>
+Для создания бровей и ресниц используем метод Extrude и маски. Выделим область на поверхности фигуры с помощью режима маски MaskPen. Далее извлечем данную область с помощью Extrude.  
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/11_15.jpeg">
+</div>
+<p class="image_text">
+Рис. 15 - Форма бровей выделена маской
+</p>
+
+<p>
+После извлечения сабтул будет иметь неровные края, поэтому смягчим его режимом Shift, откорректируем форму кистью Move (BMV). Также к сабтулам бровей и ресниц можно применить более темный цвет, что позволит им выделяться на лице.
+</p>
+
+<div  style="text-align: center;">
+<img width="50%" src="../assets/images/hp_practice/11_16.jpeg">
+</div>
+<p class="image_text">
+Рис. 16 - Extrude форм бровей и ресниц
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/11_17.jpeg">
+</div>
+<p class="image_text">
+Рис. 17 - Готовые модели бровей и ресниц
+</p>
+
+<div  style="text-align: center;">
+<img width="30%" src="../assets/images/hp_practice/11_18.jpeg">
+</div>
+<p class="image_text">
+Рис. 18 - Результат
+</p>
+
+
+
+
+ <div class="next_link">
+ 
+  <p> <a href="hpoly_task10.html"> < Создание Blockout </a> </p>
+ <p> <a href="hpoly_task12.html"> Скульптинг кистей рук > </a> </p>
+
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

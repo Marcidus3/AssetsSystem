@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+ 
+ 
+<div class="text_block">
+
+<h1>Скиннинг высокополикональной модели ботинка </h1>
+<h2>Прокси модель, Weight Tool и Skin Wrap</h2>
+
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="40%" src="../assets/images/rig_practice/proxy.gif">
+</div>
+
+<p>
+Для скиннинга моделей со сложной геометрией, для которой было бы особенно тяжело сделать корректное распределение весов, зачастую создаются прокси модели (Proxy Mesh). Такие модели легко привязать к костям, а затем к основной геометрии.
+</br>Открываем проект scenes/rig/Boot_Proxy_Start.max. Здесь имеется модель сапога со сложной геометрией и кости ступни. Перед началом моделирования прокси перейдем в режим интерфейса Workspaces: Default.
+</br>Начнем создание упрощенной модели сапога с создания любого примитива из списка Standard Primitive и преобразования его в Editable Poly. Это позволит активировать панель моделирования Freeform.
+ </p>
+               <div  style="text-align: center;">
+<img width="35%" src="../assets/images/rig_practice/6_1.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Преобразование примитива в Editable Poly
+</p>
+
+ <p>
+На панели Freeform выбираем режим моделирования на поверхности Surface, нажимаем Pick -выбрать поверхность, а затем кликаем по сапогу. Увеличиваем значение Offset до 0.300, чтобы создать небольшое расстояние между поверхностью и новой геометрией.
+</br>Включаем режим создания геометрии на основе точек Step Build. Данный способ моделирования похож на процесс ретопологии в TopoGun – на поверхности создаются точки, которые затем соединяются ребрами и образуют полигоны.
+  </p>
+  
+                <div  style="text-align: center;">
+<img width="40%" src="../assets/images/rig_practice/6_2.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Выбор объекта-референса
+</p>
+
+  <p>
+Создаем четыре точки в зоне окончания кости лодыжки, после чего с нажатым Shift проводим курсором в области между ними. На основе точек создается полигон.
+ </p>
+ <p>
+Данным образом моделируем геометрию вокруг лодыжки, для редактирования расположения точек используем режим Drag.
+  </p>
+  
+               <div  style="text-align: center;">
+<img width="60%" src="../assets/images/rig_practice/6_3.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Создаем прокси-модель
+</p>
+
+  <p>
+Выделяем и «вытягиваем» кольцо полигонов вверх, используя режим Extend.
+  </p>
+  
+                 <div  style="text-align: center;">
+<img width="50%" src="../assets/images/rig_practice/6_4.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Extend
+</p>
+
+  <p>
+Таким образом достраиваем остальную геометрию. Периодически используем стандартные средства моделирования Editable Poly, например, для закрытия дыр Cap и соединения точек Connect. Удаляем изначальный примитив (в данном случае куб) и перемещаем Pivot в центр прокси модели.
+ </p>
+               <div  style="text-align: center;">
+<img width="30%" src="../assets/images/rig_practice/6_5.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Готовая прокси-модель
+</p>
+
+ <p>
+Применяем к модели модификатор Skin, добавляем кости, имеющиеся в проекте.
+  </p>
+  
+  <p>
+Так как созданная геометрия имеет крайне маленькое число полигонов, использует стандартный инструмент Weight Tool для настройки весов. Включаем режим Edit Envelope и ставим галочку около Vertices, чтобы позволить выделение точек геометрии. Открываем окно Weight Tool. 
+  </p>
+  
+                 <div  style="text-align: center;">
+<img width="50%" src="../assets/images/rig_practice/6_6.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Настраиваем веса прокси
+</p>
+
+  <p>
+Последовательно выделяем кости, затем точки, на которые данная кость должна воздействовать, и в окне Wight Tool выбираем степень воздействия (1, 0.5 и т.д.). В области окна Vertices Selected отображается список костей, влияющих на выделенные точки. Для проверки корректности распределения весов периодически включаем тестовую анимацию.
+</p>    
+                <div  style="text-align: center;">
+<img width="40%" src="../assets/images/rig_practice/6_7.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Настраиваем веса прокси
+</p>
+  <p>
+В результате получаем следующее распределение веса на модели.
+   </p>
+                <div  style="text-align: center;">
+<img width="70%" src="../assets/images/rig_practice/6_8.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Веса каждой из костей
+</p>
+
+   <p>
+Возвращаемся к изначальной модели сапога, применяем к ней модификатор Skin Wrap, который позволяет одному объекту влиять на другой. Убедимся, что обе модели находятся в одной точке.
+  </p>
+                  <div  style="text-align: center;">
+<img width="50%" src="../assets/images/rig_practice/6_9.jpg">
+</div>
+<p class="image_text">
+Рис. 9 - Добавляем модификатор Skin Wrap
+</p>
+
+  <p>
+Во вкладке Parameters модификатора нажимаем Add для добавления управляющей модели и кликаем на прокси.
+ </p>
+                 <div  style="text-align: center;">
+<img width="20%" src="../assets/images/rig_practice/6_10.jpg">
+</div>
+<p class="image_text">
+Рис. 10 - Добавляем объект-прокси в модификатор
+</p>
+ <p>
+Скрываем прокси и запускаем анимацию. Теперь кости управляют моделью ботинка.
+</p>
+
+                <div  style="text-align: center;">
+<img width="40%" src="../assets/images/rig_practice/proxy.gif">
+</div>
+<p class="image_text">
+Рис. 11 - Результат
+</p>
+
+ <div class="next_link">
+    <p> <a href="rig_task5.html"> < Настройка весов Weight Painting </a> </p>
+ <p> <a href="rig_task8.html"> Создание скелета персонажа > </a> </p>
+ 
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

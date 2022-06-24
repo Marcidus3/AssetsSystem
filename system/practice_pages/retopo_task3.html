@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+ 
+ 
+<div class="text_block">
+
+<h1>Ретопология морды собаки</h1>
+
+<h2>Инструмент Draw</h2>
+
+
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="40%" src="../assets/images/top_practice/3_1.jpg">
+</div>
+
+<p>
+Инструмент Draw помогает создавать геометрию посредством рисования направляющих линий на поверхности модели-референса. В данном задании нам понадобятся два режима рисования: Line – рисование и Eraser – удаление линий.
+</p>
+ 
+  <div  style="text-align: center;">
+<img width="25%" src="../assets/images/top_practice/3_2.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Draw Tool
+</p>
+
+ 
+ 
+<p>
+Создаем новый проект и загружаем в него модель-референс scenes/retopo/Dog.obj. Выбираем на левой панели инструментов Draw Tool и устанавливаем режим Draw. Проводим курсором по поверхности модели, создавая набросок топологии. В месте пересечения линий будет создана точка, соединяемая с остальными точками ребрами.
+</p>
+<p>
+В случае, если необходимо провести достаточно длинную линию, но это невозможно сделать одним движением, после создания ее части поворачиваем модель в удобное положение, нажимаем Ctrl и продолжаем рисование от крайней точки. Таким образом линия будет продолжена, данную процедуру можно повторять любое количество раз.
+ </p>
+ 
+   <div  style="text-align: center;">
+<img width="40%" src="../assets/images/top_practice/3_3.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Рисуем геометрию
+</p>
+ 
+<p>
+Когда набросок готов, нажимаем копку Preview на панели Tool Options. Произойдет предварительная оценка геометрии, будут отображены возможные точки. 
+</p>
+
+    <div  style="text-align: center;">
+<img width="40%" src="../assets/images/top_practice/3_4.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Preview геометрии
+</p>
+
+<p>
+Чтобы сгенерировать топологию нажимаем кнопку Evaluate и ждем загрузки. 
+</p>
+
+    <div  style="text-align: center;">
+<img width="40%" src="../assets/images/top_practice/3_5.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Evaluate
+</p>
+
+
+ <p>
+Геометрия, полученная с помощью инструмента Draw, редко бывает идеальной, поэтому используем средства, рассмотренные в предыдущих заданиях, и поправим ее.
+</p>
+
+
+     <div  style="text-align: center;">
+<img width="35%" src="../assets/images/top_practice/3_6.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Корректируем геометрию
+</p>
+
+<p>
+Продолжим достраивать геометрию остальных частей головы таким же образом.
+</p>
+ 
+     <div  style="text-align: center;">
+<img width="70%" src="../assets/images/top_practice/3_7.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Продолжаем рисовать геометрию
+</p>
+ 
+      <div  style="text-align: center;">
+<img width="30%" src="../assets/images/top_practice/3_8.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Продолжаем рисовать геометрию
+</p>
+
+
+<p>
+Применяем Create Symmetry к модели и соединяем крайние точки геометрии.
+</p>
+
+ 
+      <div  style="text-align: center;">
+<img width="60%" src="../assets/images/top_practice/3_9.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Симметрия
+</p>
+
+
+
+
+ <div class="next_link">
+ 
+  <p> <a href="retopo_task2.html"> < Инструменты Brush и Symmetry </a> </p>
+  
+ <p> <a href="retopo_task4.html"> Подготовка и экспорт ассета из ZBrush > </a> </p>
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

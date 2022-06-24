@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+ 
+ 
+<div class="text_block">
+
+<h1>Контроль пальцев</h1>
+
+
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="30%" src="../assets/images/rig_practice/fingers.gif">
+</div>
+<p>
+Для управления пальцами будем использовать атрибуты, определяющие порот их фаланг. 
+</br>Создадим для контроллера IK еще несколько атрибутов в модификаторе Attribute Holder. Каждый из них будет управлять сгибанием и разгибанием соответствующего пальца.
+ </p>
+                         <div  style="text-align: center;">
+<img width="40%" src="../assets/images/rig_practice/12_1.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Атрибуты 
+</p>
+ <p>
+Чтобы связать значения параметров с поворотом костей используем Wire Parameter. Как основной параметр в левой части окна Parameter Wiring будет зависеть от пальца который на данный момент. Т.е. параметр Index_f будет вызван только в случае, если происходит настройка указательного пальца.
+</br>Зависимыми от атрибута должны быть параметры поворота каждой из трех фаланг пальца. Формула, определяющая зависимость атрибута от угла поворота, задается для каждого пальца и фаланги отдельно, так, чтобы палец сгибался реалистично.
+</p>
+
+                        <div  style="text-align: center;">
+<img width="65%" src="../assets/images/rig_practice/12_2.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Связывание параметров
+</p>
+
+ <div class="next_link">
+    <p> <a href="rig_task12.html"> < Смешивание IK и FK с помощью атрибутов </a> </p>
+
+ 
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

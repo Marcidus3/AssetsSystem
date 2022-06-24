@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+ 
+ 
+<div class="text_block">
+
+<h1>Смешивание IK и FK с помощью атрибутов</h1>
+
+
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="40%" src="../assets/images/rig_practice/ik_fk_rig.gif">
+</div>
+<p>
+Чтобы управлять руки с помощью контроллеров IK и FK, необходимо связать их с костями, направляющими модель.
+</br>Изолируем все кости рук, цепей и их контроллеров. С помощью ограничителя Orientation Constraint привяжем основные кости сначала к костям цепи IK, а затем FK. При просмотре ограничителей для костей в списке объектов IK должен идти перед FK, так мы убедимся, что создаваемые далее атрибуты будут работать корректно.
+</p>
+                        <div  style="text-align: center;">
+<img width="55%" src="../assets/images/rig_practice/11_8.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Цепи IK и FK, их веса
+</p>
+<p>  
+Так как для каждой из цепей IK и FK установлен одинаковый вес, т.е. степень влияния на кость, со значением 50, рука будет двигаться только на половину при управлении ей. Изменять степень влияния можно в окне Motion, однако это будет очень неудобно и настройку придется производить для каждой из костей, вручную меняя вес.
+ </p>
+                         <div  style="text-align: center;">
+<img width="30%" src="../assets/images/rig_practice/11_9.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Контроль костй скелета
+</p>
+ <p>
+Чтобы упростить процесс перехода между IK и FK создадим атрибут, управляющий их весами.
+</br>Атрибут будет принадлежать контроллеру IK_wrist_ctrl. Выделяем его и добавляем новый модификатор Attribute Holder. Затем открываем окно Animation>>Parameter Editor, чтобы перейти к созданию параметров в рамках данного модификатора.
+  </p>
+                          <div  style="text-align: center;">
+<img width="45%" src="../assets/images/rig_practice/11_10.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Модификатор Attribute Holder и создание атрибута
+</p>
+  <p>
+Здесь нам необходимо задать имя нового параметра в поле Name, установить промежуток значений от 0 до 100, а затем нажать Add, чтобы параметр появился в разделе Custom Attribute модификатора.
+  </p>
+                          <div  style="text-align: center;">
+<img width="40%" src="../assets/images/rig_practice/11_11.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Создание атрибута
+</p>
+  <p>
+Чтобы привязать данный параметр к весу ограничителей используем функцию Wire Parameters. Выделим контроллер IK и откроем окно Animation>> Wire Parameters>>Parameter Wire Dialog. В левой части окна нажмем кнопку Refresh, чтобы выделенный объект добавился в список. У контроллера находим созданный нами параметр Modified Object>>Attribute Holder>>Custom Attribute>> наш атрибут, выделяем его.
+  </p>
+                          <div  style="text-align: center;">
+<img width="85%" src="../assets/images/rig_practice/11_12.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Связываем параметры
+</p>
+  <p>
+Затем выбираем одну из костей скелета, в правой части нажимаем Refresh, а затем находим у нее параметры Transform>>Rotation>>Orientation Constraint. Здесь содержаться два параметра, сначала вес IK цепи – Orientation Weight 0, а затем FK – Orientation Weight 1. От Orientation Weight 1 устанавливаем прямую зависимость, т.е. значение атрибута будет задавать степень влияния FK цепи на кости. Нажимаем на стрелочку слева направо, чтобы установить зависимость, и нажимаем Connect.
+ </p>
+                         <div  style="text-align: center;">
+<img width="65%" src="../assets/images/rig_practice/11_13.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Связываем параметры
+</p>
+ <p>
+Для параметра Orientation Weight 0 устанавливаем зависимость 100-атрибут, так при увеличении веса FK параметр IK будет уменьшаться, при этом в сумме они всегда будут составлять 100
+ </p>
+ <p>
+Данное действие повторяем для всех трех костей: запястья, локтя и плеча. Теперь при изменении значения атрибута будет изменяться степень смеси влияния IK и FK цепей.
+  </p>
+                           <div  style="text-align: center;">
+<img width="75%" src="../assets/images/rig_practice/11_14.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Влияние атрибута
+</p>
+  <p style="font-weight:bold;">
+Создание атрибута с помощью скрипта
+</p>
+<p>
+Однако заметим, что при изменении смеси весов, рука перемещается от одного контроллера к другому. Для комфортного процесса анимации нам необходимо, чтобы между FK и IK цепями можно было переключаться автоматически, при этом не влияя на положение руки. Т.е. нам нужна возможность моментального перемещения одной из цепей к другой. Для этого создадим еще один атрибут.
+</br>Атрибут, который нам потребуется, проще всего создать с помощью встроенной функции написания скриптов.
+</br>Открываем редактор скриптов Scripting>>New Script и вставляем следующий код.
+ </p>
+                          <div  style="text-align: center;">
+<img width="30%" src="../assets/images/rig_practice/11_15.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Создание нового скрипта
+</p>
+ <p style="font-family: 'Fira Code', monospace; color:#0D5049;margin-left:10%;">
+IK_FK_Switcher_Custom_attribute = attributes custom_Attributes
+</br>(
+</br>rollout IKSwitchRollout “IK/FK Switch”
+</br>(
+</br>button ui_IK2FK “IK>>>FK” width:160 height:30
+</br>button ui_FK2IK “FK>>>IK” width:160 height:30
+</br>on ui_FK2IK pressed do
+</br>(
+</br>try ($’shoulder_fk_ctrl_l’.transform=$’shoulder_l_IK’.transform)catch()
+</br>try ($’elbow_fk_ctrl_l’.transform=$’forearm_l_IK’.transform)catch()
+</br>try ($’wrist_fk_ctrl_l’.transform=$’IK_wrist_ctrl_l’.transform)catch()
+</br>)
+</br>on ui_IK2FK pressed do
+</br>(
+</br>try ($’IK_wrist_ctrl_l’.transform=$’wrist_fk_ctrl_l’.transform)catch()
+</br>)
+</br>)
+</br>)
+CustAttributes.add $.modifiers[1] IK_FK_Switcher_Custom_attribute
+ </p>
+ <p>
+</br>В рамках данного скрипта мы создаем новый объект (IK_FK_Switcher_Custom_attribute) типа атрибут (custom_Attributes).
+Внутри кода данного объекта создается раздел модификатора rollout, который мы называем IK/FK Switch. Затем создаются два объекта (ui_IK2FK  и ui_FK2IK ) кнопок button, которые будут перемещать одну цепь к другой.
+</br>Затем для каждой из кнопок создаются функции, выполняемые при нажатии (on (название кнопки) pressed do). При нажатии на кнопку перемещения FK к IK каждая из костей перемещается посредством присваивания атрибута .transform.
+Берем кость через ее название ($’shoulder_fk_ctrl_l’), затем берем ее атрибут ($’shoulder_fk_ctrl_l’.transform и присваиваем ему значение этого же атрибута но уже кости FK =$’shoulder_l_IK’.transform. Конструкция try catch необходима для отлова ошибок.
+</br>Для кнопки, перемещающей IK к FK достаточно переместить контроллер первой ко второй.
+</br>Чтобы затем добавить атрибут в модификатор, после основного кода вызываем метод CustAttributes.add для объекта атрибута (IK_FK_Switcher_Custom_attribute). Данный метод добавит атрибут к модификатору выбранного объекта.
+</br>Чтобы выполнить скрипт нажимаем Tools>>Evaluate All. Атрибут автоматически появится в рамках модификатора, в разделе IK/FK Switch.
+  </p>
+                           <div  style="text-align: center;">
+<img width="65%" src="../assets/images/rig_practice/11_16.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Результат создания кнопок
+</p>
+  
+<p>  
+Теперь при нажатии на кнопки, цепи будут перемещаться друг к другу.
+</p>
+
+                         <div  style="text-align: center;">
+<img width="40%" src="../assets/images/rig_practice/ik_fk_rig.gif">
+</div>
+<p class="image_text">
+Рис. 9 - Результат
+</p>
+
+ <div class="next_link">
+    <p> <a href="rig_task11.html"> < Контроллеры рук </a> </p>
+ <p> <a href="rig_task13.html"> Контроль пальцев > </a> </p>
+ 
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+ 
+ 
+<div class="text_block">
+
+<h1>Раскрашиваем ракушку</h1>
+
+<h2>Использование градиентных карт в Photoshop</h2>
+
+
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="50%" src="../assets/images/tex_practice/6_1.jpg">
+</div>
+
+<p>
+Продолжаем работу с ракушкой из прошлого задания, либо открываем проект scenes/bake_texture/Clam_color_start.3b.
+</br>3D Coat предоставляет пользователями возможность пользоваться сторонними графическими редакторами для работы со слоями карты цвета. Чтобы перенести слои нажимаем Edit>>Edit All Layers in Ext. Editor, в открывшемся окне Find Extrenal Editor нажимаем Ok и указываем путь к Photoshop. Программа должна открыться автоматически.
+  </p>
+  
+  
+   <div  style="text-align: center;">
+<img width="50%" src="../assets/images/tex_practice/6_2.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Edit All Layers in Ext. Editor
+</p>
+
+     <div  style="text-align: center;">
+<img width="70%" src="../assets/images/tex_practice/6_3.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Текстура в Photoshop
+</p>
+  
+  <p>
+Создадим новый слой Layers>>Add>>New layer и проведем на нем несколько полосок стандратной кистью Brush. Затем нажмем File>>Save и увидим, что текстура автоматически обновилась в 3D Coat. Это значит, что файлы связаны и можно начинать отрисовку.
+   </p>
+
+   <div  style="text-align: center;">
+<img width="50%" src="../assets/images/tex_practice/6_4.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Сохранение изменений
+</p>
+  
+   <div  style="text-align: center;">
+<img width="70%" src="../assets/images/tex_practice/6_5.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Изменения применены
+</p>
+  
+
+ <p>
+В отличие от 3D Coat в Photoshop имеется особый слой Wireframe, который содержит UV сетку модели. Она может помочь при отрисовке, поэтому перенесем ее с нижнего слоя наверх. Кликаем на слой и, не отпуская нажатие, перетаскиваем вверх. Теперь, чтобы линии сетки были виднее, изменим их цвет.
+  </p>
+  
+     <div  style="text-align: center;">
+<img width="50%" src="../assets/images/tex_practice/6_6.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Открываем редактор цвета
+</p>
+  
+  
+  <p>
+Среди элементов верхнего меню выбираем Image, затем Adjustments и нажимаем Hue/Saturation – настройку оттенка и насыщенности. В открывшемся окне ставим галочку у Colorize, чтобы серая сетка приобрела оттенок и увеличила насыщенность. Можем изменять значение Hue, чтобы установить желаемый оттенок, чтобы применить изменения нажимаем Ok. В результате сетка приобрела заметный яркий цвет, выделяющийся на фоне текстуры.
+ </p>
+ 
+    <div  style="text-align: center;">
+<img width="60%" src="../assets/images/tex_practice/6_7.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Раскрашивание сетки
+</p>
+  
+  
+ <p>
+Переходим к процессу расскрашивания текстуры. В окне слоев Layers нажимаем на кнопку создания корректирующего слоя и выбираем вариант Gradient Map для создания градиентного слоя. В открывшемся окне нажимаем на превью градиента, а затем приступаем к его настройке. Данная функция позволяет настроить цвет разных тонов изображения, слева направо в окне градиента тон следует от темного к светлому. Нажимаем на прямоугольные иконки, обозначающие цвет в данной точке градиента и в окне Color Picker настраиваем его. Для добавления дополнительных цветов нажимаем на любоем место градиента и устанавливаем цвет. 
+   </p>
+   
+      <div  style="text-align: center;">
+<img width="70%" src="../assets/images/tex_practice/6_8.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Создаем слой-градиент
+</p>
+  
+   
+   
+   <p>
+После завершения настройки градиента в списке появится новый слой, влияющий на все слои, расположенные ниже. При желании градиент можно изменить, нажав на иконку его слоя.
+   </p>
+   
+      <div  style="text-align: center;">
+<img width="60%" src="../assets/images/tex_practice/6_9.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Градиент применен
+</p>
+  
+   
+   <p>
+Далее раскрасим отдельные части ракушки с помощью их собственных градиентов. Для объектов, текстуры которых находятся на отдельных слоях, аналогично создаем цветовой градиент, нажимаем на его слой правой кнопкой мыши и выбираем Create Clipping Mask, чтобы он применялся только к слою, находящемуся ниже.
+ </p>
+ 
+    <div  style="text-align: center;">
+<img width="30%" src="../assets/images/tex_practice/6_10.jpg">
+</div>
+<p class="image_text">
+Рис. 9 - Clipping Mask
+</p>
+  
+ 
+ 
+ <p>
+Для раскрашивания других частей ракушки потребуется использовать режим маски. Инструментом лассо Lasso Tool выделяем область внутренней поверхности ракушки. Чтобы отредактировать область выделения включаем режим рисования маски Edit in Quick Mask Mode. Здесь карсным цветом будет выделена область маски, на которую не будут влиять изменения. 
+</br>Используем стандартную кисть Brush (клавиша B) и ластик Eraser (E), чтобы отредактировать края маски. Для выключения режима повторно нажимаем кнопку.
+   </p>
+   
+   
+      <div  style="text-align: center;">
+<img width="50%" src="../assets/images/tex_practice/6_11.jpg">
+</div>
+<p class="image_text">
+Рис. 10 - Edit in Quick Mask Mode
+</p>
+  
+  
+  
+   <p>
+Создаем новый градиентный слой и устанаваливаем подходящие цвета. Нажимаем комбинацию клавиш Ctrl+D или Select>>Deselect для отключения маски.
+ </p>
+ 
+       <div  style="text-align: center;">
+<img width="20%" src="../assets/images/tex_practice/6_12.jpg">
+</div>
+<p class="image_text">
+Рис. 11 - Дополнительный градиент с использованием маски
+</p>
+  
+ 
+ <p>
+С помощью средств Photoshop можем нарисовать дополнительные детали, отредактировать цвет в разных местах текстуры и т.д. Например, на изображении ниже показано, как с помощью мягкой кисти был создан рефлекс на нижней части жемчужины. 
+ </p>
+ 
+       <div  style="text-align: center;">
+<img width="35%" src="../assets/images/tex_practice/6_13.jpg">
+</div>
+<p class="image_text">
+Рис. 12 - Рефлексы на жемчужине
+</p>
+  
+  
+  
+ <p>
+Сохраняем файл File>>Save и возвращаемся в 3D Coat, чтобы посмотреть на результат работы.
+</p>
+
+      <div  style="text-align: center;">
+<img width="50%" src="../assets/images/tex_practice/6_1.jpg">
+</div>
+<p class="image_text">
+Рис. 13 - Результат
+</p>
+  
+
+
+ <div class="next_link">
+    <p> <a href="tex_task5.html"> < Кисти и слои в 3D Coat, режим Paint </a> </p>
+ <p> <a href="tex_task7.html"> Дополнительные карты и материалы в 3D Coat > </a> </p>
+ 
+ </div>
+
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

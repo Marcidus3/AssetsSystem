@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+
+<div class="text_block">
+
+<h1>Анимация Animation Controller</h1>
+<p style="font-weight:bold;">
+Создание Контроллера Аниматора
+</p>
+<p>
+Контроллер аниматора позволяет настраивать и управлять набором анимаций персонажа или иного анимированного Game Object.
+
+Контроллер имеет ссылки на используемые им анимационные клипы, и управляет различными анимационными состояниями и переходами между ними, используя, так называемый State Machine (конечный автомат), который может быть представлен в виде блок-схемы, или простой программы, написанной на языке визуального программирования в Unity.
+
+
+
+Различные способы создания контроллера аниматора:
+
+Щелкните правой кнопкой мыши в окне Project View и выберите ‘Create > Animator Controller’ из списка.
+
+Щелкните правой кнопкой мыши в окне Project View и выберите ‘Create > Animator Controller’ из списка.
+
+Из меню Assets выберите ‘Assets > Create > Animator Controller’.
+
+Это создаст ассет .controller на диске. В окне Project Browser иконка будет выглядеть вот так:
+</p>
+
+  <div  style="text-align: center;">
+<img width="5%" src="../assets/images/unity_theory/3_1.jpg">
+</div><p></p>
+
+<p>
+ The Animator Controller окно содержит:
+
+Виджет слоя анимаций (Animation Layer Widget) (верхний-левый угол, смотри Слои анимации)
+Виджет праметров события (Event Parameters Widget) (нижний-левый угол, см. Параметры анимации)
+Визуализация самой Машины состояний.
+</p>
+  <div  style="text-align: center;">
+<img width="60%" src="../assets/images/unity_theory/3_2.jpg">
+</div><p></p>
+<p>
+Заметим, что Окно Контроллера Аниматора будет всегда отображать машину состояний из последнего выбранного ассета .controller, независимо от того какая сцена загружена.
+  </p>
+  <p style="font-weight:bold;">
+  Состояния анимации
+  </p>
+  <p>
+Animation States(Состояния анимации) - основные элементы машины состояний анимации Animation State Machine. Каждое состояние содержит индивидуальную анимационную последовательность (или blend tree), которая будет проигрываться, когда персонаж находится в этом состоянии. В том случае, когда игра вызовет переход состояния, персонаж сменит состояние на другое, чья последовательность анимации будет использована.
+
+Когда вы выбираете состояние из инспектора Animator Controller, вы увидите свойства для этого состояния:-
+</p>
+  <div  style="text-align: center;">
+<img width="30%" src="../assets/images/unity_theory/3_3.jpg">
+</div><p></p>
+<p>
+Стандартное состояние, отображённое коричневым цветом, это состояние, в котором будет машина при активации. Вы можете изменить то, какое состояние будет стандартным нажав правой кнопкой на нужном состоянии и выбрав из контекстного меню Set As Default. Флажки solo и mute у каждого перехода используются, чтобы управлять поведением превью анмиации (animation previews) - для деталей см. эту страницу.
+
+Новое состояние можно добавить нажав правой кнопкой на пустом пространстве в окне Animator Controller Window и выбрав из контекстного меню Create State->Empty. Или можно перетянуть анимацию в окно Animator Controller, чтобы создать состояние использующее эту анимацию (учтите, что вы можете перетягивать только Mecanim-анимации в Controller - не Mecanim-анимации будут отклонены). Состояния также содержат и деревья смешивания (Blend Trees).
+</p>
+<p style="font-weight:bold;">
+Any State
+</p>
+
+<p>
+Any State - особо состояние, которое всегда существует. Оно подходит для ситуаций, когда вы хотите переключиться на определённое состояние, независимо от текущего состояния. Это более быстрый способ, нежели добавление исходящего перехода каждому состоянию. Учтите, что в виду своей функции, Any State не может быть конечной точкой перехода (т.е. переход к “any state” не может быть использован для выбора случайного состояния).
+</p>  
+<div  style="text-align: center;">
+<img width="50%" src="../assets/images/unity_theory/3_4.jpg">
+</div><p></p>
+
+
+   <div class="next_link">
+  <ul>
+ <li><a href="unity_theory1.html">Импорт в Unity</a></li>
+ <li><a href="unity_theory2.html">Материалы и шейдеры</a></li>
+  </ul>
+    <ul >
+ 	<li><a href="unity_theory3.html">Animation Controller</a> </li>
+  </ul>
+ </div>
+
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

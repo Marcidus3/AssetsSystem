@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+<div class="text_block">
+
+<h1>Моделирование чайника  </h1>
+<h2>Полигональное моделирование с использованием ZModeler</h2>
+
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="50%" src="../assets/images/hp_practice/Teapot.gif">
+</div>
+
+<p>
+ZModeler – уникальная кисть, содержащая набор функций полигонального моделирования. Данная кисть подходит для низкополигонального моделирования.
+</br>ZModeler можно найти на левой панели инструментов в палитре кистей.
+</p>
+
+
+<div  style="text-align: center;">
+<img width="15%" src="../assets/images/hp_practice/15_1.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Кисть ZModeler
+</p>
+
+<p>
+Функции, которые имеет данная кисть, могут быть применены к выделенным объектам – точкам, ребрам и граням, а также к их сочетаниям и полигруппам. Чтобы вызвать меню действий, необходимо навести курсор на объект и нажать Пробел. Раздел ACTIONS содержит функции полигонального моделирования, а TARGET определяет цель, к которой будет применено действие.
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/15_2.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Настройка режима взаимодействия с элементами геометрии
+</p>
+
+<p>
+Создадим пустой проект и добавим в него сабтул звезду PolyMesh3D. Затем перейдем в раздел Initialize палитры Tool. Оставим настройки такими, какие они стоят по умолчанию (все параметры Res – 2) и нажмем QCube, что позволит превратить звезду в простейший куб. 
+</p>
+
+<div  style="text-align: center;">
+<img width="50%" src="../assets/images/hp_practice/15_3.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Преобразование в QCube
+</p>
+
+<p>
+Данная процедура была необходима, так как куб, предлагаемый при выборе 3D Meshes, как и большинство других примитивов, имеет топологию сферы, которая не подойдет для работы в ZModeler.
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/15_4.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Топология QCube и стандартного Cube3D
+</p>
+<p>
+Сплющиваем получившийся куб и включаем симметрию по X и Y. 
+</p>
+
+<div  style="text-align: center;">
+<img width="25%" src="../assets/images/hp_practice/15_5.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Настройка симметрии
+</p>
+
+<p>
+Наводим курсор на точки в середине ребер и двигаем их от центра модели. В результате должна получиться следующая форма.
+</p>
+
+<div  style="text-align: center;">
+<img width="30%" src="../assets/images/hp_practice/15_6.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Начало полигонального моделирования
+</p>
+
+<p>
+Наводим курсор на ребро нижней части модели и вызываем меню функций. Выбираем действие – Scale и цель – EdgeLoop Complete. Не убирая курсор с ребра, нажимаем на него и тянем. Основание модели должно расшириться.
+</p>
+
+<div  style="text-align: center;">
+<img width="60%" src="../assets/images/hp_practice/15_7.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Действие Scale
+</p>
+
+<p>
+Далее наведем курсор на полигон на верхней части модели. Теперь в меню выберем действие – Extrude, и цель – PolyGroup Island (островок полигруппы). Так как все полигоны на данной стороне входят в одну полигруппу, выделены одним цветом, а цель – островок полигруппы, взаимодействие с одним из них приведет к изменению остальных. Кликаем и тянем за один из полигонов. Получается операция выдавливания.
+</p>
+
+<div  style="text-align: center;">
+<img width="55%" src="../assets/images/hp_practice/15_8.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Действие Extrude
+</p>
+
+<p>
+Для такой же цели выполняем действие – Scale. Корректируем размер грани модели. Затем последовательно выполняем эти два действия, чтобы создать форму чайника.
+</p>
+
+<div  style="text-align: center;">
+<img width="20%" src="../assets/images/hp_practice/15_9.jpg">
+</div>
+<p class="image_text">
+Рис. 9 - Основание чайника
+</p>
+
+<p>
+Подобным образом создадим модель носика и ручки чайника. Добавляем сабтул – звезду, преобразуем ее в куб и модифицируем его форму. Придаем кубу форму, больше похожую на цилиндр, затем последовательно выдавливаем полигоны и изменяем их размер. При необходимости двигаем полигоны, ребра и точки, применяя к ним действие Move из меню ZModeler.
+</p>
+
+<div  style="text-align: center;">
+<img width="60%" src="../assets/images/hp_practice/15_10.jpg">
+</div>
+<p class="image_text">
+Рис. 10 - Элементы модели чайника
+</p>
+
+<p>
+Применим к модели режим Dynamic Subdiv, чтобы сгладить топологию. Видим, что смягчились также ребра, которые должны были остаться четкими.
+</br>
+Возвращаемся в ZModeler и наводим курсор на ребра основания чайника. Выбираем действие – Bevel, цель – EdgeLoop Complete и кликаем. Были созданы дополнительные ребра (фаска), благодаря которым нижняя плоскость чайника будет отделена от его боковых сторон.
+</p>
+
+
+<div  style="text-align: center;">
+<img width="60%" src="../assets/images/hp_practice/15_11.jpg">
+</div>
+<p class="image_text">
+Рис. 11 - Действие Bevel
+</p>
+<p>
+Данные действия повторим для всех частей объекта, которые должны оставаться четкими.
+</br>
+Увеличим параметр SmoothSubdiv функции Dynamic Subdiv, чтобы усилить сглаживание. 
+</p>
+
+
+<div  style="text-align: center;">
+<img width="30%" src="../assets/images/hp_practice/15_12.jpg">
+</div>
+<p class="image_text">
+Рис. 12 - Использование DynamicSubdiv
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/15_13.jpg">
+</div>
+<p class="image_text">
+Рис. 13 - Результат
+</p>
+
+
+
+ <div class="next_link">
+ 
+ <p> <a href="hpoly_task14.html"> < Методы моделирования одежды </a> </p>
+ <p> <a href="hpoly_task16.html"> Скульптинг одежды, тканей и волос > </a> </p>
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

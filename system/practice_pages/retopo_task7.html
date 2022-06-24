@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+ 
+ 
+<div class="text_block">
+
+<h1>Топология прочих частей ассета</h1>
+
+<p>
+При создании топологии для сложной геометрии хорошей практикой является создание цепочки полигонов, проходящих по границе формы. Используем данный метод для ретопологии рукава, состоящего из нескольких элементов.
+</br>После создания петель ребер для отдельных элементов остается только соединить их с петлей общей формы рукава.
+ </p>
+ 
+   <div  style="text-align: center;">
+<img width="45%" src="../assets/images/top_practice/7_1.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Топология рукава
+</p>
+ 
+<p>
+На задней части пальто петли рукава переходят в большее кольцо, описывающее форму лопаток. Обозначение лопаток на спине необходимо для корректной деформации геометрии при движении руки и плеча. 
+</br>Ребра, составляющие основную часть плаща, соединяются с кольцом рукава с помощью одного треугольника.
+</p>
+    <div  style="text-align: center;">
+<img width="25%" src="../assets/images/top_practice/7_2.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Топология спины
+</p>
+<p>
+Учитывая будущую анимацию, скиннинг и развертку создаем топологию каждой из частей моделей, а затем сохраняем их Save Scene As в отдельных файлах формата obj.
+</p>
+
+    <div  style="text-align: center;">
+<img width="40%" src="../assets/images/top_practice/retopo.gif">
+</div>
+<p class="image_text">
+Рис. 3 - Результат
+</p>
+
+
+ <div class="next_link">
+ 
+  <p> <a href="retopo_task6.html"> < Топология конечностей </a> </p>
+  
+ 
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

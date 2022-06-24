@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+ 
+ 
+<div class="text_block">
+
+<h1>Добавим шляпу</h1>
+
+<h2>Работа с отдельными частями модели</h2>
+
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="25%" src="../assets/images/tex_practice/3_1.jpg">
+</div>
+<p>
+При создании ассетов со сложной геометрией могут возникнуть проблемы с редактированием, созданием UV развертки и отрисовкой текстур в трудно доступных частях модели. Для этого ассет разделяют на составные части и работают с каждой из них по-отдельности. Рассмотрим работу с ними в 3D Coat.
+</br>Загрузим в новый проект 3D Coat две модели из папки scenes/bake_texture/TeddyBear_LP_UV.obj и Hat_LP.obj. Модель шляпы была создана отдельно от мишки, значит нам необходимо отредактировать ее размер и расположение перед началом работы.
+</p>
+ 
+ 
+  <div  style="text-align: center;">
+<img width="30%" src="../assets/images/tex_practice/3_2.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Импорт модели
+</p>
+ 
+ <p>
+Переходим из режима Paint в Tweak и на левой панели инструментов выбираем Select/Transform. Нажимаем кнопку Select Object в открывшемся окне Tool Options и кликаем на шляпу. 
+ </p>
+ 
+ 
+  <div  style="text-align: center;">
+<img width="40%" src="../assets/images/tex_practice/3_3.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Инструмент перемещения 
+</p>
+ 
+ 
+ 
+ <p>
+Теперь, когда модель выбрана, нажимаем кнопку Scale и нажимаем на белый куб в центре, чтобы изменить размер.
+</p>
+
+
+  <div  style="text-align: center;">
+<img width="50%" src="../assets/images/tex_practice/3_4.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Уменьшение шляпы
+</p>
+
+<p>  
+Нажимаем на кнопку Move и, используя появившиеся элементы управления, указывающие вдоль каких осей будет происходить передвижение, перемещаем шляпу в область головы мишки.
+</p>
+ 
+ 
+   <div  style="text-align: center;">
+<img width="50%" src="../assets/images/tex_practice/3_5.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Перемещение шляпы
+</p>
+
+ 
+<p> 
+Для поворота модели нажимаем Rotate.
+   </p>
+     <div  style="text-align: center;">
+<img width="40%" src="../assets/images/tex_practice/3_6.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Поворот шляпы
+</p>
+ 
+<p>
+После окончания редактирования моделей переходим в режим UV для создания развертки шляпы. На верхней панели инструментов в выпадающем списке изменяем одинаковые названия разверток default на bear и hat, чтобы переключаться между ними. Также в правой части экрана, во вкладке Paint Objects скрываем модель медведя, чтобы не мешать отображению и работе со шляпой.
+</p>
+
+     <div  style="text-align: center;">
+<img width="40%" src="../assets/images/tex_practice/3_7.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Изменение названия развертки
+</p>
+
+<p> 
+Создаем UV развертку шляпы, используя методы, рассмотренные в задании «Создание UV развертки в 3D Coat».
+</p>
+
+     <div  style="text-align: center;">
+<img width="55%" src="../assets/images/tex_practice/3_8.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Развертка шляпы
+</p>
+ 
+<p>
+Теперь необходимо соединить островки разверток обоих моделей в одну. Снова открываем список и нажимаем Add New UV Set для создания новой развертки, в раскрывшемся окне задаем имя и разрешение текстур.
+  </p>
+  
+  
+       <div  style="text-align: center;">
+<img width="70%" src="../assets/images/tex_practice/3_9.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Создание лбщей развертки
+</p>
+  
+  
+  <p>
+Теперь нажимаем на любой из островков UV моделей, а затем на верхней панели инструментов раскрываем список Move Selected и выбираем All. Таким образом островок переместится в новую развертку All. Повторяем данную процедуру для всех островков мишки и шляпы. На развертке all редактируем их расположение и размер.
+  </p>
+
+       <div  style="text-align: center;">
+<img width="25%" src="../assets/images/tex_practice/3_10.jpg">
+</div>
+<p class="image_text">
+Рис. 9 - Выбираем новую разертку
+</p>
+
+
+<p>
+Далее загрузим в проект высокополигональные модели File>>Import>> Sculpt/Vertex Painting/Reference. Возьмем файлы scenes/bake_texture/TeddyBear_HP.obj и Hat_HP.obj. 
+</br>Перейдем в режим Sculpt. Здесь выберем объект Hat_HP во вкладке SculptTree и инструмент Transform на панели слева. Используем элемент управления Gizmo для перемещения и уменьшения шляпы в соответствии с низкополигональной моделью.
+</p>
+   
+   
+   
+         <div  style="text-align: center;">
+<img width="70%" src="../assets/images/tex_practice/3_11.jpg">
+</div>
+<p class="image_text">
+Рис. 10 - Перемещение высокополигональной шляпы
+</p> 
+   
+   
+   
+<p>
+Переходим в режим Retopo для выполнения запекания карт нормалей. Выполняем настройку размеров сетки, выполняем запекание и переходим в режим Paint.
+  </p>
+  
+     
+         <div  style="text-align: center;">
+<img width="40%" src="../assets/images/tex_practice/3_12.jpg">
+</div>
+<p class="image_text">
+Рис. 11 - Запекание карт
+</p> 
+   
+  
+  
+  
+<p>  
+При запекании карт AO и Light всегда ставим галочку у Separate paint objects, чтобы процесс выполнялся для каждого из объектов по-отдельности.
+ </p>
+ 
+          <div  style="text-align: center;">
+<img width="30%" src="../assets/images/tex_practice/3_13.jpg">
+</div>
+<p class="image_text">
+Рис. 12 - Включаем запекание по-отдельности
+</p> 
+ 
+ 
+ 
+ 
+ <p>
+Во вкладке Paint Objects находится список объектов для текстурирования. При нажатии их можно переименовать, иконка глаза отображает видимость объектов, иконка замка предотвращает взаимодействие, а крестик удаляет из сцены.  
+ </p>
+
+          <div  style="text-align: center;">
+<img width="25%" src="../assets/images/tex_practice/3_1.jpg">
+</div>
+<p class="image_text">
+Рис. 13 - Результат
+</p> 
+
+
+
+
+ <div class="next_link">
+    <p> <a href="tex_task2.html"> < Бейкинг (запекание) UV карт </a> </p>
+ <p> <a href="tex_task4.html"> UV развертка и запекание модели персонажа > </a> </p>
+ 
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

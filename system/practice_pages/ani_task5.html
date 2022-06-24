@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+ 
+ 
+<div class="text_block">
+
+<h1>Управление анимацией с помощью манипуляторов  </h1>
+<h2>Манипулятор Slider</h2>
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="45%" src="../assets/images/ani_practice/sliders.gif">
+</div>
+
+<p>
+Продолжаем работать над мышью из прошлого задания или открываем проект scenes/anim/Mouse_Slider_Start.max.
+Создадим манипуляторы в виде слайдеров, чтобы управлять поворотом головы, хвоста и веком.
+Во вкладке Create выбираем тип объектов Helpers >> Manipulators. Создаем манипулятор Slider и располагаем его в углу рабочего пространства. В настройках указываем название. 
+При перемещении указателя на слайдере происходит изменение его числового значения, которое в свою очередь может быть использовано для управления параметров других объектов.
+   </p>
+                                <div  style="text-align: center;">
+<img width="55%" src="../assets/images/ani_practice/5_1.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Создание объекта Slider
+</p>
+
+<p>   
+Создаем три слайдера: для головы, хвоста и глаз.
+ </p>
+                              <div  style="text-align: center;">
+<img width="20%" src="../assets/images/ani_practice/5_2.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Слайдеры созданы
+</p>
+ <p>
+Теперь соединим данные манипуляторы с объектами с помощью Wire Parameters. Выделяем первый из них, открываем окно Parameter Wiring и нажимаем кнопку Refresh Tree, чтобы выделенный объект стал основным в окне.
+Основным параметром управления будет значение Value.
+ </p>
+                               <div  style="text-align: center;">
+<img width="50%" src="../assets/images/ani_practice/5_3.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Обновляем Wire Parameters
+</p>
+ <p>
+В правой части выбираем объект neck и его параметр X Rotation. Устанавливаем связь Connect.
+ </p>
+                               <div  style="text-align: center;">
+<img width="60%" src="../assets/images/ani_practice/5_4.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Выбираем параметры
+</p>
+ <p>
+Приступаем к корректировке формулы зависимости. Во-первых, уменьшаем степень воздействия value на поворот, умножая его на 0.01.
+ </p>
+                               <div  style="text-align: center;">
+<img width="40%" src="../assets/images/ani_practice/5_5.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Формула Wire Parameters
+</p>
+ <p>
+Далее открываем настройки манипулятора и включаем режим Select and Manipulate, чтобы взаимодействовать с ним. Теперь перемещаем стрелочку манипулятора и смотрим, при достижении каких значений голова повернется до предела. Запоминаем данные значения и вводим их в параметры Minimum и Maximum слайдера, чтобы ограничить его диапазон.
+    </p>
+	                              <div  style="text-align: center;">
+<img width="70%" src="../assets/images/ani_practice/5_6.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Настройка слайдера
+</p>
+
+
+<p>
+Следующий слайдер для управления глаза соединяем с объектом eyelid, а именно его параметром Z Position. В формуле ставим минус, так как веко должно двигаться сначала вниз.
+ </p>
+ 	                              <div  style="text-align: center;">
+<img width="60%" src="../assets/images/ani_practice/5_7.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Настройка параметров
+</p>
+
+ <p>
+В настройках манипулятора оставляем минимальное значение равным нулю, так как веко не будет двигаться выше положения по умолчанию (т.е. когда глаз открыт)
+</p>
+ 	                              <div  style="text-align: center;">
+<img width="20%" src="../assets/images/ani_practice/5_8.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Настройка слайдера
+</p>
+<p>
+Аналогично настраиваем слайдер, управляющий хвостом.
+   </p>
+    	                              <div  style="text-align: center;">
+<img width="75%" src="../assets/images/ani_practice/5_9.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Настройка параметров и слайдера
+</p>
+<p>
+Прежде чем создать тестовую анимацию для слайдеров, нажмем кнопку Key Filters и в открывшемся окне Set Key Filters поставим галочку All, чтобы ключи создавались для всех возможных параметров объектов.
+</p>
+ 	                              <div  style="text-align: center;">
+<img width="20%" src="../assets/images/ani_practice/5_10.jpg">
+</div>
+<p class="image_text">
+Рис. 10 - Установка фильтров анимации
+</p>
+ 	                              <div  style="text-align: center;">
+<img width="45%" src="../assets/images/ani_practice/sliders.gif">
+</div>
+<p class="image_text">
+Рис. 11 - Результат
+</p>
+ <div class="next_link">
+    <p> <a href="ani_task4.html"> < Wire Parameters </a> </p>
+	 <p> <a href="ani_task6.html"> Idle-анимация  > </a> </p>
+ 
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+
+<div class="text_block">
+
+<h1>Продолжаем моделировать рыбку 2  </h1>
+<h2>Кисти Dam Standard, Trim Dynamic, Pinch</h2>
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="50%" src="../assets/images/hp_practice/Fish3.gif">
+</div>
+
+<p>
+В данном задании рассмотрим кисти, позволяющие привести модель к финальному «отполированному» виду.
+</br>
+Продолжаем работу с рыбкой из прошлого задания, либо открываем проект из файла scenes/high_poly/Fish_2.ZPR.
+</br>
+Воспользуемся кистью DamStandard (BDS). Данная кисть позволяет создавать тонки, четкие впадины на поверхности модели. Чаще всего данную кисть используют как инструмент для набросков предполагаемой поверхности и для создания более резких углублений. 
+Используем DamStandard (BDS) для обозначения жабр и рта нашей рыбки.
+</p>
+
+<div  style="text-align: center;">
+<img width="45%" src="../assets/images/hp_practice/5_1.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Кисть DamStandard
+</p>
+
+<p>
+Следующая кисть TrimDynamic (BTD) позволит мягко «подстричь» неровную поверхность модели. Она помогает бороться с излишней грубоватостью и неопределенностью моделей, созданных с использованием обычных кистей. Используем ее чтобы обозначить плоскости трехмерного объекта, сделать его более четким и читаемым. 
+</br>
+Пройдемся по задней поверхности жабр рыбы, отделив ее от плоскости головы/лица. Проделаем эти действия со всеми гранями, требующими уточнения (ртом и веками).
+</p>
+
+<div  style="text-align: center;">
+<img width="35%" src="../assets/images/hp_practice/5_2.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Кисть TrimDynamic
+</p>
+
+<div  style="text-align: center;">
+<img width="30%" src="../assets/images/hp_practice/5_3.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Результат применения TrimDynamic и DamStandard
+</p>
+
+<p>
+Кисть Pinch (BPI) сдвигает точки топологии объекта ближе друг к другу, что позволяет делать ребра модели более острыми. 
+</br>
+На данный момент мы уже имеет четко обозначенные плоскости и ребра между ними. Чтобы сделать их четкими применим кисть Pinch (BPI), а на впадинах и углублениях ее инверсивный режим Alt.
+</p>
+
+<div  style="text-align: center;">
+<img width="45%" src="../assets/images/hp_practice/5_4.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Кисть Pinch
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/5_5.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Результат использования кистей
+</p>
+
+<p>
+Повторяем такие же действия для работы над плавниками. Кистью DamStandard (BDS) обозначаем текстуру плавника – различные линии и морщины, делаем их тоньше при помощи Pinch (BPI). Сглаживаем и корректируем поверхность модели кистью TrimDynamic (BTD) в обычном, а также сглаживающем режиме Shift.
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/5_6.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Работаем над плавниками
+</p>
+
+<p>
+Теперь попробуем создать текстуру чешуек с использованием данных кистей.
+</br>
+Подготовим поверхность тела рыбы, выравнивая и разглаживая ее кистью TrimDynamic (BTD) в стандартном и сглаживающем режимах.  
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/5_7.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Результат скульптинга плавников
+</p>
+
+<p>
+Возьмем кисть DamStandard (BDS) и в инверсивном режиме Alt пометим, где будут располагаться чешуйки. 
+</p>
+
+<div  style="text-align: center;">
+<img width="20%" src="../assets/images/hp_practice/5_8.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Используем DamStandard
+</p>
+
+<p>
+Далее с помощью кисти TrimDynamic (BTD) в инверсивном режиме Alt сделаем чешуйку объемной. В обычном режиме данная кисть обрезает поверхность, оставляя ее идеально ровной. Но в данном случае она будет наращивать объем так же совершенно ровный и гладкий. Заполним так все остальные чешуйки.
+</br>
+Когда чешуйки готовы, используем Pinch (BPI), чтобы сделать их четкими и визуально отделить от основной поверхности тела. Проведем кистью по их краям, а обратную сторону смягчим Shift, чтобы добиться эффекта как на изображении ниже.
+</p>
+<div  style="text-align: center;">
+<img width="30%" src="../assets/images/hp_practice/5_9.jpg">
+</div>
+<p class="image_text">
+Рис. 9 - Результат скульптинга чешуек 
+</p>
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/5_10.jpg">
+</div>
+<p class="image_text">
+Рис. 10 - Результат 
+</p>
+
+ <div class="next_link">
+ 
+   <p> <a href="hpoly_task4.html"> < Кисти Move, Standard, Clay Buildup </a> </p>
+  
+ <p> <a href="hpoly_task6.html"> Работа с симметрией > </a> </p>
+ 
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

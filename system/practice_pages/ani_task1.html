@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+ 
+ 
+<div class="text_block">
+
+<h1>Анимация крокодила на основе ключевых кадров  </h1>
+<h2>Auto Key, Set Key</h2>
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="45%" src="../assets/images/ani_practice/croc_anim.gif">
+</div>
+
+<p>
+Откроем проект scenes/anim/Croc_Anim_Start.max, который содержит модель крокодила, связанную со скелетом и контроллерами.
+</br>Рассмотрим метод анимации в режиме Auto Key Mode. Нажимаем кнопку под таймлайном Auto Key, чтобы начать работу.
+ </p>
+                         <div  style="text-align: center;">
+<img width="75%" src="../assets/images/ani_practice/1_1.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Панель Timeline
+</p>
+ <p>
+При изменении характеристик объектов на таймлайне будут автоматически созданы ключевые кадры. Типы характеристик, изменения которых будут учитываться, можно настроить в окне Set Key Filters, при нажатии на кнопку Key Filters.
+</br>Для создания дополнительных кадров вручную нажимаем клавишу (K).
+ </p>
+                          <div  style="text-align: center;">
+<img width="30%" src="../assets/images/ani_practice/1_2.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Set Key Filters
+</p>
+ <p>
+Приступим к анимации головы крокодила. 
+</br>Выделяем объекты контроля головы и челюсти head_ctrl и jaw_ctrl соответственно. Переместимся у нулевому кадру на таймлайне и нажмем (K), чтобы установить изначальное положение. В точке 0 должн
+  </p>
+                           <div  style="text-align: center;">
+<img width="45%" src="../assets/images/ani_practice/1_3.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Создание ключевого кадра
+</p>
+  <p>
+Теперь переместимся к кадру  20 и повернем два контроллера относительно оси X так, чтобы голова немного поднялась. Так как режим Auto Key включен, на точке таймлайна 20 появится отметка, означающая, что анимация была создана.
+  </p>
+                             <div  style="text-align: center;">
+<img width="40%" src="../assets/images/ani_practice/1_4.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Создание ключевого кадра
+</p>
+  <p>
+Можем проверить работу анимации, нажав на кнопку воспроизведения Play Animation.
+ </p>
+ <p>
+Чтобы анимировать пасть крокодила, выделяем контроллер jaw_ctrl и перемещаемся к кадру 30. Снова поворачиваем объект относительно оси X, чтобы рот открылся. Выключаем режим авктолюча повторным нажатием кнопки Auto Key.
+ </p>
+                            <div  style="text-align: center;">
+<img width="40%" src="../assets/images/ani_practice/1_5.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Создание ключевого кадра
+</p>
+ <p>
+Далее рассмотрим метод анимации в режиме Set Key. В данном режиме аниматор вручную устанавливает ключевые кадры. Чтобы включить Set Key Mode, необходимо нажать кнопку Set Key. 
+ </p>
+ 
+                            <div  style="text-align: center;">
+<img width="30%" src="../assets/images/ani_practice/1_6.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Режим Set Key
+</p>
+ <p>
+Выделяем контроллеры левой передней и правой задней лап l_f_ctrl и r_b_ctrl и перемещаемся к кадру 40. Устанавливаем здесь начальную мозицию анимации, для чего нажимаем клавишу (K) или кнопку Set Keys.
+  </p>
+                             <div  style="text-align: center;">
+<img width="35%" src="../assets/images/ani_practice/1_7.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Создание ключевого кадра
+</p>
+  <p>
+Перемещаем контроллеры по оси Y и устанавливаем новый ключевой кадр в точке 50.
+  </p>
+                             <div  style="text-align: center;">
+<img width="45%" src="../assets/images/ani_practice/1_8.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Создание ключевого кадра
+</p>
+
+  <p>
+Теперь выделяем контроллеры правой передней и левой задней лапы r_f_ctrl и l_b_ctrl. В кадре 50 устанавливаем изначальное положение, а в 60 состояние после перемещения вперед.
+ </p>
+В кадре 60 первые две лапы должны возвращаться в изначальное состояние. Выделяем кадр 40 для контроллеров l_f_ctrl и r_b_ctrl и с зажатым Shift перемещаем его в кадр 60. Таким образом произойдет копирование положений. Таким же образом скопируем кадр 50 в 70й для двух других лап.
+</br>Чтобы повторить данные движения, выделим все три ключевых кадра и скопируем их так, чтобы дублированный начальный кадр соответствовал конечному. Например, для l_f_ctrl и r_b_ctrl будут созданы следующие кадры: 60 – изначальное положение, 70 – движение вперед, 80 – возвращение в изначальное положение.
+</p>
+
+                           <div  style="text-align: center;">
+<img width="65%" src="../assets/images/ani_practice/1_9.jpg">
+</div>
+<p class="image_text">
+Рис. 9 - Дублирование кадров
+</p>
+                           <div  style="text-align: center;">
+<img width="45%" src="../assets/images/ani_practice/croc_anim.gif">
+</div>
+<p class="image_text">
+Рис. 10 - Результат
+</p>
+
+ <div class="next_link">
+ 
+ <p> <a href="ani_task2.html"> Key Properties  > </a> </p>
+ 
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

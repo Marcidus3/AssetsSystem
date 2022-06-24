@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+<div class="text_block">
+
+<h1>Скульптинг одежды, тканей и волос</h1>
+
+
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="50%" src="../assets/images/hp_practice/Clothes.gif">
+</div>
+
+<p style="font-weight:bold;">
+1.	Моделирование волос
+</p>
+
+<p>
+Начнем с создания примитивной основы для моделирования волос. Добавим в проект сабтул – сферу и, используя стандартный инструмент Gizmo и кисть Move (BMV), придадим ей очертания будущей прически.
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/16_1.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Форма волос
+</p>
+
+<p>
+Используем кисть ClayBuildup (BCB), либо Standard (BST), чтобы изобразить пряди. Затем с помощью кистей DamStandard (BDS) и Pinch (BPI) детализируем их.
+</p>
+
+<div  style="text-align: center;">
+<img width="65%" src="../assets/images/hp_practice/16_2.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Детализация волос
+</p>
+
+<p>
+Переходим к созданию отдельных прядей, для этого используем кисть ExtrudeProfile (BEP) с режимом Circle, за сабтул – основу возьмем модель головы.
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/16_3.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Использование ExtrudeProfile
+</p>
+
+<p>
+Отделяем новые объекты от головы инструментом Split >> Split to Similar Parts. 
+</p>
+
+<div  style="text-align: center;">
+<img width="30%" src="../assets/images/hp_practice/16_4.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Split
+</p>
+
+<p>
+Заузим пряди на концах кистью Pinch (BPI), центральную часть сделаем шире кистью Inflat (BIN). 
+</p>
+
+<div  style="text-align: center;">
+<img width="30%" src="../assets/images/hp_practice/16_5.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Скульптинг пряди
+</p>
+<p>
+Данным способом создаем новые пряди. Детализируем их кистями DamStandard (BDS), Pinch (BPI) и ClayBuildup (BCB), смешивая с остальными волосами.
+</p>
+
+<div  style="text-align: center;">
+<img width="70%" src="../assets/images/hp_practice/16_6.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Скульптинг волос
+</p>
+
+<p style="font-weight:bold;">
+2.	Моделирование одежды и тканей
+</p>
+
+<p>
+Начнем с создания элемента воротника плаща, который носит персонаж. 
+</br>
+Используем возможности ZModeler для создания общих форм. Добавим сабтул звезду PolyMesh3D, затем перейдем в раздел Initialize палитры Tool и установим параметры куба: X и Z Res 1, а Y Res 2, нажмем QCube.
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/16_7.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Создание основы для моделирования
+</p>
+
+<p>
+Расположим полученный параллелепипед за головой модели, согнем его по центральному ребру. Далее выберем кисть ZModeler (BZM), переключим режим взаимодействия для полигона на Extrude, а область воздействия установим PolyGroup Island. Таким образом выдавим две стороны параллелепипеда.
+</p>
+
+<div  style="text-align: center;">
+<img width="60%" src="../assets/images/hp_practice/16_8.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Операция Extrude
+</p>
+
+<p>
+Выдавливаем стороны несколько раз, периодически корректируя расположение точек и ребер. В итоге должна получиться форма воротника.
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/16_9.jpg">
+</div>
+<p class="image_text">
+Рис. 9 - Низкополигональная модель воротника
+</p>
+
+<p>
+Дублируем данную часть воротника, располагаем копии в соответствии с референсом.
+</p>
+
+<div  style="text-align: center;">
+<img width="60%" src="../assets/images/hp_practice/16_10.jpg">
+</div>
+<p class="image_text">
+Рис. 10 - Низкополигональная модель воротника
+</p>
+
+<p>
+Применяем к сабтулам либо ZRemesher с включенными Double и Adapt, либо Divide, чтобы увеличить разрешение и сгладить поверхность. Обрабатываем края воротника и добавляем складки.
+</p>
+
+<div  style="text-align: center;">
+<img width="60%" src="../assets/images/hp_practice/16_11.jpg">
+</div>
+<p class="image_text">
+Рис. 11 - Скульптинг воротника
+</p>
+
+<p>
+Так же обрабатываем две другие части воротника.
+</p>
+
+<div  style="text-align: center;">
+<img width="58%" src="../assets/images/hp_practice/16_12.jpg">
+</div>
+<p class="image_text">
+Рис. 12 - Скульптинг частей воротника
+</p>
+
+<p>
+Переходим к созданию рукавов плаща.</br>
+За основу возьмем примитив – цилиндр. Добавляем в проект сабтул Cylinder3D и придаем ему форму рукава. Для этого можно использовать инструмент Gizmo, а также кисти Move (BMV), Pinch (BPI), Inflat (BIN).
+</br>
+Чтобы создать детали нижней части рукава у запястья как на референсе используем части воротника. Скопируем эти сабтулы, уменьшим и расположим на рукаве.
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/16_13.jpg">
+</div>
+<p class="image_text">
+Рис. 13 - Создание частей рукава
+</p>
+
+<p>
+Соединим самый большой элемент рукава, расположенный над другими, с начальным цилиндром. Применим DynaMesh, чтобы соединить их геометрию.
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/16_14.jpg">
+</div>
+<p class="image_text">
+Рис. 14 - Соединение частей рукава
+</p>
+
+<p>
+Используем техники, рассмотренные в задании «Методы моделирования одежды» для создания складок. Расположим их в районах локтя и плеча. В данном случае были использованы следующие кисти: DamStandard (BDS), TrimDynamic (BTD), Pinch (BPI) и ClayBuildup (BCB). 
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/16_15.jpg">
+</div>
+<p class="image_text">
+Рис. 15 - Скульптинг складок
+</p>
+
+<p>
+В качестве примитива основы для основной части плаща также возьмем цилиндр. Новый сабтул расположим в горизонтальное положение и уменьшим его высоту. 
+</p>
+
+<div  style="text-align: center;">
+<img width="20%" src="../assets/images/hp_practice/16_16.jpg">
+</div>
+<p class="image_text">
+Рис. 16 - Создание примитивной основы плаща
+</p>
+
+<p>
+Теперь с помощью кисти Move (BMV) изменим форму сабтула, чтобы получился объект, похожий на половину жилета. 
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/16_17.jpg">
+</div>
+<p class="image_text">
+Рис. 17 - Моделирование плаща
+</p>
+
+<p>
+Скопируем и отразим данную часть при помощи Mirror and Weld. Убедимся, что половинки слились и образуют общую геометрию. Применим к сабтулу ZRemesher, чтобы исправить топологию, оставшуюся от цилиндров. 
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/16_18.jpg">
+</div>
+<p class="image_text">
+Рис. 18 - Соединение половинок плаща
+</p>
+
+<p>
+Теперь необходимо разгладить поверхность модели, обработать ее края. Аналогично рукавам создаем складки около плеча и на спине.
+</p>
+
+<div  style="text-align: center;">
+<img width="50%" src="../assets/images/hp_practice/16_19.jpg">
+</div>
+<p class="image_text">
+Рис. 19 - Скульптинг складок
+</p>
+
+<p>
+Для создания нижней части плаща выделим маской часть жилета и разделим сабтул с помощью Split. Новую часть начнем растягивать и создавать форму подола плаща.
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/16_20.jpg">
+</div>
+<p class="image_text">
+Рис. 20 - Моделирование подола плаща
+</p>
+
+<p>
+Соединим жилет с плащом стандартными функциями Merge и DynaMesh. Прежде чем приступать к работе с объектом, необходимо убедиться, что взаимодействие с его внешней стороной не отразиться на внутренней. В верхнем меню раскрываем палитру Brush, а на ней вкладку Auto Masking. Здесь включаем режим BackFaceMasking. 
+</p>
+
+<div  style="text-align: center;">
+<img width="20%" src="../assets/images/hp_practice/16_21.jpg">
+</div>
+<p class="image_text">
+Рис. 21 - Включаем BackFaceMasking
+</p>
+
+<p>
+Теперь отдельно разгладим внутреннюю и внешние стороны плаща, добавим складки.
+</p>
+
+<div  style="text-align: center;">
+<img width="20%" src="../assets/images/hp_practice/16_22.jpg">
+</div>
+<p class="image_text">
+Рис. 22 - Готовая модель плаща
+</p>
+
+<p>
+Перед началом создания брюк персонажа, соединим три сабтула – талию, таз и бедра и сгладим переходы между ними. С помощью инструмента Trim обрежем нижнюю часть бедер, так как она не будет закрыта доспехами.
+</br>
+На поверхности модели создаем складки и детали швов.
+</p>
+
+<div  style="text-align: center;">
+<img width="60%" src="../assets/images/hp_practice/16_23.jpg">
+</div>
+<p class="image_text">
+Рис. 23 - Скульптинг брюк
+</p>
+
+<p>
+За основу для модели обуви возьмем примитивную форму ступни, созданную для Blockout. Выделим нижнюю поверхность маской и извлечем ее при помощи Extract, чтобы получился отдельный сабтул - подошва. 
+</p>
+
+<div  style="text-align: center;">
+<img width="60%" src="../assets/images/hp_practice/16_24.jpg">
+</div>
+<p class="image_text">
+Рис. 24 - Скульптинг подошвы
+</p>
+
+<p>
+Теперь соединим сабтулы ступни и голени, обрезав верхнюю часть, что позволит создать форму ботинка. Аналогично брюкам моделируем складки, добавляем прочие детали.
+</p>
+
+<div  style="text-align: center;">
+<img width="60%" src="../assets/images/hp_practice/16_25.jpg">
+</div>
+<p class="image_text">
+Рис. 25 - Скульптинг ботинок
+</p>
+
+<div  style="text-align: center;">
+<img width="30%" src="../assets/images/hp_practice/16_26.jpg">
+</div>
+<p class="image_text">
+Рис. 26 - Результат
+</p>
+
+ <div class="next_link">
+ 
+  <p> <a href="hpoly_task15.html"> < ZModeler </a> </p>
+ <p> <a href="hpoly_task17.html"> Скульптинг твердых поверхностей > </a> </p>
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+
+<div class="text_block">
+
+<h1>Создание снеговика </h1>
+<h2> Работа с инструментами Subtool</h2>
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="30%" src="../assets/images/hp_practice/Snowman.gif">
+</div>
+
+
+<p>
+Рассмотрим основные возможности SubTool на примере простой модели снеговика.
+</p>
+<p>
+Subtool (сабтул) – отдельный полигональный объект и основная рабочая единица в Zbrush. 
+</br>
+Отрываем/создаем любой пустой проект и нажимаем на окошко, отображающее активный сабтул, скорее всего это будет простая сфера. Развернется окно с доступными нас примитивами.
+</br> При нажатии на любую из опций выбранный сабтул заменит все остальные в проекте, поэтому нужно соблюдать осторожность на поздних этапах моделирования.
+</p>
+
+
+<div  style="text-align: center;">
+<img width="45%" src="../assets/images/hp_practice/2_1.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Палитра Tool
+</p>
+
+<p>
+Оставим основным сабтулом сферу (sphere3D).
+Добавим еще один сабтул. Для этого нажмем на кнопку Append в нижней части списка сабтулов и выберем конус (Cone3D). Повернем его на 90 градусов и подвинем к краю сферы чтобы получился морковный нос.
+
+</p>
+
+<div  style="text-align: center;">
+<img width="25%" src="../assets/images/hp_practice/2_2.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Операция Append
+</p>
+
+<div  style="text-align: center;">
+<img width="30%" src="../assets/images/hp_practice/2_3.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Новый сабтул - конус
+</p>
+
+
+<p>
+Далее рассмотрим способы копирования объектов. Чтобы скопировать модель в рамках одного сабтула, перемещаем ее обычным способом в любом направлении при зажатом Ctrl. Как видно на превью сабтула, теперь он состоит из двух частей. Нам не совсем подходит этот способ, поэтому отменяет действие нажатием Ctrl+Z.
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/2_4.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Использование клавиши Ctrl для дублирования
+</p>
+
+<p>
+Используем функцию дублирования для создания средней части снеговика. Выберем сферу и нажмем кнопку Duplicate, новый объект (такую же сферу) переместим вниз и настроим ее размер.</br>
+</p>
+
+<div  style="text-align: center;">
+<img width="400" src="../assets/images/hp_practice/2_5.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Операция Duplicate
+</p>
+
+<p>
+Еще один способ создания сабтулов на основе уже существующих – копирование. Выбираем нижнюю сферу, нажимаем кнопку Copy, а затем Paste. Перемещаем сферу вниз и увеличиваем, чтобы создать нижнюю часть снеговика.
+</p>
+
+
+<div  style="text-align: center;">
+<img width="20%" src="../assets/images/hp_practice/2_6.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Сферы скопированы
+</p>
+
+<p>
+Далее создадим снеговику глаза. Добавим новый сабтул и придадим ему форму, напоминающую глаз (например, можно использовать сплющенную сферу).
+</p>
+
+<div  style="text-align: center;">
+<img width="30%" src="../assets/images/hp_practice/2_7.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Создание глаз
+</p>
+
+<p>
+Чтобы создать второй симметричный глаз, на панели справа переместимся под список сабтулов и развернем панель Geometry>>Modify Topology. Выберем команду отражения и спаивания Mirror and Weld. Второй глаз автоматически появится на противоположной стороне оси X (это можно увидеть и настроить выбирая разные значения в верхней левой части кнопки Mirror and Weld – X,Y,Z и все их сочетания). 
+</p>
+
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/2_8.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Операция Mirror and Weld
+</p>
+
+<p>
+Используя упомянутые выше техники сделаем снеговику рот из угольков, пуговицы и руки-веточки.
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/2_9.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Результат
+</p>
+
+ <div class="next_link">
+ 
+  <p> <a href="hpoly_task1.html"> < Основы контроля рабочей области Zbrush </a> </p>
+  
+ <p> <a href="hpoly_task3.html"> Операции Boolean > </a> </p>
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

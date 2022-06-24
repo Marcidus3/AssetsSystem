@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+
+<div class="text_block">
+
+<h1>Светильник Джека </h1>
+<h2>Маски и Extract</h2>
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="50%" src="../assets/images/hp_practice/Pumpkin2.gif">
+</div>
+
+<p>
+Маска – область модели, которая «оберегается» от воздействия.
+</br>
+Чтобы включить режим маски необходимо зажать клавишу Ctrl, тогда панель кистей станет отображать настройки маски, а использование ее на модели позволит ограничить область воздействия отдельных частей. Палитра масок вызывается аналогично палитре кистей.
+</p>
+
+<div  style="text-align: center;">
+<img width="60%" src="../assets/images/hp_practice/7_1.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Выбор режима маски
+</p>
+
+<p>
+Продолжаем работу в файле с тыквой, либо открываем файл scenes/ high_poly/Pumpkin.ZPR.
+</br>
+Включаем режим маски (зажимаем Ctrl) и в палитре кистей выбираем MaskPen. Данная кисть позволит нарисовать область маски от руки. На поверхности тыквы рисуем форму глаза. Чтобы разгладить маску, можно при включенном режиме кликнуть один раз по модели. А чтобы инвертировать – при включенном режиме кликнуть фон.
+</p>
+<div  style="text-align: center;">
+<img width="34%" src="../assets/images/hp_practice/7_2.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Выделяем область маской
+</p>
+
+<p>
+Затем в нижней части списка раскрываем настройки функции Extract (извлечь). Extract позволяет создавать новые сабтулы на основе существующей геометрии. Установим S Smt – 65 (Разглаживание) и Thick примерно 0.0995. Нажимаем кнопку Extract, чтобы посмотреть превью извлечения. Нажимаем Accept, чтобы создать новый сабтул.
+</p>
+
+<div  style="text-align: center;">
+<img width="25%" src="../assets/images/hp_practice/7_3.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Операция Extract
+</p>
+<p>
+Так как при использовании Extract периметр геометрии деформируется необходимо сгладить ее. Новый сабтул сразу будет иметь маску, соответствующую изначальной, поэтому просто сглаживаем (Shift) края, выходящие за ее границы.
+</p>
+
+<div  style="text-align: center;">
+<img width="35%" src="../assets/images/hp_practice/7_4.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Результат операции Extract
+</p>
+
+<p>
+Далее используем булевую операцию вычитания, чтобы создать эффект вырезанного из тыквы глаза. Применим Mirror and Wield чтобы скопировать его на другую сторону. 
+</p>
+
+<div  style="text-align: center;">
+<img width="25%" src="../assets/images/hp_practice/7_5.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Настройка булевых операций
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/7_6.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Результат операции вычитания
+</p>
+
+<p>
+Применяем эффект вычитания и добавляем в проект сабтул тыквы с готовыми глазами.
+</p>
+
+<div  style="text-align: center;">
+<img width="60%" src="../assets/images/hp_practice/7_7.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Результат операции вычитания - сабтул
+</p>
+
+<p>
+Повторяем предыдущие шаги также для носа и рта.
+</p>
+
+<div  style="text-align: center;">
+<img width="55%" src="../assets/images/hp_practice/7_8.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Выделяем область маской
+</p>
+
+<div  style="text-align: center;">
+<img width="30%" src="../assets/images/hp_practice/7_9.jpg">
+</div>
+<p class="image_text">
+Рис. 9 - Результат операции вычитания
+</p>
+
+<p>
+Так как операция вычитания может создать деформированную топологию в области среза, используем ZRemesher с настройкой Same, а затем Dynamesh с разрешением от 250 до 350.
+</p>
+
+<div  style="text-align: center;">
+<img width="20%" src="../assets/images/hp_practice/7_10.jpg">
+</div>
+<p class="image_text">
+Рис. 10 - Настройки ZRemesher
+</p>
+
+<p>
+Возьмем кисть Clay Buildup и сделаем черты лица более объемныными. Затем сгладим при помощи Trim Dynamic и Shift.
+</p>
+
+<div  style="text-align: center;">
+<img width="60%" src="../assets/images/hp_practice/7_11.jpg">
+</div>
+<p class="image_text">
+Рис. 11 - Скульптинг черт лица
+</p>
+<div  style="text-align: center;">
+<img width="30%" src="../assets/images/hp_practice/7_12.jpg">
+</div>
+<p class="image_text">
+Рис. 12 - Скульптинг черт лица
+</p>
+<p>
+С использованием кисти Pinch сделаем края и ребра плоскостей более четкими.
+</p>
+<div  style="text-align: center;">
+<img width="45%" src="../assets/images/hp_practice/7_13.jpg">
+</div>
+<p class="image_text">
+Рис. 13 - Скульптинг черт лица
+</p>
+
+ <div class="next_link">
+ 
+ <p> <a href="hpoly_task6.html"> < Работа с симметрией </a> </p>
+ <p> <a href="hpoly_task8.html"> Использование Spotlight > </a> </p>
+ 
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

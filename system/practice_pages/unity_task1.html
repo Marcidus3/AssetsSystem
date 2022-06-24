@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+ 
+ 
+<div class="text_block">
+
+<h1>Импорт в Unity из 3Ds Max</h1>
+
+<p>
+Чтобы использовать ассет в процессе разработки игры, необходимо импортировать его в игровой движок проекта. 
+Начнем с экспорта модели и ее составляющих из 3Ds Max, где проводилось создание рига и анимации.
+Выделим все объекты геометрии персонажа и кости. Контроллеры, помощники и IK цепи не должны быть выделены, для удобства скроем слои, на которых они находятся.
+  </p>
+  
+                          <div  style="text-align: center;">
+<img width="45%" src="../assets/images/unity_practice/1_1.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Выделяем части модели для экспорта
+</p>
+
+  <p>
+Далее на верхней панели выбираем действие File>>Export>>Export Selected – экспорт выбранных объектов, файл сохраняем в формате .fbx.
+В окне настроек экспорта обязательно ставим галочки у параметров Animation и Bake Animation во вкладке Animation. Это необходимо для экспорта и запекания анимации.
+  </p>
+                            <div  style="text-align: center;">
+<img width="80%" src="../assets/images/unity_practice/1_2.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Настройки экспорта
+</p>
+  <p>
+После окончания процесса экспорта можно переходить к движку Unity.
+</p>
+<p>
+В Unity Hub выбираем опцию создания нового проекта New Project, далее в качестве шаблона выбираем проект 3D из вкладки Core, после чего нажимаем кнопку Create Project.
+ </p>
+                           <div  style="text-align: center;">
+<img width="25%" src="../assets/images/unity_practice/1_3.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Создание нового проекта
+</p>
+ <p>
+В основном редакторе Untiy нам потребуется создать папки для соответствующих частей ассета. Нажимаем правой кнопкой мыши на пустом пространстве панели Project. В нижней части экрана, выбираем Create>>Folder. Задаем имя новой папке и нажимаем клавишу Enter.
+Иерархия созданных папок будет отображаться в левой части панели. Корневой папкой будет Assets.
+  </p>
+                            <div  style="text-align: center;">
+<img width="65%" src="../assets/images/unity_practice/1_4.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Создание папки
+</p>
+  <p>
+Пусть папка Models содержит все ассеты проект, Materials материалы и текстуры, а Animation анимации и их контроллеры.
+Чтобы импортировать модель и текстуры, перетаскиваем их из папки экспорта в соответствующие папки в Unity. Файл модели будет иметь превью, при нажатии на которое будет отображены ее составляющие: отдельные элементы геометрии, анимация, риг. 
+ </p>
+                             <div  style="text-align: center;">
+<img width="65%" src="../assets/images/unity_practice/1_5.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Импортированные объекты
+</p>
+ <p>
+Также при нажатии на файл правая панель Inspector отобразит информацию о ней и ее составляющих. Во вкладке Animation меняем название импортированной анимации на Idle, так как это анимация покоя, и ставим галочку у Loop Time для включения зацикливания. Нажимаем Apply для применения изменений.
+ </p>
+                             <div  style="text-align: center;">
+<img width="35%" src="../assets/images/unity_practice/1_6.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Настройка импортированной модели
+</p>
+ <p>
+Теперь осталось добавить ассет в игру. Для этого перетаскиваем импорт из панели Project в рабочее пространство движка. С помощью стандартного элемента управления Gizmo или панели Inspector перемещаем и поворачиваем модель.
+</p>
+                            <div  style="text-align: center;">
+<img width="35%" src="../assets/images/unity_practice/1_7.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Модель в игровом окне
+</p>
+
+ <div class="next_link">
+ <p> <a href="unity_task2.html"> Материалы Shader Graph > </a> </p>
+ 
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

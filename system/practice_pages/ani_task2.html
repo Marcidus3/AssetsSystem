@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+ 
+ 
+<div class="text_block">
+
+<h1>Анимация хвоста  </h1>
+<h2>Key Properties</h2>
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="45%" src="../assets/images/ani_practice/croc_anim2.gif">
+</div>
+<p>
+Продолжаем работать с крокодилом из прошлого задания или открываем проект scenes/anim/Croc_Anim2_Start.max.
+</br>В данном задании необходимо будет анимировать хвост крокодила, однако среди 100 доступных кадров на таймлайне заняты 90. Чтобы увеличить количество кадров и длительность анимации, откроем окно настройки времени Time Configuration.
+ </p>
+                          <div  style="text-align: center;">
+<img width="25%" src="../assets/images/ani_practice/2_1.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Открываем окно Time Configuration
+</p>
+ <p>
+В данном окне нам потребуется раздел Animation, в котором содержаться значения количества кадров, начала и длины анимации. Здесь в поле End Time установим значение 220, параметр Frame Count, определяющий кадры, автоматически примет значение 221.
+ </p>
+                           <div  style="text-align: center;">
+<img width="25%" src="../assets/images/ani_practice/2_2.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Time Configuration
+</p>
+ <p>
+Для управления хвостом потребуется возимодействовать с костями внутри модели. Чтобы сделать ее прозрачной, можно переключить отображение в данном виде в режим Wireframe Override, либо включить режим Xray, нажав сочетание клавиш Alt+X.
+   </p>
+   
+                             <div  style="text-align: center;">
+<img width="65%" src="../assets/images/ani_practice/2_3.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Включаем режим отображения Wireframe
+</p>
+                          <div  style="text-align: center;">
+<img width="45%" src="../assets/images/ani_practice/2_4.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Режим X-Ray
+</p>
+
+ <p>
+Чтобы не допустить нечаянного выделения модели в процессе анимации костей, необходимо ее «заморозить». Выделаем ее и нажимаем правой кнопкой мыши, затем выбираем Freeze Selection. Теперь можно спокойно выделять кости.
+  </p>
+                            <div  style="text-align: center;">
+<img width="45%" src="../assets/images/ani_practice/2_5.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Freeze Selection
+</p>
+  <p>
+Для дальнейшейго создания анимации можно использовать любой из режимов (Auto Key или Set Key).
+</br>В кадре 90 устанавливаем изначальное состояние костей tail01, tail02 и tail03. Повороачиваем каждую из костей относительно оси Z вправо и сохраняем данное положение в кадре 120.
+ </p>
+                             <div  style="text-align: center;">
+<img width="45%" src="../assets/images/ani_practice/2_6.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Поворот хвоста
+</p>
+ <p>
+Следующей ключевой позицией будет поворот хвоста в обратном направлении. Сначала скопируем кадр 120 в 160й, а затем нажмем на него правой кнопкой мыши, чтобы открыть перечень действий над ключом. Категория Key Properties содержит все параметры выделенных объектов, которые изменются/могут быть изменены в рамках анимации. 
+</br>Так как выделены все три кости, мы видим параметры положения, поворота и размера для каждой из них.
+ </p>
+                             <div  style="text-align: center;">
+<img width="35%" src="../assets/images/ani_practice/2_7.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Выбираем Key Property кадра
+</p>
+ <p>
+Нажмем на вариант tail03: Z Rotation, т.е. поворот большой кости хвоста относительно оси Z. В открывшемся окне можно настроить значение характеристики Value и кадр Time, которому она будет соответствовать, а также ее кривые.
+</br>В нашем случае значение Value показывает угол, на который была повернута кость. Добавляем минус перед углом, чтобы поворот отразился относительно главой оси модели.
+   </p>
+                               <div  style="text-align: center;">
+<img width="45%" src="../assets/images/ani_practice/2_8.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Устанавливаем значение параметра
+</p>
+
+   <p>
+Ту же операцию проделаем с параметрами tail02: Z Rotation, и tail01: Z Rotation.
+ </p>
+                             <div  style="text-align: center;">
+<img width="45%" src="../assets/images/ani_practice/2_9.jpg">
+</div>
+<p class="image_text">
+Рис. 9 - Повернули хвост с помощью Key Properties
+</p>
+ <p>
+Скопируем изначальные положения хвоста и головы в последний кадр 220, чтобы зациклить анимацию. 
+</br>Нажмем правой кнопкой мыши в любой области экрана и выберем Unfreeze All, чтобы сделать модель крокодила доступной для взаимодействия. 
+</p>
+                            <div  style="text-align: center;">
+<img width="45%" src="../assets/images/ani_practice/croc_anim2.gif">
+</div>
+<p class="image_text">
+Рис. 10 - Результат
+</p>
+
+ <div class="next_link">
+    <p> <a href="ani_task1.html"> < Auto Key, Set Key </a> </p>
+ <p> <a href="ani_task3.html"> Curve Editor  > </a> </p>
+ 
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

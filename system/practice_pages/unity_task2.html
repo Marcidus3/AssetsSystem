@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+ 
+ 
+<div class="text_block">
+
+<h1>Материалы Shader Graph </h1>
+
+<p>
+Теперь, когда геометрия импортирована, необходимо применить к ней материалы.
+</br>Перетащим текстуры ассета в папку Material. В данной папке нажимаем правой кнопкой мыши в выбираем создание нового материала Create>>Material, задаем его имя. 
+ </p>
+                           <div  style="text-align: center;">
+<img width="50%" src="../assets/images/unity_practice/2_1.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Создание нового материала
+</p>
+ <p>
+Так как стандартные материалы Unity не всегда идеально подходят под нужды разработчиков, используется дополнительный режим настройки отображения Shader Graph. Чтобы установить данный функционал, откроем окно загрузки дополнительных пакетов Window>>Package Manager и в разделе Packages:Unity Registry выберем Shader Graph, нажмем Install для установки.
+  </p>
+                            <div  style="text-align: center;">
+<img width="75%" src="../assets/images/unity_practice/2_2.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Добавление пакета Shader Graph в проект
+</p>
+  <p>
+Теперь при создании нового объекта в одной из папок будет доступен перечень новых режимов отображения материалов и их настройки. В папке Material создаем объект Shader Graph, Builtin, Unlit Shader Graph. 
+ </p>
+                             <div  style="text-align: center;">
+<img width="65%" src="../assets/images/unity_practice/2_3.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Создаем новый шейдер
+</p>
+ <p>
+Перетащим иконку данного Shader Graph на иконку материала, теперь на панели Inspector данного материала в качестве шейдера Shader будет указан только созданный нами.
+ </p>
+                             <div  style="text-align: center;">
+<img width="45%" src="../assets/images/unity_practice/2_4.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Добавляем шейдер к материалу
+</p>
+ <p>
+Кликаем два раза по иконке Main_Shader, чтобы открыть окно настройки. Здесь узел Fragment  - основной материал. Он содержит атрибуты (на данный момент доступен только цвет Base Color) и может быть настроен в окне Graph Inspector справа.
+ </p>
+                             <div  style="text-align: center;">
+<img width="50%" src="../assets/images/unity_practice/2_5.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Окно Shader Graph
+</p>
+ <p>
+Чтобы добавить параметры выделим основной узел и нажмем клавишу Пробел. Откроется окно выбора параметров узла Create Node, кликнем дважды по одному из вариантов, и он добавиться в Fragment. Таким образом добавим следующие параметры: Normal – нормали, Emission – свечение и Metallic металлизированные области.
+ </p>
+                             <div  style="text-align: center;">
+<img width="50%" src="../assets/images/unity_practice/2_6.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Добавление параметров
+</p>
+ <p>
+Перетащим текстуры с панели Project в окно Shader Graph. От точки выхода RGBA новых узлов текстур проведем соединительную линию к соответствующим параметрам узла Fragment. Теперь текстуры присоединены к главному материалу.
+ </p>
+                             <div  style="text-align: center;">
+<img width="45%" src="../assets/images/unity_practice/2_7.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Текстуры
+</p>
+ <p>
+Нам требуется уменьшить силу карты нормалей для данной модели. Чтобы осуществить это, нажмем правой кнопкой в рабочей области Graph Editor, выберем функцию Create Node и в открывшемся окне со список доступных к созданию узлов выберем узел Normal Strengh – сила нормалей. Узел появится в рабочей области.
+ </p>
+                             <div  style="text-align: center;">
+<img width="30%" src="../assets/images/unity_practice/2_8.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Добавление узла Normal Strengh
+</p>
+ <p>
+Соединим узел текстуры нормалей с точкой In узла Normal Strengh, чтобы свзять их. Измненим параметр Strengh данного узла и увидим, что превью текстуры изменяется. Теперь соединим точку выхода Out с точкой Normal узла Fragment. Теперь нормали, воздействующие на модель, изменят свою силу, при этом изначальный файл текстуры не исказится.
+ </p>
+                             <div  style="text-align: center;">
+<img width="55%" src="../assets/images/unity_practice/2_9.jpg">
+</div>
+<p class="image_text">
+Рис. 9 - Соединяем узлы Normal Map и Normal Strengh
+</p>
+ <p>
+Чтобы применить материал к модели, вернемся к рабочей области проекта Scene и перетащим иконку материала на все части модели (в данном случае на основную геометрию тела и глаза).
+ </p>
+                            <div  style="text-align: center;">
+<img width="35%" src="../assets/images/unity_practice/2_10.jpg">
+</div>
+<p class="image_text">
+Рис. 10 - Применение материала к модели
+</p>
+
+ <div class="next_link">
+    <p> <a href="unity_task1.html"> < Импорт в Unity из 3Ds Max </a> </p>
+ <p> <a href="unity_task3.html"> Animation Controller  > </a> </p>
+ 
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

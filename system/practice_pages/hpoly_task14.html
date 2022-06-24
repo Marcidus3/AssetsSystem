@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+ 
+<div class="text_block">
+
+<h1>Моделирование футболки </h1>
+<h2>Методы моделирования одежды</h2>
+
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="50%" src="https://psv4.vkuseraudio.net/s/v1/d/CyuTHBpJO8udyWiB5zwtN9w9CNhjhL6mnBZqvaulbtIpyh59g60kdV0QDR-1jMS9Jr34b9nrCIRpUMW0SmvTLTnCpaKYzp9qVAcaMqkm3XCjt9lIhOUTHA/T-Shirt.gif">
+</div>
+
+<p>
+В рамках данного задания рассмотрим два способа создания моделей одежды на основе модели тела.
+</br>
+Открываем файл scenes/high_poly/Clothing_start.ZPR, содержащий модель человека.
+</p>
+
+<p style="font-weight:bold;">
+1.	Использование Extrude
+</p>
+
+<p>
+Используя режим маски MaskPen(Ctrl) рисуем на поверхности модели очертания футболки. Затем, чтобы проверить насколько качественно были закрашены полигоны, изменяем активный материал на Flat Color. Теперь на модель полностью залита одним цветом и не отображает тени и блики. 
+<br>
+Закрашиваем дыры в маске и возвращаемся стандартный материал MatCap Gray.
+</p>
+
+
+<div  style="text-align: center;">
+<img width="50%" src="../assets/images/hp_practice/14_1.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Проверка маски материалом Flat Color
+</p>
+
+<p>
+Теперь используем функцию извлечения Extract, чтобы создать новый сабтул на основе части модели, выделенной маской. Применяем Extract с настройками S Smt – 21 и Thick ~ 0.0045, нажимаем Accept.
+</p>
+
+<div  style="text-align: center;">
+<img width="50%" src="../assets/images/hp_practice/14_2.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Операция Extract
+</p>
+
+<p>
+В результате получаем модель футболки, имеющую внутреннюю поверхность. 
+Отключим возможность изменения изнанки. Для этого откроем раздел Brush на палитре в верхней части экрана и во вкладке Auto Masking включим режим BackfaceMask. 
+</p>
+
+<div  style="text-align: center;">
+<img width="50%" src="../assets/images/hp_practice/14_3.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - BackfaceMask
+</p>
+
+<p>
+Теперь можно приступать к созданию текстуры футболки, складок и т.д.
+</p>
+
+<p style="font-weight:bold;">
+2.	Использование Split
+</p>
+
+<p>
+Функция Split (разделение) позволяет разделить сабтул на два новых сабтула в соответствии с определенными параметрами. 
+</br>
+Нарисуем на поверхности модели маску, повторяя шаги из предыдущего пункта.
+</p>
+
+<div  style="text-align: center;">
+<img width="30%"  src="../assets/images/hp_practice/14_4.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Маска в форме футблоки
+</p>
+
+<p>
+Применим к модели функцию Split Masked Points, которая разделит модель на два сабтула в соответствии с маской. В результате получится следующий сабтул – футболка.
+</p>
+
+<div  style="text-align: center;">
+<img width="50%" src="../assets/images/hp_practice/14_5.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Операция Split
+</p>
+
+<p>
+Чтобы заполнить дыры в модели применим DynaMesh с разрешение 128.
+</p>
+
+<div  style="text-align: center;">
+<img width="50%" src="../assets/images/hp_practice/14_6.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Преобразование в DynaMesh
+</p>
+
+<p>
+Чтобы увеличить модель и отделить его от модели фигуры перейдем в раздел Deformation палитры Tool. Изменяем параметр Inflate, пока не получим достаточную толщину футболки.
+</p>
+
+<div  style="text-align: center;">
+<img width="50%" src="../assets/images/hp_practice/14_7.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Увеличиваем размер с помощью Inflate
+</p>
+
+<p>
+Теперь можно приступать к созданию текстуры футболки, складок и т.д. Заполняем впадины, повторяющие контуры тела, чтобы сделать футболку менее облегающей, и разглаживаем поверхность.
+</p>
+
+<div  style="text-align: center;">
+<img width="35%" src="../assets/images/hp_practice/14_8.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Скульптинг футболки
+</p>
+
+<p>
+Для создания складок используем кисти ClayBuildup (CBC), DamStandard (BDS), Pinch (BPI) и TrimDynamic (BTD).
+</p>
+
+<div  style="text-align: center;">
+<img width="35%" src="../assets/images/hp_practice/14_9.jpg">
+</div>
+<p class="image_text">
+Рис. 9 - Результат
+</p>
+
+ <div class="next_link">
+ 
+ <p> <a href="hpoly_task13.html"> < Кисть Extrude Profile </a> </p>
+ <p> <a href="hpoly_task15.html"> ZModeler > </a> </p>
+ 
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+<div class="text_block">
+
+<h1>Скульптинг волос</h1>
+<h2>Кисть Extrude Profile</h2>
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="50%" src="../assets/images/hp_practice/Hair_1.gif">
+</div>
+
+
+<p>
+В данном задании будет рассмотрена кисть Extrude Profile позволяющая создавать геометрию на основе выдавливания профиля определенной формы, а затем редактировать путь выдавливания.
+</br>
+Открываем файл scenes/high_poly/Hair_start.ZPR. Создаем новый сабтул-сферу и преобразуем ее в форму, напоминающую хвост. Она станет основой для прядей, которые предстоит создать в этом задании.
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/13_1.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Основа для хвоста
+</p>
+
+<p>
+Выбираем кисть ExtrudeProfile (BEP) в палитре кистей. Для создания стилизованных волос лучше всего подходит профиль ромбовидной формы hair02.
+</p>
+
+<div  style="text-align: center;">
+<img width="50%" src="../assets/images/hp_practice/13_2.jpg">
+</div>
+<p class="image_text">
+Рис. 2- Режим hair02 кисти ExtrudeProfile
+</p>
+
+<p>
+Выбираем сабтул «волосы», переходим в вид в профиль и проводим кривую линию. Полученная линия будет состоять из сегментов, определяющих направление выдавливания профиля hair02. Точки соединения данных сегментов можно двигать в пространстве, тем самым меняя вид выдавливания.
+</p>
+
+<div  style="text-align: center;">
+<img width="30%" src="../assets/images/hp_practice/13_3.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Создание пряди
+</p>
+
+<p>
+Таким же образом создаем еще одну прядь (с выключенной симметрией). 
+</p>
+
+<div  style="text-align: center;">
+<img width="35%" src="../assets/images/hp_practice/13_4.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Создание пряди
+</p>
+
+<p>
+Включив режим сетки (Shift+F), видим, что изначальный сабтул и пряди имеют разные группы полигонов – Polygroups. Они обозначаются разными цветами. 
+</p>
+
+<div  style="text-align: center;">
+<img width="30%" src="../assets/images/hp_practice/13_5.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Полигруппы модели
+</p>
+
+<p>
+Отделим пряди от основного сабтула для удобства работы. Применим к модели функцию Groups Split из вкладки Split на суб-палитре и получим новые сабтулы – пряди.
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/13_6.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Разделение на сабтулы
+</p>
+
+<p>
+Теперь приступаем к редактированию данных моделей. Используем DynaMesh для увеличения разрешения, с помощью кистей Pinch и Inflate отредактируем толщину прядей, а стандартными кистями для скульптинга добавим детали.
+</p>
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/13_7.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Скульптинг текстуры волос
+</p>
+
+<p>
+Продолжаем моделирование волос, используя приемы, изученные в предыдущих заданиях. При желании можно добавить больше прядей и увеличить реалистичность модели.
+</p>
+
+
+<div  style="text-align: center;">
+<img width="40%" src="../assets/images/hp_practice/13_8.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Результат
+</p>
+
+
+ <div class="next_link">
+ 
+  <p> <a href="hpoly_task12.html"> < Скульптинг кистей рук </a> </p>
+ <p> <a href="hpoly_task14.html"> Методы моделирования одежды > </a> </p>
+ 
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+ 
+ 
+<div class="text_block">
+
+<h1>Animation Controller </h1>
+<p>
+Вместе с геометрией персонажа, были имортированы ее риг и анимация покоя. Чтобы использовать из в рамках игры, необходимо создать объект контроллера анимации, который будет определять, когда следует воспроизводить анимацию.
+</br>В папке Animation создаем объект Animation Controller.
+ </p>
+                            <div  style="text-align: center;">
+<img width="45%" src="../assets/images/unity_practice/3_1.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Создание Animation Controller
+</p>
+ <p>
+Перетаскиваем новый контроллер на модель в рабочей области. Теперь при нажатии на нее, на панели Inspector отображается новая вкладка настройки анимации Animator. В поле Controller отображается созданный нами контроллер.
+ </p>
+                             <div  style="text-align: center;">
+<img width="40%" src="../assets/images/unity_practice/3_2.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Добавляем контроллер анимации к модели
+</p>
+ <p>
+Кликнем по иконке контроллера на панели Project, чтобы открыть окно работы с анимацией. Здесь уже имеются три узла Entry, Any State и Exit. 
+</br>Нажемем на импорт модели и в списке ее элементов выберем Idle – анимацию покоя и перетащим ее в окно Animation Controller. Она автоматически соединиться с узлом Entry, определяющим начало какого-либо состояния. Соединим анимацию Idle с узло Any State, нажав на него правой кнопкой мыши и выбрав функцию Make Transition. Кликнем на Idle, чтобы между узлами появилась стрелочка.
+  </p>
+                              <div  style="text-align: center;">
+<img width="55%" src="../assets/images/unity_practice/3_3.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Настройка Animation Controller
+</p>
+  <p>
+Для проверки работы анимации перейдем в окно игры Game и нажмем на кнопку запуска. Анимация должна проигрываться в зацикленном режиме.
+</p>
+                            <div  style="text-align: center;">
+<img width="50%" src="../assets/images/unity_practice/3_4.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Включаем игру
+</p>
+
+ <div class="next_link">
+    <p> <a href="unity_task2.html"> < Материалы Shader Graph </a> </p>
+
+ 
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+ 
+ 
+<div class="text_block">
+
+<h1>Настройка весов Weight Painting</h1>
+
+
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="40%" src="../assets/images/rig_practice/parrot.gif">
+</div>
+<p>
+В процессе скиннинга обычно недостаточно использования автоматических модификаторов и прочих средств привязки. В 3DS Max можно выполнить ручную настройку весов, т.е. степени влияния кости на геометрию, с помощью Weight Tool и Weight Painting, который будет рассмотрен в данном задании.
+</br>Открываем проект scenes/rig/Bird_Weight_Start.max, или продолжаем работу над птицей из прошлого задания.
+</br>Включаем режимы Edit Envelope и Paint Weight. На месте курсора появляется кисть рисования весов, на которой диаметр круга обозначает область влияния, а нормаль – сила влияния. В режиме Paint Blend Weights, либо при зажатом Shift происходит смягчение границ весов.
+  </p>
+              <div  style="text-align: center;">
+<img width="60%" src="../assets/images/rig_practice/5_1.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Режим Paint Weights
+</p>
+
+  <p>
+Редактировать параметры кисти можно в окне Painter Options (кнопка с тремя точками рядом с Paint Weight), где Max Size – размер кисти, а Max Strength – сила воздействия. 
+</br>Также сочетание клавиш Shift+Ctrl изменяет размер кисти, Shift+Alt силу.
+ </p>
+ 
+               <div  style="text-align: center;">
+<img width="40%" src="../assets/images/rig_practice/5_2.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Настройка кисти в окне Paint Object
+</p>
+
+ <p>
+Прежде чем начать рисование весов также настроим Weight Solver. В окне настроек Geodesic Voxel Solver увеличим параметр Falloff, отвечающий за плавность/жесткость перехода между весами разных костей. Увеличение данного параметра сделает границу менее мягкой. 
+</br>Также устанавливаем 256 - Max Resolution, определяющий разрешение карты весов. Нажимаем Apply, чтобы применить изменения.
+</p>
+              <div  style="text-align: center;">
+<img width="45%" src="../assets/images/rig_practice/5_3.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Настройка разрешения карты весов
+</p>
+
+ <p>
+Рисовать будем преимущественно на левой стороне объекта, чтобы сэкономить время и в конце выполнить отражение.
+</br>Теперь проводим кистью по поверхности модели, создавая новые области воздействия для выбранной области. Стираем лишнее с зажатым Alt, а с зажатым Shift размываем границы. Выполняем данный процесс для всех костей. 
+</br>Периодически включаем тестовую анимацию, чтобы проверить корректность распределения весов.
+   </p>
+   
+                 <div  style="text-align: center;">
+<img width="70%" src="../assets/images/rig_practice/5_4.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Примеры весов
+</p>
+
+   <p>
+В процессе рисования мы можем столкнуться с труднодоступными местами, либо аномальной геометрией, на которой невозможно рисовать стандартными средствами Paint Weights. Будем работать с такими областями, настраивая веса отдельных точек.
+</br>Ставим галочку рядом с Vertices во вкладке Select, чтобы позволить выделение точек геометрии. 
+  </p>
+
+  <p>
+Выбираем точки, кликая на них, а затем вручную устанавливаем вес для них в поле Abs Effect.
+  </p>   
+  
+  <div  style="text-align: center;">
+<img width="25%" src="../assets/images/rig_practice/5_5.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Weight Properties
+</p>
+
+  <p>
+Когда установка весов окончена, отразим их на правую часть модели. Включим режим Mirror Mode во вкладке Mirror Parameters устанавливаем метод Paste Blue to Green Verts, плоскость симметрии Mirror Plane X, остальные параметры оставляем по умолчанию. Нажимаем Update для применения изменений.
+  </p>
+  
+                <div  style="text-align: center;">
+<img width="55%" src="../assets/images/rig_practice/5_6.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Отражение весов Mirror Mode
+</p>
+
+
+  <p>
+Проверяем результат работы, повторно запуская тестовую анимацию.
+</p>
+
+
+
+
+ <div class="next_link">
+    <p> <a href="rig_task4.html"> < Модификатор Skin и Edit Envelopes </a> </p>
+ <p> <a href="rig_task6.html"> Прокси модель, Weight Tool и Skin Wrap > </a> </p>
+ 
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

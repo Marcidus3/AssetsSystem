@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+ 
+ 
+<div class="text_block">
+
+<h1>Создание зависимостей и анимация шестеренок </h1>
+<h2>Wire Parameters</h2>
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="45%" src="../assets/images/ani_practice/wheel_fin.gif">
+</div>
+<p>
+Открываем проект scenes/anim/Mouse_Spin_Start.max
+В рамках данного задания нам необходимо установить зависимость между вращением большой и малой шестеренок, а также движением все модели.
+</br>В данном проекте большим колесом управляет объект оси pin01, выделяем его и нажимаем правой кнопкой мыши, чтобы затем в списке выбрать Wire Parameters.
+</br>Wire Parameters – функция, позволяющая связать два объекта так, чтобы параметры одного изменяли другого автоматически. 
+</br>Для pin01 выбираем параметр зависимости X Rotation – поворот относительно оси X (Wire Parameters>>Transform>>Rotation>>Zero Euler XYZ>>X Rotation). 
+  </p>
+  
+                             <div  style="text-align: center;">
+<img width="65%" src="../assets/images/ani_practice/4_1.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Выбираем параметр Wire Parameters для объекта
+</p>
+
+
+  <p>
+Тянем пунктирную линию к оси малой шестеренки pin00, для нее устанавливаем такой же параметр зависимости X Rotation.
+  </p>
+                               <div  style="text-align: center;">
+<img width="55%" src="../assets/images/ani_practice/4_2.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Соединяем параметры объектов
+</p>
+  <p>
+В открывшемся окне Parameter Wiring отображаются объекты и их параметры, их связь и уравнения, определяющие ее. В левом окне выбран объект pin01, в правом pin00. Чтобы установить зависимость между ними, нажимаем кнопку со стрелочкой слева направо (control direction), а затем кнопку Connect. Управляющая характеристика подсветится зеленым, управляемая – красным.
+</br>В правом нижнем окне отображается формула, которая будет определять зависимость параметров. По умолчанию зависимость прямая, а значит формула = X_Rotation.
+ </p>
+                              <div  style="text-align: center;">
+<img width="55%" src="../assets/images/ani_practice/4_3.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Настройка Wire Parameters
+</p>
+ <p>
+Проверим анимацию и заметим, что, во-первых, вращение обеих шестеренок происходит в одном направлении, а во-вторых, их скорости не соответствуют друг другу.
+</p>
+                             <div  style="text-align: center;">
+<img width="40%" src="../assets/images/ani_practice/wheel1.gif">
+</div>
+<p class="image_text">
+Рис. 4 - Результат
+</p>
+<p>
+Чтобы вращение происходило в обратные стороны добавим минус перед параметром X_Rotation.
+</br>Так как большая шестеренка имеет в два раза больше зубьев, она будет вращаться в два раза медленнее. Умножаем параметр поворота X_Rotation на 2.
+</br>Осталось установить шестеренки в такое положение относительно друг друга, чтобы создать иллюзия нажатия зубьев бОльшей на малую. Для этого подбираем число, которое необходимо прибавить к основному параметру. В данном случае подошло число -0.61.
+</br>Получившаяся формула выглядит следующим образом:
+ </p>
+ 
+                               <div  style="text-align: center;">
+<img width="55%" src="../assets/images/ani_practice/4_4.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Настройка формулы Wire Parameters
+</p>
+                             <div  style="text-align: center;">
+<img width="40%" src="../assets/images/ani_practice/wheel2.gif">
+</div>
+<p class="image_text">
+Рис. 6 - Результат
+</p>
+
+ <p>
+
+Теперь необходимо установить зависимость поворота колеса от перемещения модели. 
+</br>Окно настроек Wire Parameter также можно открыть через вкладку Animation>>Wire Parameters>>Parameter Wire Dialog.
+ </p>
+ 
+                                <div  style="text-align: center;">
+<img width="35%" src="../assets/images/ani_practice/4_5.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Открываем окно Wire Parameters
+</p>
+ 
+ <p>
+В окнах выбора отображаются все возможные параметры, которые можно связать между собой. Находим части модели во вкладке Objects. Первый объект – body, так как к нему привязаны все остальные части мыши, параметр – Y Position. Второй – pin01 с параметром X Rotation.
+</br>Здесь перед Y_Position ставим минус, чтобы поменять направление вращения, и умножаем на 0.15, чтобы уменьшить поворот.
+ </p>
+ 
+                                 <div  style="text-align: center;">
+<img width="55%" src="../assets/images/ani_practice/4_6.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Настройка Wire Parameters
+</p>
+
+ <p>
+Создаем анимацию движения и проверяем результат работы зависимостей.
+</p>
+
+                                 <div  style="text-align: center;">
+<img width="60%" src="../assets/images/ani_practice/wheel_0.gif">
+</div>
+<p class="image_text">
+Рис. 9 - Анимация движения
+</p>
+
+ <div class="next_link">
+    <p> <a href="ani_task3.html"> < Curve Editor </a> </p>
+ <p> <a href="ani_task5.html"> Манипулятор Slider  > </a> </p>
+ 
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

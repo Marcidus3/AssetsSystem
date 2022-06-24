@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+ 
+ 
+<div class="text_block">
+
+<h1>UV развертка и запекание модели персонажа</h1>
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="250" src="../assets/images/tex_practice/char_normal.gif">
+</div>
+
+<p>
+</br>Создаем новый проект 3DCoat и импортируем все части низкополигональной модели с помощью Import>>Model for Per Pixel Painting.
+В окне настройки импорта устанавливаем разрешение текстур 2048, а также в поле UV Set Name устанавливаем название пакета UV для модели, нажимаем Ok.
+ </p>
+ 
+  <div  style="text-align: center;">
+<img width="50%" src="../assets/images/tex_practice/4_1.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Импорт модели
+</p>
+
+<p> 
+Переходим в режим UV и сбрасываем швы, созданные автоматически, с помощью кнопки Clear Seams. Будем выполнять развертку для каждого из объектов персонажа. Скрывать и замораживать их будем в окне Paint Objects. 
+  </p>
+  
+  <div  style="text-align: center;">
+<img width="50%" src="../assets/images/tex_practice/4_2.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Список объектов, составляющих модель
+</p>
+
+  <p>
+Начнем с развертки головы. Отделим область глаз и создадим швы, проходящие по лицевой части. Убедимся, что швы будут спрятаны под объектом волос. Шею и часть тела разделим на два острова так, чтобы швы находились в области, закрываемой плащем.
+  </p>
+  
+    <div  style="text-align: center;">
+<img width="50%" src="../assets/images/tex_practice/4_3.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Швы лица
+</p>
+
+  <p>
+Волосы разделяем на четыре симметричные части со швом проходящим по пробору. Пересечение швов спрячем во внутренней части объекта.
+</p>
+
+  <div  style="text-align: center;">
+<img width="20%" src="../assets/images/tex_practice/4_4.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Швы волос
+</p>
+
+
+<p> 
+При создании развертки тела важно отделить швами части доспехов от одежды. Таким образом будет проще выполнять отрисовку текстур, так как их материалы и цвета точно не смешаются. 
+</br>Шов ног проведем по внутренней части, там он будет наименее заметен.
+</br>Нагрудник состоит из передней части и двух декоративных элементов, которые тоже необходимо выделить в отдельный островок.
+   </p>
+   
+    <div  style="text-align: center;">
+<img width="60%" src="../assets/images/tex_practice/4_5.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Швы тела
+</p> 
+   
+   
+ <p>  
+Кисти рук разделяем на верхнюю и нижнюю поверхности, делая шов похожим на реальные швы перчаток.
+ </p>
+ 
+   <div  style="text-align: center;">
+<img width="40%" src="../assets/images/tex_practice/4_6.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Швы кистей рук
+</p>
+ 
+ 
+ <p>
+Пальто разделяем на две части – переднюю и заднюю, при этом рукава отделяем. Разрезаем их одним швом на задней стороне, декоративные элементы в области также ограничиваем швами.
+  </p>
+  
+  
+    <div  style="text-align: center;">
+<img width="50%" src="../assets/images/tex_practice/4_7.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Швы одежды
+</p>
+  
+  
+  <p>
+Части воротника, как и глазные яблоки разделяем пополам.
+</br>Когда распределение швов закончено, нажимаем кнопку Unwrap и приступаем к редактированию островков в окне UV Preview. У нас имеется большое количество симметричных частей, поэтому отредактируем только половину из них, расположим на площади развертки, а затем наложим на них копии.
+</br>Располагаем островки так чтобы части модели, требующие наибольшей детализации, занимали больше площади, а также были минимально искажены. Используем функцию Relax, чтобы «расслабить» геометрию и сделать ее более равномерной и плоской.
+</br>Такие острова, как задняя часть головы, глаз и волос можно максимально уменьшить и спрятать, чтобы сэкономить место, так как они не будут видны на модели.
+   </p>
+
+
+  <div  style="text-align: center;">
+<img width="85%" src="../assets/images/tex_practice/4_8.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - UV развертка модели
+</p>
+
+
+<p style="font-weight:bold;">
+Запекание текстур
+
+</p>
+
+<p>
+Переходим в раздел Retopo и импортируем высокоплигональную модель персонажа с помощью Import>>for Sculpt.
+ </p>
+ 
+   <div  style="text-align: center;">
+<img width="60%" src="../assets/images/tex_practice/4_9.jpg">
+</div>
+<p class="image_text">
+Рис. 9 - Импорт модели для запекания
+</p>
+ 
+ 
+<p> 
+Вызовем окно настройки запекания нормалей Bake w/Normal Map. Прежде чем выполнить бейкинг, нужно убедиться, что низкополигональноая модель полностью «окружает» скульпт. Увеличим геометрию с помощью параметра Scan Depth Outside the Object, а также используем кисть, чтобы увеличить/уменьшить отдельные области модели. Для выполнения функции нажмем Ok.
+ </p>
+ 
+ 
+   <div  style="text-align: center;">
+<img width="60%" src="../assets/images/tex_practice/4_10.jpg">
+</div>
+<p class="image_text">
+Рис. 10 - Запекание карт нормалей
+</p>
+ 
+<p> 
+Вернемся в режим Pain и в окне Sculpt tree удалим референс. Запечем Ambient Occlusion и Light from Render Room, чтобы использовать их в качестве подложки для текстур цвета.
+</p>
+
+  <div  style="text-align: center;">
+<img width="250" src="../assets/images/tex_practice/char_normal.gif">
+</div>
+<p class="image_text">
+Рис. 11 - Результат 
+</p>
+
+
+
+
+ <div class="next_link">
+    <p> <a href="tex_task3.html"> < Работа с отдельными частями модели </a> </p>
+ <p> <a href="tex_task5.html"> Кисти и слои в 3D Coat, режим Paint > </a> </p>
+ 
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+ 
+ 
+<div class="text_block">
+
+<h1>Дальнейшая настройка с помощью редактора кривых  </h1>
+<h2>Curve Editor</h2>
+
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="55%" src="../assets/images/ani_practice/croc_curve_fin.gif">
+</div>
+
+<p>
+Корректировать ключи непосредственно в главном окне программы не всегда удобно, поскольку траектории шарика мы не видим. Иное дело, если открыть редактор треков Track View в режиме Curve Editor, в котором отображаются анимационные кривые вместе с ключами, представленными в виде явно выраженных точек, лежащих на кривых.
+</br>Продолжаем работать с крокодилом из прошлого задания, либо открываем проект scenes/anim/Croc_Curves_Start.max.
+</br>Начнем с настройки движения челюсти, т.е. контроллера jaw_ctrl. Выделим данный объект, а затем откроем окно редактирования кривых Curve Editor.
+ </p>
+                           <div  style="text-align: center;">
+<img width="30%" src="../assets/images/ani_practice/3_1.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Открываем Curve Editor
+</p>
+ <p>
+В левой части окна находятся параметры выделенных объектов, которые могут участвовать в анимации. В правой располагаются анимационные кривые.
+</br>Нам необходимо отредактировать изменения параметра Z Rotation, поэтому кликаем на него в списке Transform>>Rotation>>Keyframe. Чтобы растянуть график на все окно, нажимаем кнопки Frame Horizontal и Frame Value на нижней панели инструментов.
+ </p>
+                            <div  style="text-align: center;">
+<img width="80%" src="../assets/images/ani_practice/3_2.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Curve Editor
+</p>
+ <p>
+В режиме Move Keys выделим две точки, соответствующие 20 и 30 кадрам. По виду кривой можно сделать вывод, что при переходе в данные позиции анимация замедляется, т.е. график в области этих точек сглажен. На верхней панели инструментов находится перечень видов кривых в области точек – Tangents. При нажатии на данные иконки выделенная точка изменит свой тип. 
+</br>Также настроить график в области входы и выхода из точки можно при нажатии на нее правой кнопкой мыши, настройка происходит в знакомом окне параметров ключа.
+   </p>
+                              <div  style="text-align: center;">
+<img width="65%" src="../assets/images/ani_practice/3_3.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Настройка кадра
+</p>
+   <p>
+Выделим точку 30го кадра и нажмем кнопку Set Tangents to Fast, что ускорит анимацию при приближении к данному месту. График изменит свой вид, а анимация открывания и закрывания пасти ускорится.
+   </p>
+                                 <div  style="text-align: center;">
+<img width="65%" src="../assets/images/ani_practice/3_4.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Настройка кадра
+</p>
+                              <div  style="text-align: center;">
+<img width="45%" src="../assets/images/ani_practice/croc_curve1.gif">
+</div>
+<p class="image_text">
+Рис. 5 - Результат
+</p>
+<p>
+Прямо в редакторе Curve Editor можно создавать новые ключи. Включим режим Add/Remove Key, позволяющий создавать и удалять ключи.
+</br>Кликнем на кривой в области между ключами, появится новая точка, установим ее тип Set Tangents to Fast. В режиме Move Keys переместим ее на один уровень с первой точкой.
+  </p>
+                                   <div  style="text-align: center;">
+<img width="45%" src="../assets/images/ani_practice/3_5.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Создаем новый ключевой кадр
+</p>
+  <p>
+Создадим еще  одну точку между двумя предыдущими и переместим ее вниз. Таким образом крокодил будет открывать пасть два раза.
+</p>
+                                 <div  style="text-align: center;">
+<img width="20%" src="../assets/images/ani_practice/3_6.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Настройка кадра
+</p>
+                                 <div  style="text-align: center;">
+<img width="45%" src="../assets/images/ani_practice/croc_curve2.gif">
+</div>
+<p class="image_text">
+Рис. 8 - Результат
+</p>
+<p>
+Чтобы дублировать точки, достаточно выделить их и с зажатым Shift потянуть в сторону. Таким образом скопируем две точки и получим три повторения.
+  </p>
+                                   <div  style="text-align: center;">
+<img width="50%" src="../assets/images/ani_practice/3_7.jpg">
+</div>
+<p class="image_text">
+Рис. 9 - Копируем кадры
+</p>
+  <p>
+Так как мы перемещали точки вручную, они имеют отличающиеся значения Value поворота контроллера. Выделим первую точку – пик, и скопируем ее значение, отображающееся на нижней панели инструментов. Далее выделим две другие точки и в пустое поле вставим данное значение, после чего они автоматически выровняются, а значит каждой из трех раз рот будет открываться одинаково. 
+  </p>
+                                     <div  style="text-align: center;">
+<img width="25%" src="../assets/images/ani_practice/3_8.jpg">
+</div>
+<p class="image_text">
+Рис. 10 - Настраиваем кадры
+</p>
+                                   <div  style="text-align: center;">
+<img width="45%" src="../assets/images/ani_practice/croc_curve3.gif">
+</div>
+<p class="image_text">
+Рис. 11 - Результат
+</p>
+<p>
+Перейдем к редактированию движения хвоста. Выделим кость tail03 – основание хвоста и откроем ее характеристику Z Rotation в Curve Editor. Первой точке – повороту хвоста вправо установим тип Fast, а двум другим Smooth, т.е. сглаживание.  Таким образом хвост будет сначала двигаться резко, а затем плавно.
+</br>Теперь изменяем Value второй точки на -10, а третьей на 5. Таким образом угол поворота будет уменьшаться с каждым следующим повторением.
+</p>
+                                     <div  style="text-align: center;">
+<img width="65%" src="../assets/images/ani_practice/3_9.jpg">
+</div>
+<p class="image_text">
+Рис. 12 - Кривая движения хвоста
+</p>
+
+
+                                     <div  style="text-align: center;">
+<img width="55%" src="../assets/images/ani_practice/croc_curve_fin.gif">
+</div>
+<p class="image_text">
+Рис. 13 - Результат
+</p>
+
+
+ <div class="next_link">
+    <p> <a href="ani_task2.html"> < Key Properties </a> </p>
+ <p> <a href="ani_task4.html"> Wire Parameters  > </a> </p>
+ 
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

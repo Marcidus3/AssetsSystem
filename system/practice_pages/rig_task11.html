@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+ 
+ 
+<div class="text_block">
+
+<h1>Контроллеры рук </h1>
+
+<p style="font-weight:bold;">
+FK цепь
+</p>
+<p>
+Выбираем все кости цепи прямой кинематики руки и кликаем правой кнопкой мыши, затем выбираем вариант Isolate Selection, чтобы изолировать ее. Чтобы затем выйти из данного режима достаточно нажать End Isolate.
+   </p>
+                        <div  style="text-align: center;">
+<img width="55%" src="../assets/images/rig_practice/11_1.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Изолируем кости
+</p>
+   <p>
+С помощью сплайнов-кругов создаем три формы сферы и располагаем их у запястья, локтя и плеча, при это ориентация должна соответствовать костям. Размер данных контроллеров устанавливаем такой, чтобы они были видны через модель.
+   </p>
+                           <div  style="text-align: center;">
+<img width="45%" src="../assets/images/rig_practice/11_2.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Контроллеры цепи
+</p>
+   <p>
+Привязываем контроллер запястья к контроллеру локтя, а его в свою очередь к контроллеру плеча.
+</br>Далее привязываем кости к соответствующим контроллерам с помощью Orientation Constraint.
+ </p>
+                         <div  style="text-align: center;">
+<img width="50%" src="../assets/images/rig_practice/11_3.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Иерархия костей и конттроллеров
+</p>
+ <p>
+Для каждого из контроллеров отменяем возможность перемещения в Hierarchy>>Link Info>>Locks>>Move, а у контроллера локтя отключаем поворот относительно двух осей, а также удаляем лишнюю окружность. Это ограничит поворот локтя так, чтобы он был реалистичным. Повторяем действия для цепи второй руки.
+ </p>
+                         <div  style="text-align: center;">
+<img width="35%" src="../assets/images/rig_practice/11_4.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Все контроллеры FK цепей
+</p>
+ <p>
+Контроллеры плеч привязываем к соответствующим ключикам методом Select and Link.
+</p>
+<p style="font-weight:bold;">
+IK цепь
+</p>
+<p>
+Аналогично FK цепи, изолируем кости обратной кинематики. С помощью HI Solver соединяем кость запястья и плеча так, чтобы контроль цепью был у запястья.
+</br>В качестве объекта контроллера используем форму трехмерного креста.
+  </p>
+                          <div  style="text-align: center;">
+<img width="50%" src="../assets/images/rig_practice/11_5.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Цепь IK и ее контроллер
+</p>
+  <p>
+Выравниваем контроллер относительно цели IK, затем привязываем ее Select and Link к контроллеру.
+</p>
+                        <div  style="text-align: center;">
+<img width="35%" src="../assets/images/rig_practice/11_6.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Выравниваем контроллер относительно кости запястья
+</p>
+
+ <p style="font-weight:bold;">
+Контроллеры ключиц
+</p>
+<p>
+Для контроля ключиц используем такую же форму сферы, состоящей из трех окружностей, как и для FK цепи рук. Выровняем форму относительно ключицы, а затем перенесем в область рядом с головой, чтобы модель не закрывала контроллер. 
+</br>Привяжем ключицу к ее контроллеру с помощью Orientation Constraint, а затем сам контроллер привязываем к кости позвоночника spine 2.  Этот контроллер будет управлять поворотом ключицы, а значит движениями поднятия руки от плеча, движения рук вперед и назад.
+ </p>
+                        <div  style="text-align: center;">
+<img width="45%" src="../assets/images/rig_practice/11_7.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Контроллер ключиц
+</p>
+
+
+
+ <div class="next_link">
+    <p> <a href="rig_task10.html"> < Контроллеры ног, позвоночника и глаз </a> </p>
+ <p> <a href="rig_task12.html"> Смешивание IK и FK с помощью атрибутов > </a> </p>
+ 
+ </div>
+
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

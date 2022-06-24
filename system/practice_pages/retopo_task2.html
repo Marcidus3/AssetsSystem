@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <!-- Vendor CSS -->
+   
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+</head>
+
+<body>
+
+
+<div class="hide1"></div>
+<div class="hide2"></div>
+<div class="hide3"></div>
+<iframe src="../menu.html" seamles scrolling="no"  allowtransparency="true" ></iframe>
+ 
+ 
+<div class="text_block">
+
+<h1>Продолжение ретопологии рыбки</h1>
+
+<h2>Инструменты Brush и Symmetry </h2>
+
+
+
+<div  style="text-align: center; margin-bottom:20px;">
+<img width="40%" src="../assets/images/top_practice/2_1.jpg">
+</div>
+
+<p>
+Продолжаем работать в проекте с рыбкой, либо открываем проект scenes/retopo/Fish_half.tgs.
+</br>Рассмотрим инструмент Brush. Он позволяет модифицировать несколько точек одновременно, а именно: двигать, выделять, расслаблять топологию, выбирая определенные настройки инструмента.
+</br>Инструмент Brush находится на панели TG и обозначается иконкой кисти.
+</p>
+ 
+ <div  style="text-align: center;">
+<img width="25%" src="../assets/images/top_practice/2_2.jpg">
+</div>
+<p class="image_text">
+Рис. 1 - Brush Tool
+</p>
+
+ 
+<p>
+Начнем с расслабления частей поверхности модели, где точки собраны слишком близко. Выбираем режим инструмента Brush – Relax, который «расслабляет» позицию каждой из точек относительно соседних. Настраиваем размер области воздействия Size Affect, устанавливая значение примерно 50 единиц. 
+</br>Проводим инструментом по местам, требующим расслабления и видим, что точки отодвигаются/сближаются друг с другом и образуют более равномерную поверхность.
+ </p>
+ 
+  <div  style="text-align: center;">
+<img width="25%" src="../assets/images/top_practice/2_3.jpg">
+</div>
+<p class="image_text">
+Рис. 2 - Результат Relax
+</p>
+ 
+ 
+<p>
+Переключим режим Brush на Inflate – раздуть. Данный режим необходим, чтобы увеличивать объем топологии низкополигонального объекта. 
+</br>В нашем случае использование Inflate необходимо в области плавников. Применяем Brush с данным режимом на границе топологии так, чтобы она полностью закрывала модель-референс. 
+</p>
+  <div  style="text-align: center;">
+<img width="45%" src="../assets/images/top_practice/2_4.jpg">
+</div>
+<p class="image_text">
+Рис. 3 - Результат Inflate
+</p>
+ 
+  
+<p>
+Далее необходимо скопировать и отразить половину модели, которая имеется на данный момент. Для этого используем функции Symmetry.
+</br>На нижней панели нажмем кнопку Sym Options, чтобы настроить параметры симметрии.
+</p>
+ 
+<p>
+Выберем плоскость симметрии Symmetry Plane – YZ (R). Нажмем Done, чтобы сохранить настройки.
+ </p>
+ 
+   <div  style="text-align: center;">
+<img width="40%" src="../assets/images/top_practice/2_5.jpg">
+</div>
+<p class="image_text">
+Рис. 4 - Настройка симметрии
+</p>
+ 
+ 
+ 
+<p>
+Теперь на панели справа нажимаем кнопку Create Sym, чтобы скопировать и отразить модель относительно плоскости симметрии.
+</p>
+  
+    <div  style="text-align: center;">
+<img width="40%" src="../assets/images/top_practice/2_6.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Create Sym
+</p>
+  
+  
+<p>
+Чтобы соединить две половины модели будем последовательно объединять точки на их границах (Merge). 
+</p>
+ 
+    <div  style="text-align: center;">
+<img width="50%" src="../assets/images/top_practice/2_7.jpg">
+</div>
+<p class="image_text">
+Рис. 5 - Слияние точек
+</p>
+ 
+<p>
+После соединения точки необходимо выровнять относительно плоскости симметрии. Выделяем точку и нажимаем кнопку Zero Sym. В результате должен на модели получиться ровный шов.
+</p>
+  
+     <div  style="text-align: center;">
+<img width="60%" src="../assets/images/top_practice/2_8.jpg">
+</div>
+<p class="image_text">
+Рис. 6 - Zero Sym
+</p>
+ 
+ 
+<p>
+После завершения процесса ретопологии изменим режим отображения, чтобы увидеть результат. Для этого используем функции на верхней панели инструментов. Выключим модель-референс – View Ref и сетку – View Net. 
+</br>
+Далее откроем настройки смягчения Subdivision – Preferences. Установим степень смягчения Levels – 1.
+</p>
+      <div  style="text-align: center;">
+<img width="50%" src="../assets/images/top_practice/2_9.jpg">
+</div>
+<p class="image_text">
+Рис. 7 - Настройка Subdivision 
+</p> 
+
+<p>
+Далее на верхней панели нажмем кнопку SubD, дождемся загрузки и увидим результат.
+</p>
+
+     <div  style="text-align: center;">
+<img width="50%" src="../assets/images/top_practice/2_1.jpg">
+</div>
+<p class="image_text">
+Рис. 8 - Результат 
+</p>
+
+ <div class="next_link">
+ 
+  <p> <a href="retopo_task1.html"> < Инструмент Simple Create </a> </p>
+  
+ <p> <a href="retopo_task3.html"> Инструмент Draw > </a> </p>
+ 
+ </div>
+  
+</div> 
+
+<footer>
+</footer>
+
+ <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
